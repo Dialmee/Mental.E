@@ -15,7 +15,7 @@ public class ObstacleScrolling : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - speed * Time.deltaTime);
         }else 
         { 
-            Destroy(this.gameObject); 
+            this.gameObject.SetActive(false);
         }
         
     }
