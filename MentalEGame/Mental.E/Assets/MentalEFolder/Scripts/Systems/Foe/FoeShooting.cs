@@ -12,7 +12,12 @@ public class FoeShooting : MonoBehaviour
     private float fTimer = 0f;
     [SerializeField] private float fSpeed = 5f;
     [SerializeField] private float fFréquence = 2f;
-
+    private int iDamageInitial = 5;
+    public int iDamage = 5;
+    private void Start()
+    {
+        iDamageInitial = iDamage;
+    }
     private void Update()
     {
         /*if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 200f, layerMask))
@@ -33,6 +38,14 @@ public class FoeShooting : MonoBehaviour
         {
             Shoot();
             fTimer = 0f;
+        }
+        if(iDamageInitial != iDamage)
+        {
+            iDamageInitial = iDamage;
+            foreach(GameObject projectile in GO_Projectil)
+            {
+                projectile.GetComponent<FoeProjectil>().iDamage = iDamage;
+            }
         }
     }
    private void Shoot()
