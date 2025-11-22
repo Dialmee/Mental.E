@@ -10,7 +10,8 @@ public class FoeShooting : MonoBehaviour
     [SerializeField] private List<GameObject> GO_Projectil = new List<GameObject>(10);
     private int iCurrentProjectil = 0;
     private float fTimer = 0f;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float fSpeed = 5f;
+    [SerializeField] private float fFréquence = 2f;
 
     private void Update()
     {
@@ -28,7 +29,7 @@ public class FoeShooting : MonoBehaviour
 
         }*/
         fTimer += Time.deltaTime;
-        if (fTimer > 2f)
+        if (fTimer > fFréquence)
         {
             Shoot();
             fTimer = 0f;
@@ -45,7 +46,6 @@ public class FoeShooting : MonoBehaviour
     {
         if (iCurrentProjectil >= GO_Projectil.Count && GO_Projectil[0].activeInHierarchy)
         {
-            iCurrentProjectil += 1;
             GO_Projectil.Add(Instantiate(GO_Projectil[0], this.transform.position, Quaternion.identity, tr_ProjectilParent));
             Debug.Log("NEW PROJECTIL");
         }
@@ -54,5 +54,6 @@ public class FoeShooting : MonoBehaviour
             iCurrentProjectil = 0;
             Debug.Log("nouvelle boucle");
         }
+        Debug.Log("Checked");
     }
 }
