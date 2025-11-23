@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using static UnityEngine.GraphicsBuffer;
 
 public class PlayerProjectile : MonoBehaviour
@@ -24,9 +25,17 @@ public class PlayerProjectile : MonoBehaviour
             {
                 Vector3 direction = (Vector3)target.position - rb.position;
                 direction.Normalize();
-                Vector3 rotateAmount = Vector3.Cross(direction, transform.forward);
+                /*Vector3 rotateAmount = Vector3.Cross(direction, transform.forward);
                 rb.angularVelocity = -rotateAmount * rotateSpeed;
-                rb.linearVelocity = transform.forward * fSpeed;
+                rb.linearVelocity = transform.forward * fSpeed;*/
+                this.transform.position += direction * fSpeed *Time.deltaTime;
+                if(direction.z < -0.2)
+                {
+                    this.gameObject.SetActive(false);
+                    target = null;
+                    this.transform.localPosition = Vector3.zero;
+                    Debug.Log("projectil passe");
+                }
             }
             else
             {

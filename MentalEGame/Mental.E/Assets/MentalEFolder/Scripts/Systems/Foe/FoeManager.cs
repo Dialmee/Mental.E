@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class FoeManager : MonoBehaviour
 {
+    [SerializeField] private float maxHp;
     [SerializeField] private float hp;
 
+    private void OnEnable()
+    {
+        hp = maxHp;
+    }
     public void TakeDamage(int nb)
     {
         hp -= nb;
