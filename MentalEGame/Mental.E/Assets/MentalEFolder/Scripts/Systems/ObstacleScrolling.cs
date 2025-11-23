@@ -3,20 +3,21 @@ using UnityEngine;
 
 public class ObstacleScrolling : MonoBehaviour
 {
-
     public float speed = 5f;
-
-    void Update()
+    private void OnEnable()
     {
-
-
+        this.transform.localPosition = Vector3.zero;
+    }
+    private void Update()
+    {
         if (transform.position.z > 0)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - speed * Time.deltaTime);
-        }else 
+        }
+        else 
         { 
             this.gameObject.SetActive(false);
+            this.transform.localPosition = Vector3.zero;
         }
-        
     }
 }
