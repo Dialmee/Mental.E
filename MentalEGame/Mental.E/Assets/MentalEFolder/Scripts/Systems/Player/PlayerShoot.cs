@@ -6,7 +6,7 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private SpawnAxe[] spawnAxes = new SpawnAxe[9];
     [SerializeField]private PlayerMouvement playerMouvement;
-    [SerializeField] private PlayerStats ps;
+    [SerializeField] private PlayerManager playerManager;
     private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Transform tr_ProjectilParent;
@@ -39,9 +39,12 @@ public class PlayerShoot : MonoBehaviour
         if(target!=null)
         {
             CheckProjectilEnable();
-            GO_Projectil[iCurrentProjectil].SetActive(true); 
-            GO_Projectil[iCurrentProjectil].GetComponent<PlayerProjectile>().target = target;
-            GO_Projectil[iCurrentProjectil].GetComponent<PlayerProjectile>().playerTr = this.transform;
+            GO_Projectil[iCurrentProjectil].SetActive(true);
+            PlayerProjectile proj = GO_Projectil[iCurrentProjectil].GetComponent<PlayerProjectile>();
+            proj.target = target;
+            proj.playerTr = this.transform;
+            proj.iDamage = playerManager.ps.bulletDamages;
+            proj.fSpeed = playerManager.ps.bulletSpeed;
             iCurrentProjectil += 1;
         }
     }
@@ -58,7 +61,7 @@ public class PlayerShoot : MonoBehaviour
     }
     private void CheckFoeInDirection()
     {
-        if (ps.nbBullets[0] != 0) //forward
+        if (playerManager.ps.nbBullets[0] != 0) //forward
         {
             fTimer[0] += Time.deltaTime;
             if (fTimer[0] > fFrequence)
@@ -67,7 +70,7 @@ public class PlayerShoot : MonoBehaviour
                 fTimer[0] = 0f;
             }
         }
-        if (ps.nbBullets[1] != 0 && playerMouvement.iAxe != 2 && playerMouvement.iAxe != 5 && playerMouvement.iAxe != 8) //right
+        if (playerManager.ps.nbBullets[1] != 0 && playerMouvement.iAxe != 2 && playerMouvement.iAxe != 5 && playerMouvement.iAxe != 8) //right
         {
             fTimer[1] += Time.deltaTime;
             if (fTimer[1] > fFrequence)
@@ -76,7 +79,7 @@ public class PlayerShoot : MonoBehaviour
                 fTimer[1] = 0f;
             }
         }
-        if (ps.nbBullets[2] != 0 && playerMouvement.iAxe != 0 && playerMouvement.iAxe != 3 && playerMouvement.iAxe != 6) //left
+        if (playerManager.ps.nbBullets[2] != 0 && playerMouvement.iAxe != 0 && playerMouvement.iAxe != 3 && playerMouvement.iAxe != 6) //left
         {
             fTimer[2] += Time.deltaTime;
             if (fTimer[2] > fFrequence)
@@ -85,7 +88,7 @@ public class PlayerShoot : MonoBehaviour
                 fTimer[2] = 0f;
             }
         }
-        if (ps.nbBullets[3] != 0 && playerMouvement.iAxe >2) //up
+        if (playerManager.ps.nbBullets[3] != 0 && playerMouvement.iAxe >2) //up
         {
             fTimer[3] += Time.deltaTime;
             if (fTimer[3] > fFrequence)
@@ -94,7 +97,7 @@ public class PlayerShoot : MonoBehaviour
                 fTimer[3] = 0f;
             }
         }
-        if (ps.nbBullets[4] != 0 && playerMouvement.iAxe < 6) //down
+        if (playerManager.ps.nbBullets[4] != 0 && playerMouvement.iAxe < 6) //down
         {
             fTimer[4] += Time.deltaTime;
             if (fTimer[4] > fFrequence)

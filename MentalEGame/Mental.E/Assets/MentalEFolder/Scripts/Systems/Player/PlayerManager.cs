@@ -3,13 +3,20 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private PlayerStats ps;
-    [SerializeField] private float hp;
+    public PlayerStats ps;
+    public float hp;
+    public float fXP = 0f;
+    [SerializeField] private LifeUpdate lifeUpdate = null;
+    [SerializeField] private XPUpdate xpUpdate = null;
     [SerializeField] private int iDamageAsteroid = 10;
 
     void Start()
     {
         hp = ps.hpMax;
+        if(lifeUpdate!=null)
+        {
+            lifeUpdate.ChangeUI();
+        }
     }
 
     void Update()
@@ -19,7 +26,23 @@ public class PlayerManager : MonoBehaviour
             hp += ps.healthRegeneration * Time.deltaTime;
             if(hp > ps.hpMax)
                 hp = ps.hpMax;
+            if (lifeUpdate != null)
+            {
+                lifeUpdate.ChangeUI();
+            }
         }
+    }
+
+    public void GainXP(float nb)
+    {
+        fXP += nb;
+        if(fXP >= ps.fXPmax)
+        {
+            ps.iLevel += 1;
+            fXP -= ps.fXPmax;
+        }
+        xpUpdate.ChangeUI();
+        //TO DO le droit d'avoir une update mtn
     }
 
     public void TakeDamage(int nb)

@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpMax: 50
   healthRegeneration: 0.2
-  bulletDamages: 2
-  bulletSpeed: 2
+  bulletDamages: 10
+  bulletSpeed: 10
   bulletRange: 2
   fireRate: 2
   moveCd: 2
   nbBullets: 0100000000000000000000000000000000000000
+  iLevel: 0
+  fXPmax: 100

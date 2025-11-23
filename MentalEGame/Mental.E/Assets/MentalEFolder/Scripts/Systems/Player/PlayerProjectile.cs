@@ -15,7 +15,6 @@ public class PlayerProjectile : MonoBehaviour
         if (playerTr != null)
         {
             this.transform.position = playerTr.position;
-            Debug.Log(this.transform.position + " and the player transform is " + playerTr.position);
         }
     }
     private void OnDisable()
@@ -36,7 +35,6 @@ public class PlayerProjectile : MonoBehaviour
                     this.gameObject.SetActive(false);
                     target = null;
                     this.transform.position = Vector3.zero;
-                    Debug.Log("projectil passe");
                 }
             }
             else

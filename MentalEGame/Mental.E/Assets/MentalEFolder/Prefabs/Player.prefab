@@ -353,6 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 11400000, guid: 6c06d2a16696cb9419c2846ea57ffbdd, type: 2}
   hp: 50
+  lifeUpdate: {fileID: 0}
   iDamageAsteroid: 10
 --- !u!114 &563337013854360999
 MonoBehaviour:
@@ -377,13 +378,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   playerMouvement: {fileID: 4617373002503063601}
-  ps: {fileID: 11400000, guid: 6c06d2a16696cb9419c2846ea57ffbdd, type: 2}
+  playerManager: {fileID: 2272438016295197882}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
   tr_ProjectilParent: {fileID: 0}
   GO_Projectil:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -6,12 +6,14 @@ public class PlayerStats : ScriptableObject
 {
     public float hpMax = 2f;
     public float healthRegeneration = 0.2f;
-    public float bulletDamages = 2f;
+    public int bulletDamages = 2;
     public float bulletSpeed = 2f;
     public float bulletRange = 2f;
     public float fireRate = 2f;
     public float moveCd = 2f;
     [Tooltip("0 is forward, 1 is right, 2 is left, 3 is up, 4 is down")] public int[] nbBullets = new int[5] { 1, 0, 0, 0, 0 };
+    public int iLevel = 0;
+    public float fXPmax = 100f;
 
     private int _maxUpBullRange = 3;
     private int _upBullRange = 0;
@@ -30,7 +32,7 @@ public class PlayerStats : ScriptableObject
 
     public bool upgradeBullDamage()
     {
-        bulletDamages += 1f;
+        bulletDamages += 1;
         return true;
     }
 
