@@ -41,4 +41,45 @@ public class SpawnAxe : MonoBehaviour
             GO_entity[iCurrentEntity].SetActive(true);
         }
     }
+
+    public Transform WhatFoe()
+    {
+        Transform transform = this.transform;
+        float greatestDistance = 0f;
+        float newDistance = 0f;
+        GameObject Go_far = null;
+        foreach (GameObject go_foe in GO_foes)
+        {
+            if(go_foe.activeInHierarchy)
+            {
+                newDistance = this.transform.position.z - go_foe.transform.position.z;
+                if (newDistance > greatestDistance)
+                {
+                    greatestDistance = newDistance;
+                    Go_far = go_foe;
+                }
+            }
+        }
+        foreach (GameObject go_ast in GO_asteroid)
+        {
+            if (go_ast.activeInHierarchy)
+            {
+                newDistance = this.transform.position.z - go_ast.transform.position.z;
+                if (newDistance > greatestDistance)
+                {
+                    greatestDistance = newDistance;
+                    Go_far = go_ast;
+                }
+            }
+        }
+        if(Go_far!=null)
+        {
+            transform = Go_far.transform;
+            return transform;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

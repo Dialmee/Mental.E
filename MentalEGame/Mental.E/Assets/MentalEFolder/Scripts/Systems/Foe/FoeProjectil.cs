@@ -21,7 +21,6 @@ public class FoeProjectil : MonoBehaviour
     {
         if(collider.gameObject.CompareTag("Player"))
         {
-            //TODO Le joueur prend des dégats
             collider.gameObject.GetComponent<PlayerManager>().TakeDamage(iDamage);
             this.gameObject.SetActive(false);
             this.transform.localPosition = Vector3.zero;

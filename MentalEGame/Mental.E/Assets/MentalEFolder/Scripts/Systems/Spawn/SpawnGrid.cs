@@ -13,20 +13,14 @@ public class SpawnGrid : MonoBehaviour
     }
     private void Start()
     {
-        int hasardAxe = iHasard(0, 8);
-        int hasardEntity = iHasard(0, 1);
-        Debug.Log("l'axe est " + hasardAxe + " et l'entite est " + hasardEntity);
-        spawnAxes[hasardAxe].Spawn(hasardEntity);
+        spawnAxes[iHasard(0, 8)].Spawn(iHasard(0, 1));
     }
     private void Update()
     {
         fTimer += Time.deltaTime;
         if (fTimer > fFrequence)
         {
-            int hasardAxe = iHasard(0, 8);
-            int hasardEntity = iHasard(0, 1);
-            Debug.Log("l'axe est " + hasardAxe + " et l'entite est " + hasardEntity);
-            spawnAxes[hasardAxe].Spawn(hasardEntity);
+            spawnAxes[iHasard(0, 8)].Spawn(iHasard(0, 1));
             fTimer = 0f;
         }
     }
