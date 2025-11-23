@@ -39,8 +39,9 @@ public class PlayerShoot : MonoBehaviour
         if(target!=null)
         {
             CheckProjectilEnable();
-            GO_Projectil[iCurrentProjectil].SetActive(true);
+            GO_Projectil[iCurrentProjectil].SetActive(true); 
             GO_Projectil[iCurrentProjectil].GetComponent<PlayerProjectile>().target = target;
+            GO_Projectil[iCurrentProjectil].GetComponent<PlayerProjectile>().playerTr = this.transform;
             iCurrentProjectil += 1;
         }
     }

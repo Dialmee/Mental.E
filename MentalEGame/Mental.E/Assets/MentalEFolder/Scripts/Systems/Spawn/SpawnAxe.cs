@@ -14,7 +14,7 @@ public class SpawnAxe : MonoBehaviour
     }
     public void Spawn(int hasard)
     {
-        if(hasard == 0)
+        if(hasard < 70)
         {
             CheckEntityEnable(iCurrentFoe, GO_foes);
             iCurrentFoe += 1;
@@ -68,11 +68,11 @@ public class SpawnAxe : MonoBehaviour
                 if (newDistance > greatestDistance)
                 {
                     greatestDistance = newDistance;
-                    Go_far = go_ast;
+                    Go_far = null;
                 }
             }
         }
-        if(Go_far!=null)
+        if (Go_far!=null)
         {
             transform = Go_far.transform;
             return transform;

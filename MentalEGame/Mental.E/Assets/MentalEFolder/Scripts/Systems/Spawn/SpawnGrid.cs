@@ -13,14 +13,14 @@ public class SpawnGrid : MonoBehaviour
     }
     private void Start()
     {
-        spawnAxes[iHasard(0, 8)].Spawn(iHasard(0, 1));
+        spawnAxes[iHasard(0, 8)].Spawn(iHasard(0, 100));
     }
     private void Update()
     {
         fTimer += Time.deltaTime;
         if (fTimer > fFrequence)
         {
-            spawnAxes[iHasard(0, 8)].Spawn(iHasard(0, 1));
+            spawnAxes[iHasard(0, 8)].Spawn(iHasard(0, 100));
             fTimer = 0f;
         }
     }

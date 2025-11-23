@@ -1,9 +1,11 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private PlayerStats ps;
     [SerializeField] private float hp;
+    [SerializeField] private int iDamageAsteroid = 10;
 
     void Start()
     {
@@ -27,6 +29,15 @@ public class PlayerManager : MonoBehaviour
         {
             hp = 0;
             Death();
+        }
+    }
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.CompareTag("Asteroid"))
+        {
+            TakeDamage(iDamageAsteroid);
+            collider.gameObject.SetActive(false);
+            collider.gameObject.transform.localPosition = Vector3.zero;
         }
     }
 

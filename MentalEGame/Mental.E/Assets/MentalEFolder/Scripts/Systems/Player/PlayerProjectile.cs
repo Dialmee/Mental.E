@@ -1,17 +1,22 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
 public class PlayerProjectile : MonoBehaviour
 {
+    public Transform playerTr = null;
     public Transform target = null;
     [SerializeField] private Rigidbody rb;
     public float fSpeed = 10f;
     public int iDamage = 20; 
-    public float rotateSpeed = 200f;
     private void OnEnable()
     {
-        this.transform.localPosition = Vector3.zero;
+        if (playerTr != null)
+        {
+            this.transform.position = playerTr.position;
+            Debug.Log(this.transform.position + " and the player transform is " + playerTr.position);
+        }
     }
     private void OnDisable()
     {
@@ -25,15 +30,12 @@ public class PlayerProjectile : MonoBehaviour
             {
                 Vector3 direction = (Vector3)target.position - rb.position;
                 direction.Normalize();
-                /*Vector3 rotateAmount = Vector3.Cross(direction, transform.forward);
-                rb.angularVelocity = -rotateAmount * rotateSpeed;
-                rb.linearVelocity = transform.forward * fSpeed;*/
                 this.transform.position += direction * fSpeed *Time.deltaTime;
                 if(direction.z < -0.2)
                 {
                     this.gameObject.SetActive(false);
                     target = null;
-                    this.transform.localPosition = Vector3.zero;
+                    this.transform.position = Vector3.zero;
                     Debug.Log("projectil passe");
                 }
             }
@@ -41,7 +43,7 @@ public class PlayerProjectile : MonoBehaviour
             {
                 this.gameObject.SetActive(false);
                 target = null;
-                this.transform.localPosition = Vector3.zero;
+                this.transform.position = Vector3.zero;
             }
         }
     }
@@ -53,7 +55,7 @@ public class PlayerProjectile : MonoBehaviour
             collider.gameObject.GetComponent<FoeManager>().TakeDamage(iDamage);
             this.gameObject.SetActive(false);
             target = null;
-            this.transform.localPosition = Vector3.zero;
+            this.transform.position = Vector3.zero;
             Debug.Log("BAM");
         }
     }
