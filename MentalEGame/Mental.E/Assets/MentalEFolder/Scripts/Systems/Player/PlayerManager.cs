@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public float hp;
     public float fXP = 0f;
     [SerializeField] private LifeUpdate lifeUpdate = null;
+    [SerializeField] private GameObject GO_levelingUpdate = null;
     [SerializeField] private XPUpdate xpUpdate = null;
     [SerializeField] private int iDamageAsteroid = 10;
 
@@ -40,6 +41,7 @@ public class PlayerManager : MonoBehaviour
         if(fXP >= ps.fXPmax)
         {
             ps.iLevel += 1;
+            GO_levelingUpdate.SetActive(true);
             fXP -= ps.fXPmax;
         }
         xpUpdate.ChangeUI();

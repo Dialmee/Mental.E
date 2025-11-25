@@ -8,7 +8,7 @@ public class LevelingUpdate : MonoBehaviour
     [SerializeField] private Sprite[] sprites_update = new Sprite[10];
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private UnityEngine.UI.Image[] imageButtonAmelioration = new UnityEngine.UI.Image[3];
-    [SerializeField] private UnityEngine.UI.Button[] buttonAmelioration = new UnityEngine.UI.Button[3];
+    [SerializeField] private UpdateButton[] buttonAmelioration = new UpdateButton[3];
     private int[] i_ = new int[3];
     private int iHasard(int a, int b) //Si 0 alors vaisseau ennemi, sinon asteroid
     {
@@ -27,7 +27,8 @@ public class LevelingUpdate : MonoBehaviour
         for(int i = 0; i<3; i++)
         {
             imageButtonAmelioration[i].sprite = sprites_update[i_[i]];
-            buttonAmelioration[i].onClick.AddListener(delegate { playerManager.ps.Upgrade(i, playerManager); });
+            buttonAmelioration[i].iNumber = i_[i];
+            Debug.Log(i_[i]);
         }
     }
     private List <int> int_ten()
@@ -55,5 +56,9 @@ public class LevelingUpdate : MonoBehaviour
             i_[i] = list[index];
             list.RemoveAt(index);
         }
+    }
+    private void OnDisable()
+    {
+        playerManager.pauseManager.PauseGame(false);
     }
 }

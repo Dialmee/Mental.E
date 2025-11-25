@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 3272111542170761003}
   - component: {fileID: 829409324902895344}
   - component: {fileID: 1349313983209465592}
+  - component: {fileID: 2612789884013900350}
   m_Layer: 5
   m_Name: AmeliorationB
   m_TagString: Untagged
@@ -425,7 +426,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829409324902895344}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7369834526838467782}
+        m_TargetAssemblyTypeName: UpdateButton, Assembly-CSharp
+        m_MethodName: Upgrading
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: PlayerManager, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2612789884013900350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357179826134680686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2578aa35d123148a1439493dd2e942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GO_levelingUpdate: {fileID: 6137432959340239672}
+  iNumber: 0
 --- !u!1 &1840529946886223926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1488,7 @@ GameObject:
   - component: {fileID: 7894604044510557620}
   - component: {fileID: 2097798161668459327}
   - component: {fileID: 3101796005601042312}
+  - component: {fileID: 7369834526838467782}
   m_Layer: 5
   m_Name: AmeliorationC
   m_TagString: Untagged
@@ -1569,7 +1597,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2097798161668459327}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7369834526838467782}
+        m_TargetAssemblyTypeName: UpdateButton, Assembly-CSharp
+        m_MethodName: Upgrading
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: PlayerManager, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7369834526838467782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5273120583758726316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2578aa35d123148a1439493dd2e942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GO_levelingUpdate: {fileID: 6137432959340239672}
+  iNumber: 0
 --- !u!1 &6137432959340239672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,25 +1676,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites_update:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 63396321148de324e9a4715df0784017, type: 3}
+  - {fileID: 21300000, guid: 8a15429eedc55a34e9a8477c36c47abb, type: 3}
+  - {fileID: 21300000, guid: ae031c8a20a56804e8a3b883bacd8e43, type: 3}
+  - {fileID: 21300000, guid: dbfc3f459e024d34b809451d1caa6539, type: 3}
+  - {fileID: 21300000, guid: 3246bd9dff5bb76439bb07c985bfc845, type: 3}
+  - {fileID: 21300000, guid: cc36c96ade9cf404cb55dfa0af10cb8c, type: 3}
+  - {fileID: 21300000, guid: bb3bf42b1f3715a4991b081f49f2a073, type: 3}
+  - {fileID: 21300000, guid: a548f2bfe550c53478d9817245f340eb, type: 3}
+  - {fileID: 21300000, guid: a1646e534edc8b649bb6b4e971fb0b10, type: 3}
+  - {fileID: 21300000, guid: 40444cc06dd0f5e4d96eee9d019e3988, type: 3}
   playerManager: {fileID: 0}
   imageButtonAmelioration:
   - {fileID: 8213712703036371196}
   - {fileID: 829409324902895344}
   - {fileID: 2097798161668459327}
   buttonAmelioration:
-  - {fileID: 5290385528639725046}
-  - {fileID: 1349313983209465592}
-  - {fileID: 3101796005601042312}
+  - {fileID: 6771965629329313039}
+  - {fileID: 2612789884013900350}
+  - {fileID: 7369834526838467782}
 --- !u!1 &6173502765396584501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,6 +2121,7 @@ GameObject:
   - component: {fileID: 6458154469566586976}
   - component: {fileID: 8213712703036371196}
   - component: {fileID: 5290385528639725046}
+  - component: {fileID: 6771965629329313039}
   m_Layer: 5
   m_Name: AmeliorationA
   m_TagString: Untagged
@@ -2175,7 +2230,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8213712703036371196}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7369834526838467782}
+        m_TargetAssemblyTypeName: UpdateButton, Assembly-CSharp
+        m_MethodName: Upgrading
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: PlayerManager, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6771965629329313039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177668177357219307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2578aa35d123148a1439493dd2e942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GO_levelingUpdate: {fileID: 6137432959340239672}
+  iNumber: 0
 --- !u!1 &7292108240577887929
 GameObject:
   m_ObjectHideFlags: 0
