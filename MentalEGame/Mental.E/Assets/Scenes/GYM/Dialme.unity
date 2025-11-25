@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: lifeUpdate
       value: 
       objectReference: {fileID: 1293047718}
+    - target: {fileID: 2272438016295197882, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
+      propertyPath: pauseManager
+      value: 
+      objectReference: {fileID: 5608646501415047398}
     - target: {fileID: 5228355784597486471, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -1194,12 +1198,156 @@ PrefabInstance:
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 819659341}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_Name
+      value: Escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_Name
+      value: Pause Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: iA_escape.m_Name
+      value: IA_escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[0].m_Id
+      value: e66a0b0d-ec2a-45fe-a5f1-339ccf732f1e
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[1].m_Id
+      value: b7d1c408-4f53-47de-8093-71176a30c0a6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[2].m_Id
+      value: aa454127-a703-428c-b1e9-cd09afb8afe8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[0].m_Name
+      value: escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[0].m_Path
+      value: OneModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[1].m_Name
+      value: modifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[2].m_Name
+      value: binding
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 9fbac7b8-c726-4cae-aff8-dd3feeca67f7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 1e898658-acf5-4a65-8dc7-34c8f33d2007
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 5cf1703b-b0dc-418a-aadc-cb7afe54cb40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[0].m_Flags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[1].m_Flags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[2].m_Flags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: escape.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[0].m_Name
+      value: Escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[0].m_Path
+      value: OneModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[1].m_Name
+      value: modifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[2].m_Name
+      value: binding
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[0].m_Flags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[1].m_Flags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[2].m_Flags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Pause Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Pause Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: pauseKey.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Pause Key
+      objectReference: {fileID: 0}
     - target: {fileID: 4365867734471619882, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4365867734471619882, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137432959340239672, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7109533709630278674, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
@@ -1290,11 +1438,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9145065997116821917, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+--- !u!114 &5608646501415047398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+  m_PrefabInstance: {fileID: 5608646501415047396}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2143e8f9faed3468211957beadc1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8390737420741915066
 PrefabInstance:
   m_ObjectHideFlags: 0

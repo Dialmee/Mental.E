@@ -3,6 +3,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerManager : MonoBehaviour
 {
+    public PauseManager pauseManager;
     public PlayerStats ps;
     public float hp;
     public float fXP = 0f;

@@ -18,71 +18,107 @@ public class PlayerStats : ScriptableObject
     private int _maxUpBullRange = 3;
     private int _upBullRange = 0;
 
-    public bool upgradeMaxHp()
+    public int[] iUpdate = new int[4] { 0, 0, 0, 0 };
+
+    public void Upgrade(int i, PlayerManager playerManager)
+    {
+        if(i==9)
+        {
+            upgradeMaxHp();
+        }
+        else if (i == 8)
+        {
+            moreHp(playerManager);
+        }
+        else if (i == 7)
+        {
+            upgradeBullDamage();
+        }
+        else if (i == 6)
+        {
+            upgradeBullSpeed();
+        }
+        else if (i == 5)
+        {
+            upgradeFireRate();
+        }
+        else if (i == 4)
+        {
+            upgradeMoveCd();
+        }
+        else if (i == 3)
+        {
+            upgradeRegeneration();
+        }
+        else if (i == 2)
+        {
+            upgradeBullRange();
+        }
+        else if (i == 1)
+        {
+            upgradeVertBullets();
+        }
+        else if (i == 0)
+        {
+            upgradeHorBullets();
+        }
+    }
+    public void upgradeMaxHp()
     {
         hpMax += 2f;
-        return true;
     }
-
-    public bool upgradeRegeneration()
+    public void moreHp(PlayerManager playerManager)
     {
-        healthRegeneration += 0.1f;
-        return true;
+        playerManager.hp = hpMax;
     }
-
-    public bool upgradeBullDamage()
+    public void upgradeBullDamage()
     {
         bulletDamages += 1;
-        return true;
     }
-
-    public bool upgradeBullSpeed()
+    public void upgradeBullSpeed()
     {
         bulletSpeed += 1f;
-        return true;
     }
-
-    public bool upgradeBullRange()
+    public void upgradeFireRate()
+    {
+        fireRate += 1f;
+    }
+    public void upgradeMoveCd()
+    {
+        moveCd -= 1f;
+    }
+    public void upgradeRegeneration()
+    {
+        healthRegeneration += 0.1f;
+        iUpdate[3] += 1;
+    }
+    public void upgradeBullRange()
     {
         if (_upBullRange >= _maxUpBullRange)
-            return false;
+            return;
 
         _upBullRange += 1;
         bulletRange += 20f;
-        return true;
+        iUpdate[2] += 1;
     }
-
-    public bool upgradeFireRate()
-    {
-        fireRate += 1f;
-        return true;
-    }
-
-    public bool upgradeMoveCd()
-    {
-        moveCd -= 1f;
-        return true;
-    }
-
-    public bool upgradeVertBullets()
+    public void upgradeVertBullets()
     {
         int nbVerMax = 3;
         if (nbBullets[3] >= nbVerMax)
-            return false;
+            return;
         nbBullets[0] += 1;
         nbBullets[3] += 1;
         nbBullets[4] += 1;
-        return true;
+        iUpdate[1] += 1;
     }
-
-    public bool upgradeHorBullets()
+    public void upgradeHorBullets()
     {
         int nbHorMax = 3;
         if (nbBullets[3] >= nbHorMax)
-            return false;
+            return;
         nbBullets[0] += 1;
         nbBullets[1] += 1;
         nbBullets[2] += 1;
-        return true;
+        iUpdate[0] += 1;
     }
 }
