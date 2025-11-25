@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    [SerializeField] private GameObject GO_Pause;
+    [SerializeField] private GameObject GO_Pause = null;
     private bool bGameIsPaused = false;
     private bool isLoadingScene = false;
     private AsyncOperation loadingOperation;
     private void Update()
     {
-        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        if(Keyboard.current.escapeKey.wasPressedThisFrame && GO_Pause!=null)
         {
             PauseMenu(!bGameIsPaused);
         }
@@ -40,5 +40,15 @@ public class PauseManager : MonoBehaviour
         PauseGame(toPause);
         GO_Pause.SetActive(toPause);
         bGameIsPaused = toPause;
+    }
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        if (UnityEditor.EditorApplication.isPlaying)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+#endif
+        Application.Quit();
     }
 }
