@@ -5,6 +5,7 @@ public class PlayerManager : MonoBehaviour
 {
     public PauseManager pauseManager;
     public PlayerStats ps;
+    public PlayerMouvement playerMouvement;
     public float hp;
     public float fXP = 0f;
     [SerializeField] private LifeUpdate lifeUpdate = null;

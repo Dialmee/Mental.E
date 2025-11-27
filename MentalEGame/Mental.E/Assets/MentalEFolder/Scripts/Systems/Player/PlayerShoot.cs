@@ -13,25 +13,9 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private List<GameObject> GO_Projectil = new List<GameObject>(10);
     private int iCurrentProjectil = 0;
     private float[] fTimer = new float[5] {0f,0f,0f,0f,0f };
-    [SerializeField] private float fSpeed = 5f;
-    [SerializeField] private float fFrequence = 2f;
-    private int iDamageInitial = 5;
-    public int iDamage = 5;
 
-    private void Start()
-    {
-        iDamageInitial = iDamage;
-    }
     private void Update()
     {
-        if (iDamageInitial != iDamage)
-        {
-            iDamageInitial = iDamage;
-            foreach (GameObject projectile in GO_Projectil)
-            {
-                projectile.GetComponent<FoeProjectil>().iDamage = iDamage;
-            }
-        }
         CheckFoeInDirection();
     }
     private void Shoot(Transform target)
@@ -64,7 +48,7 @@ public class PlayerShoot : MonoBehaviour
         if (playerManager.ps.nbBullets[0] != 0) //forward
         {
             fTimer[0] += Time.deltaTime;
-            if (fTimer[0] > fFrequence)
+            if (fTimer[0] > playerManager.ps.fireRate)
             {
                 Shoot(spawnAxes[playerMouvement.iAxe].WhatFoe());
                 fTimer[0] = 0f;
@@ -73,7 +57,7 @@ public class PlayerShoot : MonoBehaviour
         if (playerManager.ps.nbBullets[1] != 0 && playerMouvement.iAxe != 2 && playerMouvement.iAxe != 5 && playerMouvement.iAxe != 8) //right
         {
             fTimer[1] += Time.deltaTime;
-            if (fTimer[1] > fFrequence)
+            if (fTimer[1] > playerManager.ps.fireRate)
             {
                 Shoot(spawnAxes[playerMouvement.iAxe+1].WhatFoe());
                 fTimer[1] = 0f;
@@ -82,7 +66,7 @@ public class PlayerShoot : MonoBehaviour
         if (playerManager.ps.nbBullets[2] != 0 && playerMouvement.iAxe != 0 && playerMouvement.iAxe != 3 && playerMouvement.iAxe != 6) //left
         {
             fTimer[2] += Time.deltaTime;
-            if (fTimer[2] > fFrequence)
+            if (fTimer[2] > playerManager.ps.fireRate)
             {
                 Shoot(spawnAxes[playerMouvement.iAxe-1].WhatFoe());
                 fTimer[2] = 0f;
@@ -91,7 +75,7 @@ public class PlayerShoot : MonoBehaviour
         if (playerManager.ps.nbBullets[3] != 0 && playerMouvement.iAxe >2) //up
         {
             fTimer[3] += Time.deltaTime;
-            if (fTimer[3] > fFrequence)
+            if (fTimer[3] > playerManager.ps.fireRate)
             {
                 Shoot(spawnAxes[playerMouvement.iAxe-3].WhatFoe());
                 fTimer[3] = 0f;
@@ -100,7 +84,7 @@ public class PlayerShoot : MonoBehaviour
         if (playerManager.ps.nbBullets[4] != 0 && playerMouvement.iAxe < 6) //down
         {
             fTimer[4] += Time.deltaTime;
-            if (fTimer[4] > fFrequence)
+            if (fTimer[4] > playerManager.ps.fireRate)
             {
                 Shoot(spawnAxes[playerMouvement.iAxe+3].WhatFoe());
                 fTimer[4] = 0f;

@@ -8,6 +8,8 @@ public class SpawnAxe : MonoBehaviour
     private Transform tr_entity;
     public int iCurrentFoe = 0;
     public int iCurrentAsteroid = 0;
+    public PlayerManager playerManager;
+    public int iAxe = 0;
     private void Start()
     {
         tr_entity = this.GetComponent<Transform>();
@@ -71,6 +73,10 @@ public class SpawnAxe : MonoBehaviour
                     Go_far = null;
                 }
             }
+        }
+        if(newDistance > playerManager.ps.bulletRange*10)
+        {
+            Go_far = null;
         }
         if (Go_far!=null)
         {

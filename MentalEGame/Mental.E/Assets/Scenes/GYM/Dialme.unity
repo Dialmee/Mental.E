@@ -1073,6 +1073,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1848781879}
     - target: {fileID: 2272438016295197882, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
+      propertyPath: vfxWarp
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272438016295197882, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
       propertyPath: xpUpdate
       value: 
       objectReference: {fileID: 1210986263}
@@ -2684,11 +2688,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1884343970338284472, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
-      propertyPath: fFrequence
-      value: 5
-      objectReference: {fileID: 0}
+    - target: {fileID: 1124299134337565705, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
+    - target: {fileID: 2687208209236892946, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
     - target: {fileID: 3079468536883697229, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
+    - target: {fileID: 4176553808262695567, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
+    - target: {fileID: 4689402769260690623, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 819659341}
@@ -2713,6 +2729,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 819659341}
     - target: {fileID: 5740199956535945408, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
+    - target: {fileID: 6149139432741907984, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 819659341}
@@ -2760,7 +2780,23 @@ PrefabInstance:
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 819659341}
+    - target: {fileID: 7766037179058548152, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
     - target: {fileID: 8110812553535077283, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
+    - target: {fileID: 8147143134766893663, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
+    - target: {fileID: 8154187640351154210, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 819659341}
+    - target: {fileID: 8220667178393563403, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 819659341}

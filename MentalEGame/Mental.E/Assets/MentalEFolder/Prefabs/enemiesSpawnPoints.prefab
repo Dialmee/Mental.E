@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fTimer: 0
-  fFrequence: 10
+  fFrequence: 5
   spawnAxes:
   - {fileID: 8154187640351154210}
   - {fileID: 2687208209236892946}
@@ -250,6 +250,8 @@ MonoBehaviour:
   - {fileID: 9181213097864440309}
   iCurrentFoe: 0
   iCurrentAsteroid: 0
+  playerManager: {fileID: 0}
+  iAxe: 5
 --- !u!1001 &945669528401961651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -430,6 +432,8 @@ MonoBehaviour:
   - {fileID: 1037968200460698739}
   iCurrentFoe: 0
   iCurrentAsteroid: 0
+  playerManager: {fileID: 0}
+  iAxe: 1
 --- !u!4 &1785643182412843802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 781157001828654494, guid: 5f87c6ff53caa0c4aacc518c800acf4a, type: 3}
@@ -615,6 +619,8 @@ MonoBehaviour:
   - {fileID: 2444761654044925869}
   iCurrentFoe: 0
   iCurrentAsteroid: 0
+  playerManager: {fileID: 0}
+  iAxe: 0
 --- !u!4 &1385432235176506945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 781157001828654494, guid: 5f87c6ff53caa0c4aacc518c800acf4a, type: 3}
@@ -714,6 +720,8 @@ MonoBehaviour:
   - {fileID: 8694873141256262081}
   iCurrentFoe: 0
   iCurrentAsteroid: 0
+  playerManager: {fileID: 0}
+  iAxe: 2
 --- !u!1001 &3472235657436476714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -837,6 +845,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
+      propertyPath: spawnAxe
+      value: 
+      objectReference: {fileID: 7766037179058548152}
     - target: {fileID: 4315819865970204834, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
       propertyPath: m_Name
       value: Foe
@@ -1171,6 +1183,8 @@ MonoBehaviour:
   - {fileID: 6847200194061212924}
   iCurrentFoe: 0
   iCurrentAsteroid: 0
+  playerManager: {fileID: 0}
+  iAxe: 4
 --- !u!4 &3821706781863284321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 781157001828654494, guid: 5f87c6ff53caa0c4aacc518c800acf4a, type: 3}
@@ -1208,6 +1222,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
+      propertyPath: spawnAxe
+      value: 
+      objectReference: {fileID: 8154187640351154210}
     - target: {fileID: 4315819865970204834, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
       propertyPath: m_Name
       value: Foe
@@ -1394,6 +1412,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
+      propertyPath: spawnAxe
+      value: 
+      objectReference: {fileID: 6149139432741907984}
     - target: {fileID: 4315819865970204834, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
       propertyPath: m_Name
       value: Foe
@@ -1501,6 +1523,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
+      propertyPath: spawnAxe
+      value: 
+      objectReference: {fileID: 2687208209236892946}
     - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
       propertyPath: GO_Projectil.Array.size
       value: 3
@@ -1751,6 +1777,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
+      propertyPath: spawnAxe
+      value: 
+      objectReference: {fileID: 8220667178393563403}
     - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
       propertyPath: GO_Projectil.Array.size
       value: 3
@@ -2080,6 +2110,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
+      propertyPath: spawnAxe
+      value: 
+      objectReference: {fileID: 1124299134337565705}
     - target: {fileID: 4315819865970204834, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
       propertyPath: m_Name
       value: Foe
@@ -2232,6 +2266,8 @@ MonoBehaviour:
   - {fileID: 1825625361978460497}
   iCurrentFoe: 0
   iCurrentAsteroid: 0
+  playerManager: {fileID: 0}
+  iAxe: 6
 --- !u!4 &6894467411682786708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 781157001828654494, guid: 5f87c6ff53caa0c4aacc518c800acf4a, type: 3}
@@ -2281,6 +2317,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
+      propertyPath: spawnAxe
+      value: 
+      objectReference: {fileID: 4689402769260690623}
     - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
       propertyPath: GO_Projectil.Array.size
       value: 3
@@ -2519,6 +2559,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
+      propertyPath: spawnAxe
+      value: 
+      objectReference: {fileID: 4176553808262695567}
     - target: {fileID: 4315819865970204834, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
       propertyPath: m_Name
       value: Foe
@@ -2767,6 +2811,8 @@ MonoBehaviour:
   - {fileID: 5749729714240738604}
   iCurrentFoe: 0
   iCurrentAsteroid: 0
+  playerManager: {fileID: 0}
+  iAxe: 8
 --- !u!1001 &7913769714685750384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2861,6 +2907,8 @@ MonoBehaviour:
   - {fileID: 8079007791087723150}
   iCurrentFoe: 0
   iCurrentAsteroid: 0
+  playerManager: {fileID: 0}
+  iAxe: 7
 --- !u!1001 &8013447522941921731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2905,6 +2953,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
+      propertyPath: spawnAxe
+      value: 
+      objectReference: {fileID: 8147143134766893663}
     - target: {fileID: 2761453879722212532, guid: 1085d49bcd3f14f49b023cb25c40d7e4, type: 3}
       propertyPath: GO_Projectil.Array.size
       value: 3
@@ -3200,6 +3252,8 @@ MonoBehaviour:
   - {fileID: 5015338237675652696}
   iCurrentFoe: 0
   iCurrentAsteroid: 0
+  playerManager: {fileID: 0}
+  iAxe: 3
 --- !u!4 &8466077063328856326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 781157001828654494, guid: 5f87c6ff53caa0c4aacc518c800acf4a, type: 3}

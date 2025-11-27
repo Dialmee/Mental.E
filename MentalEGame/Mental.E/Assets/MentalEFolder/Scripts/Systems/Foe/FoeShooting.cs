@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FoeShooting : MonoBehaviour
 {
+    [SerializeField] private SpawnAxe spawnAxe;
     private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
     private bool bPlayerIsInFront = false;
@@ -11,12 +12,10 @@ public class FoeShooting : MonoBehaviour
     private int iCurrentProjectil = 0;
     private float fTimer = 0f;
     [SerializeField] private float fSpeed = 5f;
-    [SerializeField] private float fFréquence = 2f;
-    private int iDamageInitial = 5;
-    public int iDamage = 5;
+    private float fDamageInitial = 5;
     private void Start()
     {
-        iDamageInitial = iDamage;
+        fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
     }
     private void Update()
     {
@@ -33,18 +32,21 @@ public class FoeShooting : MonoBehaviour
         {
 
         }*/
-        fTimer += Time.deltaTime;
-        if (fTimer > fFréquence)
+        if(spawnAxe.playerManager.playerMouvement.iAxe == spawnAxe.iAxe)
         {
-            Shoot();
-            fTimer = 0f;
-        }
-        if(iDamageInitial != iDamage)
-        {
-            iDamageInitial = iDamage;
-            foreach(GameObject projectile in GO_Projectil)
+            fTimer += Time.deltaTime;
+            if (fTimer > spawnAxe.playerManager.ps.fireRate * 0.5f)
             {
-                projectile.GetComponent<FoeProjectil>().iDamage = iDamage;
+                Shoot();
+                fTimer = 0f;
+            }
+            if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)
+            {
+                fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
+                foreach (GameObject projectile in GO_Projectil)
+                {
+                    projectile.GetComponent<FoeProjectil>().iDamage = Mathf.RoundToInt(Mathf.Floor(fDamageInitial));
+                }
             }
         }
     }
