@@ -1089,6 +1089,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5608646501415047398}
     - target: {fileID: 2272438016295197882, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
+      propertyPath: playerMouvement
+      value: 
+      objectReference: {fileID: 2054503197}
+    - target: {fileID: 2272438016295197882, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
       propertyPath: GO_levelingUpdate
       value: 
       objectReference: {fileID: 259580588}
@@ -2625,6 +2629,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7540829850089847313, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
   m_PrefabInstance: {fileID: 819659340}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2054503197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4617373002503063601, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
+  m_PrefabInstance: {fileID: 819659340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fbe034babc2ad4c8f41d931fc62a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2055575571 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8220667178393563403, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}

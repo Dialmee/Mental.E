@@ -16,7 +16,10 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
-        CheckFoeInDirection();
+        if(!playerManager.playerMouvement.bIsMoving)
+        {
+            CheckFoeInDirection();
+        }
     }
     private void Shoot(Transform target)
     {
@@ -50,8 +53,12 @@ public class PlayerShoot : MonoBehaviour
             fTimer[0] += Time.deltaTime;
             if (fTimer[0] > playerManager.ps.fireRate)
             {
-                Shoot(spawnAxes[playerMouvement.iAxe].WhatFoe());
-                fTimer[0] = 0f;
+                Transform target = spawnAxes[playerMouvement.iAxe].WhatFoe();
+                if(target != null)
+                {
+                    Shoot(target);
+                    fTimer[0] = 0f;
+                }
             }
         }
         if (playerManager.ps.nbBullets[1] != 0 && playerMouvement.iAxe != 2 && playerMouvement.iAxe != 5 && playerMouvement.iAxe != 8) //right
@@ -59,8 +66,12 @@ public class PlayerShoot : MonoBehaviour
             fTimer[1] += Time.deltaTime;
             if (fTimer[1] > playerManager.ps.fireRate)
             {
-                Shoot(spawnAxes[playerMouvement.iAxe+1].WhatFoe());
-                fTimer[1] = 0f;
+                Transform target = spawnAxes[playerMouvement.iAxe + 1].WhatFoe();
+                if(target != null)
+                {
+                    Shoot(target);
+                    fTimer[1] = 0f;
+                }
             }
         }
         if (playerManager.ps.nbBullets[2] != 0 && playerMouvement.iAxe != 0 && playerMouvement.iAxe != 3 && playerMouvement.iAxe != 6) //left
@@ -68,8 +79,12 @@ public class PlayerShoot : MonoBehaviour
             fTimer[2] += Time.deltaTime;
             if (fTimer[2] > playerManager.ps.fireRate)
             {
-                Shoot(spawnAxes[playerMouvement.iAxe-1].WhatFoe());
-                fTimer[2] = 0f;
+                Transform target = spawnAxes[playerMouvement.iAxe - 1].WhatFoe();
+                if (target != null)
+                {
+                    Shoot(target);
+                    fTimer[2] = 0f;
+                }
             }
         }
         if (playerManager.ps.nbBullets[3] != 0 && playerMouvement.iAxe >2) //up
@@ -77,8 +92,12 @@ public class PlayerShoot : MonoBehaviour
             fTimer[3] += Time.deltaTime;
             if (fTimer[3] > playerManager.ps.fireRate)
             {
-                Shoot(spawnAxes[playerMouvement.iAxe-3].WhatFoe());
-                fTimer[3] = 0f;
+                Transform target = spawnAxes[playerMouvement.iAxe - 3].WhatFoe();
+                if (target != null)
+                {
+                    Shoot(target);
+                    fTimer[3] = 0f;
+                }
             }
         }
         if (playerManager.ps.nbBullets[4] != 0 && playerMouvement.iAxe < 6) //down
@@ -86,8 +105,12 @@ public class PlayerShoot : MonoBehaviour
             fTimer[4] += Time.deltaTime;
             if (fTimer[4] > playerManager.ps.fireRate)
             {
-                Shoot(spawnAxes[playerMouvement.iAxe+3].WhatFoe());
-                fTimer[4] = 0f;
+                Transform target = spawnAxes[playerMouvement.iAxe + 3].WhatFoe();
+                if (target != null)
+                {
+                    Shoot(target);
+                    fTimer[4] = 0f;
+                }
             }
         }
     }
