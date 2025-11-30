@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Trail_FlameAdd
+  m_Name: m_trail_bullet
   m_Shader: {fileID: 4800000, guid: 0bf068526a8b4af48b092394026ec12b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -45,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 05cda407c12da774c975bce33082f592, type: 3}
+        m_Texture: {fileID: 2800000, guid: ab563b0e3c2d9ce4eaa4f29d8795512d, type: 3}
         m_Scale: {x: 0.15, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -61,7 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TintTex:
-        m_Texture: {fileID: 2800000, guid: ae09abbcb3af9f148bfc2c4cc3504a0c, type: 3}
+        m_Texture: {fileID: 2800000, guid: e428c8f3bd92ab74785f847dbe6d6df7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -76,7 +76,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _LineFade: 1
-    - _MainScrollSpeedU: 5
+    - _MainScrollSpeedU: 8
     - _MainScrollSpeedV: 0
     - _MainTexMultiplier: 1.1
     - _MainTexPow: 0.6

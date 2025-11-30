@@ -15,12 +15,12 @@ MonoBehaviour:
   hpMax: 30
   healthRegeneration: 0.1
   bulletDamages: 10
-  bulletSpeed: 11
+  bulletSpeed: 5
   bulletRange: 20
-  fireRate: 3
+  fireRate: 2
   moveCd: 1
   nbBullets: 0100000000000000000000000000000000000000
-  iLevel: 1
+  iLevel: 5
   fXPmax: 50
   fUpdatesNumbers:
   - 1
@@ -33,4 +33,4 @@ MonoBehaviour:
   - 1
   - 0
   - 2
-  iUpdate: 00000000000000000000000000000000
+  iUpdate: 02000000000000000100000000000000

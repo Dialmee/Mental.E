@@ -44,7 +44,7 @@ public class SpawnAxe : MonoBehaviour
         }
     }
 
-    public Transform WhatFoe()
+    public Transform WhatFoe(bool bIsPlayer)
     {
         Transform transform = this.transform;
         float greatestDistance = 0f;
@@ -74,11 +74,15 @@ public class SpawnAxe : MonoBehaviour
                 }
             }
         }
-        if(newDistance < playerManager.ps.bulletRange)
+        if(bIsPlayer && newDistance < playerManager.ps.bulletRange)
         {
             Go_far = null;
         }
-        if (Go_far!=null)
+        else if(!bIsPlayer && newDistance < playerManager.ps.bulletRange*0.5f)
+        {
+            Go_far = null;
+        }
+        if (Go_far != null)
         {
             transform = Go_far.transform;
             return transform;

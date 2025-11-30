@@ -34,18 +34,22 @@ public class FoeShooting : MonoBehaviour
         }*/
         if(spawnAxe.playerManager.playerMouvement.iAxe == spawnAxe.iAxe)
         {
+            Transform transform = spawnAxe. WhatFoe(false);
             fTimer += Time.deltaTime;
-            if (fTimer > spawnAxe.playerManager.ps.fireRate * 1.5f)
+            if(transform==this.transform)
             {
-                Shoot();
-                fTimer = 0f;
-            }
-            if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)
-            {
-                fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
-                foreach (GameObject projectile in GO_Projectil)
+                if (fTimer > spawnAxe.playerManager.ps.fireRate * 1.5f)
                 {
-                    projectile.GetComponent<FoeProjectil>().iDamage = Mathf.RoundToInt(Mathf.Floor(fDamageInitial));
+                    Shoot();
+                    fTimer = 0f;
+                }
+                if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)
+                {
+                    fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
+                    foreach (GameObject projectile in GO_Projectil)
+                    {
+                        projectile.GetComponent<FoeProjectil>().iDamage = Mathf.RoundToInt(Mathf.Floor(fDamageInitial));
+                    }
                 }
             }
         }
