@@ -74,7 +74,7 @@ public class SpawnAxe : MonoBehaviour
                 }
             }
         }
-        if(newDistance > playerManager.ps.bulletRange*10)
+        if(newDistance < playerManager.ps.bulletRange*10)
         {
             Go_far = null;
         }

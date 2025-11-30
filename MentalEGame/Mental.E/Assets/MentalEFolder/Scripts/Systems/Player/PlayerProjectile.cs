@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
+using UnityEngine.VFX;
 using static UnityEngine.GraphicsBuffer;
 
 public class PlayerProjectile : MonoBehaviour
 {
+    [SerializeField] private VisualEffect vfxArrow = null;
     public Transform playerTr = null;
     public Transform target = null;
     [SerializeField] private Rigidbody rb;
@@ -29,6 +31,11 @@ public class PlayerProjectile : MonoBehaviour
             {
                 Vector3 direction = (Vector3)target.position - rb.position;
                 direction.Normalize();
+                if(vfxArrow!=null && vfxArrow.HasVector3("Vect3Direction"))
+                {
+                    Vector3 newV = rb.position - (Vector3)target.position;
+                    vfxArrow.SetVector3("Vect3Direction", newV.normalized);
+                }
                 this.transform.position += direction * fSpeed *Time.deltaTime;
                 if(direction.z < -0.2)
                 {
