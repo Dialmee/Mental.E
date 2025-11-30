@@ -189,7 +189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4384061024846846061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -206,8 +206,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3, y: 0.75}
   m_AnchorMax: {x: 0.7, y: 0.85}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -2500, y: 0}
+  m_SizeDelta: {x: 5000, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2692991813479679992
 CanvasRenderer:
@@ -732,6 +732,8 @@ MonoBehaviour:
   text: {fileID: 262905293368246519}
   textUpgrade: {fileID: 3608261884893189982}
   GO_levelingUpdate: {fileID: 6137432959340239672}
+  GO_newLevel: {fileID: 5566149209883883796}
+  GO_newLevelBlackBackground: {fileID: 7584678951069476307}
   iNumber: 0
 --- !u!114 &527645968347886128
 MonoBehaviour:
@@ -2233,6 +2235,8 @@ MonoBehaviour:
   text: {fileID: 319389594443621308}
   textUpgrade: {fileID: 9197452368620800624}
   GO_levelingUpdate: {fileID: 6137432959340239672}
+  GO_newLevel: {fileID: 5566149209883883796}
+  GO_newLevelBlackBackground: {fileID: 7584678951069476307}
   iNumber: 0
 --- !u!114 &1139998801998797071
 MonoBehaviour:
@@ -2256,13 +2260,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2647775958308641115}
+  - component: {fileID: 4408432306980983568}
   m_Layer: 5
   m_Name: NewLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2647775958308641115
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2284,6 +2289,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4408432306980983568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5566149209883883796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac72da9b8f35844ade1e47f69f6a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rect_Text: {fileID: 4384061024846846061}
+  imBlack: {fileID: 6454423227302885956}
+  colorBlack:
+    serializedVersion: 2
+    rgba: 3355443200
+  fDuration: 1
+  GO_levelingUpdate: {fileID: 6137432959340239672}
 --- !u!1 &6137432959340239672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,7 +2324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5095737845854118818
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2898,7 +2922,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2951,6 +2975,8 @@ MonoBehaviour:
   text: {fileID: 8009764053293364742}
   textUpgrade: {fileID: 1814749904038132896}
   GO_levelingUpdate: {fileID: 6137432959340239672}
+  GO_newLevel: {fileID: 5566149209883883796}
+  GO_newLevelBlackBackground: {fileID: 7584678951069476307}
   iNumber: 0
 --- !u!95 &7680107365163989472
 Animator:
@@ -3218,7 +3244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &433823621913600791
 RectTransform:
   m_ObjectHideFlags: 0

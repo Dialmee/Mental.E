@@ -1,4 +1,5 @@
 using UnityEngine;
+using PrimeTween;
 using static UnityEngine.GraphicsBuffer;
 
 public class PlayerManager : MonoBehaviour
@@ -9,8 +10,8 @@ public class PlayerManager : MonoBehaviour
     public float hp;
     public float fXP = 0f;
     public LifeUpdate lifeUpdate = null;
-    [SerializeField] private GameObject GO_levelingUpdate = null;
     [SerializeField] private XPUpdate xpUpdate = null;
+    [SerializeField] private NewLevel newLevel = null;
     [SerializeField] private int iDamageAsteroid = 10;
 
     void Start()
@@ -42,11 +43,11 @@ public class PlayerManager : MonoBehaviour
         if(fXP >= ps.fXPmax)
         {
             ps.iLevel += 1;
-            GO_levelingUpdate.SetActive(true);
+            newLevel.gameObject.SetActive(true);
+            newLevel.NewLevelIn();
             fXP -= ps.fXPmax;
         }
         xpUpdate.ChangeUI();
-        //TO DO le droit d'avoir une update mtn
     }
 
     public void TakeDamage(int nb)

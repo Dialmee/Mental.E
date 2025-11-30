@@ -9,12 +9,15 @@ public class UpdateButton : MonoBehaviour
     [SerializeField] private TMP_Text text = null;
     [SerializeField] private TMP_Text textUpgrade = null;
     [SerializeField] private GameObject GO_levelingUpdate = null;
+    [SerializeField] private GameObject GO_newLevel = null;
+    [SerializeField] private GameObject GO_newLevelBlackBackground = null;
     public int iNumber = 0;
     public void Upgrading(PlayerManager playerManager)
     {
         playerManager.ps.Upgrade(iNumber, playerManager);
-        Debug.Log(iNumber);
         GO_levelingUpdate.SetActive(false);
+        GO_newLevelBlackBackground.SetActive(false);
+        GO_newLevel.SetActive(false);
     }
     public void SetTextes(string sTitle, string sText, float fNumber, Color color, bool bTransparent)
     {
