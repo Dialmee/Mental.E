@@ -66,7 +66,6 @@ public class PlayerStats : ScriptableObject
     public void upgradeMaxHp(PlayerManager playerManager)//9
     {
         hpMax += fUpdatesNumbers[9];
-        Debug.Log("more HP Max");
         playerManager.lifeUpdate.MoreHPSlider();
     }
     public void moreHp(PlayerManager playerManager)//8

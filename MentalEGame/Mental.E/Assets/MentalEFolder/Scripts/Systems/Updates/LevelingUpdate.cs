@@ -68,7 +68,7 @@ public class LevelingUpdate : MonoBehaviour
             {
                 list.Add(i);
             }
-            else if(i >= playerManager.ps.iUpdate.Length)
+            else
             {
                 list.Add(i);
             }
@@ -81,10 +81,8 @@ public class LevelingUpdate : MonoBehaviour
         List<int> list = int_ten();
         for (int i =0; i<3; i++)
         {
-            int index = iHasard(0, list .Count- i);
-            Debug.Log(index);
+            int index = iHasard(0, list.Count - i);
             i_[i] = list[index];
-            Debug.Log(i_[i]);
             list.RemoveAt(index);
         }
     }

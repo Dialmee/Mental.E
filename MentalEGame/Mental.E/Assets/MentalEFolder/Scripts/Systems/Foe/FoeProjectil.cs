@@ -14,7 +14,6 @@ public class FoeProjectil : MonoBehaviour
         if(transform.position.z < 0)
         {
             this.gameObject.SetActive(false);
-            Debug.Log("disparu");
         }
     }
     private void OnTriggerEnter(Collider collider)
@@ -24,7 +23,6 @@ public class FoeProjectil : MonoBehaviour
             collider.gameObject.GetComponent<PlayerManager>().TakeDamage(iDamage);
             this.gameObject.SetActive(false);
             this.transform.localPosition = Vector3.zero;
-            Debug.Log("BAM");
         }
     }
 }

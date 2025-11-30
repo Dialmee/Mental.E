@@ -48,9 +48,9 @@ public class PlayerMouvement : MonoBehaviour
     {
         if((Mathf.Sign(horDir)<0 && iAxe !=0 && iAxe != 3 && iAxe != 6) || (Mathf.Sign(horDir) > 0 && iAxe != 2 && iAxe != 5 && iAxe != 8))
         {
-            transform.position = new Vector3(transform.position.x + Mathf.Sign(horDir) * 15, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + Mathf.Sign(horDir) * 10, transform.position.y, transform.position.z);
             /*bIsMoving = true;
-            Tween.PositionX(transform, endValue: transform.position.x + Mathf.Sign(horDir) * 15, duration: playerManager.ps.moveCd, ease: Ease.InOutSine)
+            Tween.PositionX(transform, endValue: transform.position.x + Mathf.Sign(horDir) * 10, duration: playerManager.ps.moveCd, ease: Ease.InOutSine)
             .OnComplete(() => { iAxe += Mathf.RoundToInt(Mathf.Sign(horDir) * 1); bIsMoving = false; CheckBugPosition(); });*/
             iAxe += Mathf.RoundToInt(Mathf.Sign(horDir) * 1);
         }
@@ -59,9 +59,9 @@ public class PlayerMouvement : MonoBehaviour
     {
         if ((Mathf.Sign(verDir) < 0 && iAxe<6) || (Mathf.Sign(verDir) > 0 && iAxe > 2))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + Mathf.Sign(verDir) * 10, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + Mathf.Sign(verDir) * 8, transform.position.z);
             /*bIsMoving = true;
-            Tween.PositionY(transform, endValue: transform.position.y + Mathf.Sign(verDir) * 10, duration: playerManager.ps.moveCd, ease: Ease.InOutSine)
+            Tween.PositionY(transform, endValue: transform.position.y + Mathf.Sign(verDir) * 8, duration: playerManager.ps.moveCd, ease: Ease.InOutSine)
             .OnComplete(() => { iAxe -= Mathf.RoundToInt(Mathf.Sign(verDir) * 3); bIsMoving = false; CheckBugPosition(); });*/
             iAxe -= Mathf.RoundToInt(Mathf.Sign(verDir) * 3);
         }
@@ -75,31 +75,31 @@ public class PlayerMouvement : MonoBehaviour
             Debug.LogWarning("ERROR POSITION");
             if (iAxe == 0)
             {
-                transform.position = new Vector3(-15f, 20f, transform.position.z);
+                transform.position = new Vector3(-10f, 16f, transform.position.z);
             }
             else if (iAxe == 1)
             {
-                transform.position = new Vector3(0f, 20f, transform.position.z);
+                transform.position = new Vector3(0f, 16f, transform.position.z);
             }
             else if (iAxe == 2)
             {
-                transform.position = new Vector3(15f, 20f, transform.position.z);
+                transform.position = new Vector3(10f, 16f, transform.position.z);
             }
             else if (iAxe == 3)
             {
-                transform.position = new Vector3(-15f, 10f, transform.position.z);
+                transform.position = new Vector3(-10f, 8f, transform.position.z);
             }
             else if (iAxe == 4)
             {
-                transform.position = new Vector3(0f, 10f, transform.position.z);
+                transform.position = new Vector3(0f, 8f, transform.position.z);
             }
             else if (iAxe == 5)
             {
-                transform.position = new Vector3(15f, 10f, transform.position.z);
+                transform.position = new Vector3(10f, 8f, transform.position.z);
             }
             else if (iAxe == 6)
             {
-                transform.position = new Vector3(-15f, 0f, transform.position.z);
+                transform.position = new Vector3(-10f, 0f, transform.position.z);
             }
             else if (iAxe == 7)
             {
@@ -107,7 +107,7 @@ public class PlayerMouvement : MonoBehaviour
             }
             else if (iAxe == 8)
             {
-                transform.position = new Vector3(15f, 0f, transform.position.z);
+                transform.position = new Vector3(10f, 0f, transform.position.z);
             }
         }
     }

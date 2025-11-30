@@ -17,7 +17,7 @@ public class LifeUpdate : MonoBehaviour
     {
         if(rectTrLife.anchorMax.x < 1f)
         {
-            Tween.UIAnchorMax(rectTrLife, new Vector2(rectTrLife.anchorMax.x + 0.1f, 1), fSpeedMoreHp)
+            Tween.UIAnchorMax(rectTrLife, new Vector2(rectTrLife.anchorMax.x + 0.05f, 1), fSpeedMoreHp)
                 .Group(Tween.UIOffsetMax(rectTrLife, Vector2.zero, fSpeedMoreHp))
                 .Group(Tween.UIOffsetMin(rectTrLife, Vector2.zero, fSpeedMoreHp));
             //rectTrLife.anchorMax = new Vector2(rectTrLife.anchorMax.x + 0.1f, 1);
