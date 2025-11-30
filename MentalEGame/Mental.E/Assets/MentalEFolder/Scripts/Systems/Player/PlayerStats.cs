@@ -17,14 +17,14 @@ public class PlayerStats : ScriptableObject
 
     private int _maxUpBullRange = 3;
     private int _upBullRange = 0;
-
+    public float[] fUpdatesNumbers = new float[10] { 1f, 1f, 20f, 0.1f, -1f, 1f, 1f, 1f, 0f, 2f };
     public int[] iUpdate = new int[4] { 0, 0, 0, 0 };
 
     public void Upgrade(int i, PlayerManager playerManager)
     {
         if(i==9)
         {
-            upgradeMaxHp();
+            upgradeMaxHp(playerManager);
         }
         else if (i == 8)
         {
@@ -63,62 +63,64 @@ public class PlayerStats : ScriptableObject
             upgradeHorBullets();
         }
     }
-    public void upgradeMaxHp()
+    public void upgradeMaxHp(PlayerManager playerManager)//9
     {
-        hpMax += 2f;
+        hpMax += fUpdatesNumbers[9];
+        Debug.Log("more HP Max");
+        playerManager.lifeUpdate.MoreHPSlider();
     }
-    public void moreHp(PlayerManager playerManager)
+    public void moreHp(PlayerManager playerManager)//8
     {
         playerManager.hp = hpMax;
     }
-    public void upgradeBullDamage()
+    public void upgradeBullDamage()//7
     {
-        bulletDamages += 1;
+        bulletDamages += Mathf.RoundToInt(fUpdatesNumbers[7]);
     }
-    public void upgradeBullSpeed()
+    public void upgradeBullSpeed()//6
     {
-        bulletSpeed += 1f;
+        bulletSpeed += fUpdatesNumbers[6];
     }
-    public void upgradeFireRate()
+    public void upgradeFireRate()//5
     {
-        fireRate += 1f;
+        fireRate += fUpdatesNumbers[5];
     }
-    public void upgradeMoveCd()
+    public void upgradeMoveCd()//4
     {
-        moveCd -= 1f;
+        moveCd += fUpdatesNumbers[4];
     }
-    public void upgradeRegeneration()
+    public void upgradeRegeneration()//3
     {
         healthRegeneration += 0.1f;
-        iUpdate[3] += 1;
+        iUpdate[3] += Mathf.RoundToInt(fUpdatesNumbers[3]);
     }
-    public void upgradeBullRange()
+    public void upgradeBullRange()//2
     {
         if (_upBullRange >= _maxUpBullRange)
             return;
 
         _upBullRange += 1;
-        bulletRange += 20f;
+        bulletRange += fUpdatesNumbers[2];
         iUpdate[2] += 1;
     }
-    public void upgradeVertBullets()
+    public void upgradeVertBullets()//1
     {
         int nbVerMax = 3;
         if (nbBullets[3] >= nbVerMax)
             return;
-        nbBullets[0] += 1;
-        nbBullets[3] += 1;
-        nbBullets[4] += 1;
+        nbBullets[0] += Mathf.RoundToInt(fUpdatesNumbers[1]);
+        nbBullets[3] += Mathf.RoundToInt(fUpdatesNumbers[1]);
+        nbBullets[4] += Mathf.RoundToInt(fUpdatesNumbers[1]);
         iUpdate[1] += 1;
     }
-    public void upgradeHorBullets()
+    public void upgradeHorBullets() //0
     {
         int nbHorMax = 3;
         if (nbBullets[3] >= nbHorMax)
             return;
-        nbBullets[0] += 1;
-        nbBullets[1] += 1;
-        nbBullets[2] += 1;
+        nbBullets[0] += Mathf.RoundToInt(fUpdatesNumbers[0]);
+        nbBullets[1] += Mathf.RoundToInt(fUpdatesNumbers[0]);
+        nbBullets[2] += Mathf.RoundToInt(fUpdatesNumbers[0]);
         iUpdate[0] += 1;
     }
 }

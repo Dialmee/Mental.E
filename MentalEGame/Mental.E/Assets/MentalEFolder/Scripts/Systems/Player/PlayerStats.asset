@@ -12,14 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1b13a10ac41684aaa2f7db79716fd6, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  hpMax: 50
-  healthRegeneration: 0.2
+  hpMax: 30
+  healthRegeneration: 0.1
   bulletDamages: 10
-  bulletSpeed: 10
-  bulletRange: 2
-  fireRate: 2
-  moveCd: 2
+  bulletSpeed: 11
+  bulletRange: 20
+  fireRate: 3
+  moveCd: 1
   nbBullets: 0100000000000000000000000000000000000000
-  iLevel: 0
-  fXPmax: 100
+  iLevel: 1
+  fXPmax: 50
+  fUpdatesNumbers:
+  - 1
+  - 1
+  - 20
+  - 0.1
+  - -1
+  - 1
+  - 1
+  - 1
+  - 0
+  - 2
   iUpdate: 00000000000000000000000000000000

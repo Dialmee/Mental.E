@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerMouvement playerMouvement;
     public float hp;
     public float fXP = 0f;
-    [SerializeField] private LifeUpdate lifeUpdate = null;
+    public LifeUpdate lifeUpdate = null;
     [SerializeField] private GameObject GO_levelingUpdate = null;
     [SerializeField] private XPUpdate xpUpdate = null;
     [SerializeField] private int iDamageAsteroid = 10;
