@@ -4,11 +4,23 @@ using PrimeTween;
 
 public class PlayerMouvement : MonoBehaviour
 {
-    [SerializeField]private PlayerManager playerManager;
+    [SerializeField] private PlayerManager playerManager;
+    [SerializeField] private Animator rollAnimator;
     [SerializeField] private InputAction horMove;
     [SerializeField] private InputAction verMove;
-    public int iAxe = 4;
+
+    [SerializeField] private float moveSpeed = 15;
+
+    [SerializeField] private int maxVerAxe = 2;
+    [SerializeField] private int maxHorAxe = 2;
+
+    private int iVerAxe = 1; 
+    private int iHorAxe = 1;
     public bool bIsMoving = false;
+
+    private Vector3 _nextPos;
+    private Vector2 _dir;
+
 
 
     private void OnEnable()
@@ -25,8 +37,9 @@ public class PlayerMouvement : MonoBehaviour
 
     void Update()
     {
+        ResetRoll();
         InputDetection();
-        //CheckBugPosition();
+        Move();
     }
 
     private void InputDetection()
@@ -34,81 +47,82 @@ public class PlayerMouvement : MonoBehaviour
 
         if (horMove.WasPerformedThisFrame())
         {
-            changeLane(horMove.ReadValue<float>());
+            CalculateNewPlace(horMove.ReadValue<float>(), false);
         }
 
         if(verMove.WasPerformedThisFrame())
         {
-            changeStage(verMove.ReadValue<float>());
+            CalculateNewPlace(verMove.ReadValue<float>(), true);
         }
     }
 
-    //TO DO : meilleure anim si possible
-    private void changeLane(float horDir)
+
+    private void CalculateNewPlace(float dir, bool isVertical)
     {
-        if((Mathf.Sign(horDir)<0 && iAxe !=0 && iAxe != 3 && iAxe != 6) || (Mathf.Sign(horDir) > 0 && iAxe != 2 && iAxe != 5 && iAxe != 8))
+        if (bIsMoving)
+            return;
+        
+        bIsMoving = true;
+
+        if (!isVertical && ((Mathf.Sign(dir) < 0 && iHorAxe > 0) || (Mathf.Sign(dir) > 0 && iHorAxe < maxHorAxe)))
         {
-            transform.position = new Vector3(transform.position.x + Mathf.Sign(horDir) * 15, transform.position.y, transform.position.z);
-            /*bIsMoving = true;
-            Tween.PositionX(transform, endValue: transform.position.x + Mathf.Sign(horDir) * 15, duration: playerManager.ps.moveCd, ease: Ease.InOutSine)
-            .OnComplete(() => { iAxe += Mathf.RoundToInt(Mathf.Sign(horDir) * 1); bIsMoving = false; CheckBugPosition(); });*/
-            iAxe += Mathf.RoundToInt(Mathf.Sign(horDir) * 1);
+            _nextPos = new Vector3(transform.position.x + Mathf.Sign(dir) * 15, transform.position.y, transform.position.z);
+            iHorAxe += Mathf.RoundToInt(Mathf.Sign(dir));
+            _dir = Vector2.right * dir;
         }
+        else
+        if (isVertical && ((Mathf.Sign(dir) < 0 && iVerAxe > 0) || (Mathf.Sign(dir) > 0 && iVerAxe < maxVerAxe)))
+        {
+            _nextPos = new Vector3(transform.position.x, transform.position.y + Mathf.Sign(dir) * 10, transform.position.z);
+            iVerAxe += Mathf.RoundToInt(Mathf.Sign(dir));
+            _dir = Vector2.up * dir;
+        }
+
+        Roll();
     }
-    private void changeStage(float verDir)
+
+    private void Move()
     {
-        if ((Mathf.Sign(verDir) < 0 && iAxe<6) || (Mathf.Sign(verDir) > 0 && iAxe > 2))
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + Mathf.Sign(verDir) * 10, transform.position.z);
-            /*bIsMoving = true;
-            Tween.PositionY(transform, endValue: transform.position.y + Mathf.Sign(verDir) * 10, duration: playerManager.ps.moveCd, ease: Ease.InOutSine)
-            .OnComplete(() => { iAxe -= Mathf.RoundToInt(Mathf.Sign(verDir) * 3); bIsMoving = false; CheckBugPosition(); });*/
-            iAxe -= Mathf.RoundToInt(Mathf.Sign(verDir) * 3);
+        if (!bIsMoving) {
+            return;
         }
+        
+        transform.position = Vector3.MoveTowards(transform.position, _nextPos, moveSpeed * Time.deltaTime);
+
+
+        if (transform.position == _nextPos)
+            bIsMoving = false;
+            
+
     }
-    //TO DO : la verif n'est pas de ouf fonctionnel #Sad
-    private void CheckBugPosition()
+    private void Roll()
     {
-        Vector3 playerPos = transform.position;
-        if (!bIsMoving && playerPos.x != 15 && playerPos.x != -15 && playerPos.x != 0 && playerPos.y != 0 && playerPos.y != 10 && playerPos.y != 20)
-        {
-            Debug.LogWarning("ERROR POSITION");
-            if (iAxe == 0)
-            {
-                transform.position = new Vector3(-15f, 20f, transform.position.z);
-            }
-            else if (iAxe == 1)
-            {
-                transform.position = new Vector3(0f, 20f, transform.position.z);
-            }
-            else if (iAxe == 2)
-            {
-                transform.position = new Vector3(15f, 20f, transform.position.z);
-            }
-            else if (iAxe == 3)
-            {
-                transform.position = new Vector3(-15f, 10f, transform.position.z);
-            }
-            else if (iAxe == 4)
-            {
-                transform.position = new Vector3(0f, 10f, transform.position.z);
-            }
-            else if (iAxe == 5)
-            {
-                transform.position = new Vector3(15f, 10f, transform.position.z);
-            }
-            else if (iAxe == 6)
-            {
-                transform.position = new Vector3(-15f, 0f, transform.position.z);
-            }
-            else if (iAxe == 7)
-            {
-                transform.position = new Vector3(0f, 0f, transform.position.z);
-            }
-            else if (iAxe == 8)
-            {
-                transform.position = new Vector3(15f, 0f, transform.position.z);
-            }
-        }
+        Debug.Log(_dir);
+        if (_dir == Vector2.right)
+            rollAnimator.SetBool("rollRight", true);
+        else 
+        if (_dir == Vector2.left)
+            rollAnimator.SetBool("rollLeft", true);
+        else 
+        if (_dir == Vector2.up)
+            rollAnimator.SetBool("rollUp", true);
+        else 
+        if (_dir == Vector2.down)
+            rollAnimator.SetBool("rollDown", true);
     }
+    private void ResetRoll()
+    {
+        rollAnimator.SetBool("rollRight", false);
+        rollAnimator.SetBool("rollLeft", false);
+        rollAnimator.SetBool("rollUp", false);
+        rollAnimator.SetBool("rollDown", false);
+    }
+
+
+    public int getiAxe()
+    {
+        return iHorAxe + ((2-iVerAxe)*3);
+    }
+
+
 }

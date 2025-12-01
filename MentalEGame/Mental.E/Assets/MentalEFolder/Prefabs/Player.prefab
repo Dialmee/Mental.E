@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 3948274876641939122}
   - component: {fileID: 2272438016295197882}
   - component: {fileID: 563337013854360999}
+  - component: {fileID: 4653291692660268897}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerManager: {fileID: 2272438016295197882}
+  rollAnimator: {fileID: 4653291692660268897}
   horMove:
     m_Name: Hor Move
     m_Type: 0
@@ -291,7 +293,9 @@ MonoBehaviour:
       m_Action: Ver Move
       m_Flags: 8
     m_Flags: 0
-  iAxe: 4
+  moveSpeed: 20
+  maxVerAxe: 2
+  maxHorAxe: 2
   bIsMoving: 0
 --- !u!54 &7946509534873678624
 Rigidbody:
@@ -396,6 +400,28 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!95 &4653291692660268897
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228355784597486471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df6ad23ce2942844d88171d255a7c107, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5386526777376538058
 GameObject:
   m_ObjectHideFlags: 0

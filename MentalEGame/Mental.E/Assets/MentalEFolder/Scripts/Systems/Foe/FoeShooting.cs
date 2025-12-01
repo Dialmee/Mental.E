@@ -32,7 +32,7 @@ public class FoeShooting : MonoBehaviour
         {
 
         }*/
-        if(spawnAxe.playerManager.playerMouvement.iAxe == spawnAxe.iAxe)
+        if(spawnAxe.playerManager.playerMouvement.getiAxe() == spawnAxe.iAxe)
         {
             fTimer += Time.deltaTime;
             if (fTimer > spawnAxe.playerManager.ps.fireRate * 1.5f)
