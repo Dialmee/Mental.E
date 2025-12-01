@@ -183,6 +183,7 @@ MonoBehaviour:
   rb: {fileID: 782804408859144239}
   fSpeed: 50
   iDamage: 20
+  fTresholdZ: 100
 --- !u!54 &782804408859144239
 Rigidbody:
   m_ObjectHideFlags: 0

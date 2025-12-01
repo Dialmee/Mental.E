@@ -8,6 +8,10 @@ public class LifeUpdate : MonoBehaviour
     [SerializeField] private RectTransform rectTrLife;
     [SerializeField] private UnityEngine.UI.Slider slider;
     [SerializeField]private PlayerManager playerManager;
+    private void Start()
+    {
+        PrimeTweenConfig.warnEndValueEqualsCurrent = false;
+    }
 
     public void ChangeUI()
     {

@@ -396,6 +396,10 @@ PrefabInstance:
       propertyPath: fSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8611443367359331907, guid: 11335f41bc22a194db85aacfe1e6ab14, type: 3}
+      propertyPath: fTresholdZ
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

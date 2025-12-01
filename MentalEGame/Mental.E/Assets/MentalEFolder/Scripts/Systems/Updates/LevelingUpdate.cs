@@ -73,7 +73,6 @@ public class LevelingUpdate : MonoBehaviour
                 list.Add(i);
             }
         }
-        Debug.Log(list);
         return list;
     }
     private void ThreeChosenOnes()

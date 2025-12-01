@@ -12,6 +12,8 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     public float fSpeed = 10f;
     public int iDamage = 20; 
+    private Vector3 lastDirectionTake = Vector3.zero;
+    [SerializeField] private float fTresholdZ = 80f;
     private void OnEnable()
     {
         if (playerTr != null)
@@ -37,7 +39,8 @@ public class PlayerProjectile : MonoBehaviour
                     vfxArrow.SetVector3("Vect3Direction", newV.normalized);
                 }
                 this.transform.position += direction * fSpeed *Time.deltaTime;
-                if(direction.z < -0.2)
+                lastDirectionTake = direction;
+                if (direction.z < -0.2)
                 {
                     this.gameObject.SetActive(false);
                     target = null;
@@ -46,9 +49,13 @@ public class PlayerProjectile : MonoBehaviour
             }
             else
             {
-                this.gameObject.SetActive(false);
-                target = null;
-                this.transform.position = Vector3.zero;
+                this.transform.position += lastDirectionTake * fSpeed * Time.deltaTime;
+                if (this.transform.position.z >= fTresholdZ)
+                {
+                    this.gameObject.SetActive(false);
+                    target = null;
+                    this.transform.position = Vector3.zero;
+                }
             }
         }
     }
@@ -61,7 +68,6 @@ public class PlayerProjectile : MonoBehaviour
             this.gameObject.SetActive(false);
             target = null;
             this.transform.position = Vector3.zero;
-            Debug.Log("BAM");
         }
     }
 }
