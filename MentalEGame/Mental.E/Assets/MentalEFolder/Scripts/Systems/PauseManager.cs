@@ -5,10 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
+    [SerializeField] private string sGameSceneName = null;
     [SerializeField] private GameObject GO_Pause = null;
     private bool bGameIsPaused = false;
     private bool isLoadingScene = false;
     private AsyncOperation loadingOperation;
+    private void Start()
+    {
+        if(SceneManager.GetActiveScene().name == sGameSceneName)
+        {
+            PauseGame(false);
+        }
+    }
     private void Update()
     {
         if(Keyboard.current.escapeKey.wasPressedThisFrame && GO_Pause!=null)
@@ -21,10 +29,14 @@ public class PauseManager : MonoBehaviour
         if (toPause)
         {
             Time.timeScale = 0f;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1f;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void LoaderScene(string sceneToLoad)

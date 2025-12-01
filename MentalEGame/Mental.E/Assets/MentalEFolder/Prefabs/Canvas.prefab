@@ -237,7 +237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- - New Level - -'
+  m_text: '- - Level Up - -'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 13972331cd276c449ad1393f4c612c43, type: 2}
   m_sharedMaterial: {fileID: 3236510726817198036, guid: 13972331cd276c449ad1393f4c612c43, type: 2}
@@ -1484,6 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2143e8f9faed3468211957beadc1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sGameSceneName: Dialme
   GO_Pause: {fileID: 7292108240577887929}
 --- !u!1 &2932607751113816993
 GameObject:
@@ -2306,7 +2307,9 @@ MonoBehaviour:
   colorBlack:
     serializedVersion: 2
     rgba: 3355443200
-  fDuration: 1
+  fDurationTextSwap: 0.5
+  fDurationTextStay: 1
+  fDurationBlackFade: 0.5
   GO_levelingUpdate: {fileID: 6137432959340239672}
 --- !u!1 &6137432959340239672
 GameObject:
