@@ -52,7 +52,7 @@ public class SpawnAxe : MonoBehaviour
         GameObject Go_far = null;
         foreach (GameObject go_foe in GO_foes)
         {
-            if(go_foe.activeInHierarchy)
+            if(go_foe.activeInHierarchy && !go_foe.transform.GetComponent<FoeManager>().bIsDead)
             {
                 newDistance = this.transform.position.z - go_foe.transform.position.z;
                 if (newDistance > greatestDistance)

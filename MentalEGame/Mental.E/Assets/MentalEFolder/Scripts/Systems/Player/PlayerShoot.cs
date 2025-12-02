@@ -54,7 +54,7 @@ public class PlayerShoot : MonoBehaviour
             if (fTimer[0] > playerManager.ps.fireRate)
             {
                 Transform target = spawnAxes[playerMouvement.iAxe].WhatFoe(true);
-                if(target != null)
+                if (target != null)
                 {
                     Shoot(target);
                     fTimer[0] = 0f;

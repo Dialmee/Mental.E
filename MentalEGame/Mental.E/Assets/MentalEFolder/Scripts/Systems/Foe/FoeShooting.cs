@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FoeShooting : MonoBehaviour
 {
+    [SerializeField] private FoeManager foeManager;
     [SerializeField] private SpawnAxe spawnAxe;
     private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
@@ -32,7 +33,7 @@ public class FoeShooting : MonoBehaviour
         {
 
         }*/
-        if(spawnAxe.playerManager.playerMouvement.iAxe == spawnAxe.iAxe)
+        if(spawnAxe.playerManager.playerMouvement.iAxe == spawnAxe.iAxe && !foeManager.bIsDead)
         {
             Transform transform = spawnAxe. WhatFoe(false);
             fTimer += Time.deltaTime;
@@ -53,6 +54,10 @@ public class FoeShooting : MonoBehaviour
                 }
             }
         }
+        else if(foeManager.bIsDead)
+        {
+            CheckProjectilDisable();
+        }
     }
    private void Shoot()
     {
@@ -69,6 +74,21 @@ public class FoeShooting : MonoBehaviour
         else if (iCurrentProjectil >= GO_Projectil.Count)
         {
             iCurrentProjectil = 0;
+        }
+    }
+    private void CheckProjectilDisable()
+    {
+        bool bisActive = false;
+        for (int i = 0; i < GO_Projectil.Count; i++)
+        {
+            if (GO_Projectil[i].activeInHierarchy)
+            {
+                bisActive = true;
+            }
+        }
+        if (!bisActive)
+        {
+            foeManager.Death();
         }
     }
 }

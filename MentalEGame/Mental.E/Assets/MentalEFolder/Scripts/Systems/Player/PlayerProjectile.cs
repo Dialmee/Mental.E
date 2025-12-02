@@ -14,12 +14,14 @@ public class PlayerProjectile : MonoBehaviour
     public int iDamage = 20; 
     private Vector3 lastDirectionTake = Vector3.zero;
     [SerializeField] private float fTresholdZ = 80f;
+    private bool bFoeIsDead = false;
     private void OnEnable()
     {
         if (playerTr != null)
         {
             this.transform.position = playerTr.position;
         }
+        bFoeIsDead = false;
     }
     private void OnDisable()
     {
@@ -47,8 +49,9 @@ public class PlayerProjectile : MonoBehaviour
                     this.transform.position = Vector3.zero;
                 }
             }
-            else
+            else if(bFoeIsDead || !target.gameObject.activeInHierarchy)
             {
+                bFoeIsDead = true;
                 this.transform.position += lastDirectionTake * fSpeed * Time.deltaTime;
                 if (this.transform.position.z >= fTresholdZ)
                 {
