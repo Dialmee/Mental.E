@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class FoeShooting : MonoBehaviour
 {
-    [SerializeField] private FoeManager foeManager;
     [SerializeField] private SpawnAxe spawnAxe;
     private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
@@ -33,30 +32,22 @@ public class FoeShooting : MonoBehaviour
         {
 
         }*/
-        if(spawnAxe.playerManager.playerMouvement.iAxe == spawnAxe.iAxe && !foeManager.bIsDead)
+        if(spawnAxe.playerManager.playerMouvement.getiAxe() == spawnAxe.iAxe)
         {
-            Transform transform = spawnAxe. WhatFoe(false);
             fTimer += Time.deltaTime;
-            if(transform==this.transform)
+            if (fTimer > spawnAxe.playerManager.ps.fireRate * 1.5f)
             {
-                if (fTimer > spawnAxe.playerManager.ps.fireRate * 1.5f)
+                Shoot();
+                fTimer = 0f;
+            }
+            if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)
+            {
+                fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
+                foreach (GameObject projectile in GO_Projectil)
                 {
-                    Shoot();
-                    fTimer = 0f;
-                }
-                if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)
-                {
-                    fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
-                    foreach (GameObject projectile in GO_Projectil)
-                    {
-                        projectile.GetComponent<FoeProjectil>().iDamage = Mathf.RoundToInt(Mathf.Floor(fDamageInitial));
-                    }
+                    projectile.GetComponent<FoeProjectil>().iDamage = Mathf.RoundToInt(Mathf.Floor(fDamageInitial));
                 }
             }
-        }
-        else if(foeManager.bIsDead)
-        {
-            CheckProjectilDisable();
         }
     }
    private void Shoot()
@@ -74,21 +65,6 @@ public class FoeShooting : MonoBehaviour
         else if (iCurrentProjectil >= GO_Projectil.Count)
         {
             iCurrentProjectil = 0;
-        }
-    }
-    private void CheckProjectilDisable()
-    {
-        bool bisActive = false;
-        for (int i = 0; i < GO_Projectil.Count; i++)
-        {
-            if (GO_Projectil[i].activeInHierarchy)
-            {
-                bisActive = true;
-            }
-        }
-        if (!bisActive)
-        {
-            foeManager.Death();
         }
     }
 }

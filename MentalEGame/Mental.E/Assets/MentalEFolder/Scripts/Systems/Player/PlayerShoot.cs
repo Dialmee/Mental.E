@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private SpawnAxe[] spawnAxes = new SpawnAxe[9];
-    [SerializeField]private PlayerMouvement playerMouvement;
+    [SerializeField] private PlayerMouvement playerMouvement;
     [SerializeField] private PlayerManager playerManager;
     private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
@@ -48,25 +48,26 @@ public class PlayerShoot : MonoBehaviour
     }
     private void CheckFoeInDirection()
     {
+        int iAxe = playerMouvement.getiAxe();
         if (playerManager.ps.nbBullets[0] != 0) //forward
         {
             fTimer[0] += Time.deltaTime;
             if (fTimer[0] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[playerMouvement.iAxe].WhatFoe(true);
-                if (target != null)
+                Transform target = spawnAxes[iAxe].WhatFoe();
+                if(target != null)
                 {
                     Shoot(target);
                     fTimer[0] = 0f;
                 }
             }
         }
-        if (playerManager.ps.nbBullets[1] != 0 && playerMouvement.iAxe != 2 && playerMouvement.iAxe != 5 && playerMouvement.iAxe != 8) //right
+        if (playerManager.ps.nbBullets[1] != 0 && iAxe != 2 && iAxe != 5 && iAxe != 8) //right
         {
             fTimer[1] += Time.deltaTime;
             if (fTimer[1] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[playerMouvement.iAxe + 1].WhatFoe(true);
+                Transform target = spawnAxes[iAxe + 1].WhatFoe();
                 if(target != null)
                 {
                     Shoot(target);
@@ -74,12 +75,12 @@ public class PlayerShoot : MonoBehaviour
                 }
             }
         }
-        if (playerManager.ps.nbBullets[2] != 0 && playerMouvement.iAxe != 0 && playerMouvement.iAxe != 3 && playerMouvement.iAxe != 6) //left
+        if (playerManager.ps.nbBullets[2] != 0 && iAxe != 0 && iAxe != 3 && iAxe != 6) //left
         {
             fTimer[2] += Time.deltaTime;
             if (fTimer[2] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[playerMouvement.iAxe - 1].WhatFoe(true);
+                Transform target = spawnAxes[iAxe - 1].WhatFoe();
                 if (target != null)
                 {
                     Shoot(target);
@@ -87,12 +88,12 @@ public class PlayerShoot : MonoBehaviour
                 }
             }
         }
-        if (playerManager.ps.nbBullets[3] != 0 && playerMouvement.iAxe >2) //up
+        if (playerManager.ps.nbBullets[3] != 0 && iAxe > 2) //up
         {
             fTimer[3] += Time.deltaTime;
             if (fTimer[3] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[playerMouvement.iAxe - 3].WhatFoe(true);
+                Transform target = spawnAxes[iAxe - 3].WhatFoe();
                 if (target != null)
                 {
                     Shoot(target);
@@ -100,12 +101,12 @@ public class PlayerShoot : MonoBehaviour
                 }
             }
         }
-        if (playerManager.ps.nbBullets[4] != 0 && playerMouvement.iAxe < 6) //down
+        if (playerManager.ps.nbBullets[4] != 0 && iAxe < 6) //down
         {
             fTimer[4] += Time.deltaTime;
             if (fTimer[4] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[playerMouvement.iAxe + 3].WhatFoe(true);
+                Transform target = spawnAxes[iAxe + 3].WhatFoe();
                 if (target != null)
                 {
                     Shoot(target);
