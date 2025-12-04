@@ -9,6 +9,9 @@ public class PlayerMouvement : MonoBehaviour
     [SerializeField] private InputAction horMove;
     [SerializeField] private InputAction verMove;
 
+    [SerializeField] private float fHorMove = 10f;
+    [SerializeField] private float fVerMove = 8f;
+
     [SerializeField] private float moveSpeed = 15;
 
     [SerializeField] private int maxVerAxe = 2;
@@ -66,14 +69,14 @@ public class PlayerMouvement : MonoBehaviour
 
         if (!isVertical && ((Mathf.Sign(dir) < 0 && iHorAxe > 0) || (Mathf.Sign(dir) > 0 && iHorAxe < maxHorAxe)))
         {
-            _nextPos = new Vector3(transform.position.x + Mathf.Sign(dir) * 15, transform.position.y, transform.position.z);
+            _nextPos = new Vector3(transform.position.x + Mathf.Sign(dir) * fHorMove, transform.position.y, transform.position.z);
             iHorAxe += Mathf.RoundToInt(Mathf.Sign(dir));
             _dir = Vector2.right * dir;
         }
         else
         if (isVertical && ((Mathf.Sign(dir) < 0 && iVerAxe > 0) || (Mathf.Sign(dir) > 0 && iVerAxe < maxVerAxe)))
         {
-            _nextPos = new Vector3(transform.position.x, transform.position.y + Mathf.Sign(dir) * 10, transform.position.z);
+            _nextPos = new Vector3(transform.position.x, transform.position.y + Mathf.Sign(dir) * fVerMove, transform.position.z);
             iVerAxe += Mathf.RoundToInt(Mathf.Sign(dir));
             _dir = Vector2.up * dir;
         }

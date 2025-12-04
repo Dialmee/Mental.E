@@ -450,6 +450,10 @@ PrefabInstance:
       propertyPath: GO_levelingUpdate
       value: 
       objectReference: {fileID: 259580588}
+    - target: {fileID: 4617373002503063601, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
+      propertyPath: fHorMove
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5228355784597486471, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
       propertyPath: m_Name
       value: Player (1)

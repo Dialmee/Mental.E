@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public class FoeShooting : MonoBehaviour
 {
+    [SerializeField] private FoeManager foeManager;
     [SerializeField] private SpawnAxe spawnAxe;
     private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
-    private bool bPlayerIsInFront = false;
     [SerializeField] private Transform tr_ProjectilParent;
     [SerializeField] private List<GameObject> GO_Projectil = new List<GameObject>(10);
     private int iCurrentProjectil = 0;
@@ -19,38 +18,33 @@ public class FoeShooting : MonoBehaviour
     }
     private void Update()
     {
-        /*if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 200f, layerMask))
+        if (spawnAxe.playerManager.playerMouvement.getiAxe() == spawnAxe.iAxe && !foeManager.bIsDead)
         {
-            bPlayerIsInFront = true;
-        }
-        else
-        {
-            bPlayerIsInFront = false;
-        }
-
-        if(bPlayerIsInFront)
-        {
-
-        }*/
-        if(spawnAxe.playerManager.playerMouvement.getiAxe() == spawnAxe.iAxe)
-        {
+            Transform transform = spawnAxe.WhatFoe(false);
             fTimer += Time.deltaTime;
-            if (fTimer > spawnAxe.playerManager.ps.fireRate * 1.5f)
+            if (transform == this.transform)
             {
-                Shoot();
-                fTimer = 0f;
-            }
-            if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)
-            {
-                fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
-                foreach (GameObject projectile in GO_Projectil)
+                if (fTimer > spawnAxe.playerManager.ps.fireRate * 1.5f)
                 {
-                    projectile.GetComponent<FoeProjectil>().iDamage = Mathf.RoundToInt(Mathf.Floor(fDamageInitial));
+                    Shoot();
+                    fTimer = 0f;
+                }
+                if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)
+                {
+                    fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
+                    foreach (GameObject projectile in GO_Projectil)
+                    {
+                        projectile.GetComponent<FoeProjectil>().iDamage = Mathf.RoundToInt(Mathf.Floor(fDamageInitial));
+                    }
                 }
             }
         }
+        else if (foeManager.bIsDead)
+        {
+            CheckProjectilDisable();
+        }
     }
-   private void Shoot()
+    private void Shoot()
     {
         CheckProjectilEnable();
         GO_Projectil[iCurrentProjectil].SetActive(true);
@@ -65,6 +59,21 @@ public class FoeShooting : MonoBehaviour
         else if (iCurrentProjectil >= GO_Projectil.Count)
         {
             iCurrentProjectil = 0;
+        }
+    }
+    private void CheckProjectilDisable()
+    {
+        bool bisActive = false;
+        for (int i = 0; i < GO_Projectil.Count; i++)
+        {
+            if (GO_Projectil[i].activeInHierarchy)
+            {
+                bisActive = true;
+            }
+        }
+        if (!bisActive)
+        {
+            foeManager.Death();
         }
     }
 }
