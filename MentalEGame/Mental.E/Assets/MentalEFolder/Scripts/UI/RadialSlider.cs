@@ -9,11 +9,12 @@ public class RadialSlider : Selectable, IDragHandler, IPointerDownHandler, ICanv
 {
     public enum FillOrigin { Top, Right, Bottom, Left }
 
+    [SerializeField] private PlayerMouvement playerMouvement;
     [SerializeField] private Image fillImage;
     [SerializeField] private RectTransform handle;
     [SerializeField] private bool clockwise = true;
     [SerializeField, Range(0, 1)] public float m_Value = 0f;
-    public float fValue = 0f;
+    public float fValue = 1f;
 
     public UnityEvent<float> onValueChanged = new UnityEvent<float>();
 
@@ -32,11 +33,21 @@ public class RadialSlider : Selectable, IDragHandler, IPointerDownHandler, ICanv
         }
 
         m_Value = val;
-        fValue = m_Value;
         UpdateVisuals();
         onValueChanged.Invoke(m_Value);
     }
-
+    private void Update()
+    {
+        ThisSliderValue();
+    }
+    public void ThisSliderValue()
+    {
+        if(playerMouvement!=null)
+        {
+            fValue = playerMouvement.fCurrentTimer / playerMouvement.fTimeToMoveAgain;
+            SetValue(fValue);
+        }
+    }
     private void UpdateVisuals()
     {
         if (fillImage)
@@ -56,7 +67,7 @@ public class RadialSlider : Selectable, IDragHandler, IPointerDownHandler, ICanv
         }*/
     }
 
-    public void OnPointerDown(PointerEventData eventData) => UpdateDrag(eventData);
+    //public void OnPointerDown(PointerEventData eventData) => UpdateDrag(eventData);
 
     public void OnDrag(PointerEventData eventData) => UpdateDrag(eventData);
 

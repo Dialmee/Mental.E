@@ -612,7 +612,7 @@ MonoBehaviour:
   sourceProjectPath: Assets/MentalEFolder/fmod/mentalEfmod/mentalEfmod.fspro
   sourceBankPath: Assets/MentalEFolder/fmod/mentalEfmod/Build
   sourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
+  BankRefreshCooldown: -2
   ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -631,7 +631,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -645,7 +646,7 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131634
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131634
   Platforms:
   - {fileID: 5397995929507597924}

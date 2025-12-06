@@ -7,12 +7,14 @@ public class PauseManager : MonoBehaviour
 {
     [SerializeField] private string sGameSceneName = null;
     [SerializeField] private GameObject GO_Pause = null;
+    [SerializeField] private GameObject GO_Cursor = null;
     private bool bGameIsPaused = false;
     private bool isLoadingScene = false;
     private AsyncOperation loadingOperation;
     private void Start()
     {
-        if(SceneManager.GetActiveScene().name == sGameSceneName)
+        Cursor.visible = false;
+        if (SceneManager.GetActiveScene().name == sGameSceneName)
         {
             PauseGame(false);
         }
@@ -29,14 +31,22 @@ public class PauseManager : MonoBehaviour
         if (toPause)
         {
             Time.timeScale = 0f;
-            /*Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;*/
+            //Cursor.visible = true;
+            if(GO_Cursor)
+            {
+                GO_Cursor.SetActive(true);
+            }
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1f;
-            /*Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;*/
+            //Cursor.visible = false;
+            if (GO_Cursor)
+            {
+                GO_Cursor.SetActive(false);
+            }
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void LoaderScene(string sceneToLoad)

@@ -20,6 +20,9 @@ public class PlayerMouvement : MonoBehaviour
     private int iVerAxe = 1; 
     private int iHorAxe = 1;
     public bool bIsMoving = false;
+    public bool bCanMove = true;
+    public float fTimeToMoveAgain = 5f;
+    public float fCurrentTimer = 5f;
 
     private Vector3 _nextPos;
     private Vector2 _dir;
@@ -28,6 +31,9 @@ public class PlayerMouvement : MonoBehaviour
 
     private void OnEnable()
     {
+        fTimeToMoveAgain = playerManager.ps.moveCd;
+        fCurrentTimer = fTimeToMoveAgain;
+        bCanMove = true;
         horMove.Enable();
         verMove.Enable();
     }
@@ -41,13 +47,25 @@ public class PlayerMouvement : MonoBehaviour
     void Update()
     {
         ResetRoll();
-        InputDetection();
-        Move();
+
+        if (bCanMove)
+        {
+            InputDetection();
+        }
+        else
+        {
+            fTimeToMoveAgain = playerManager.ps.moveCd;
+            fCurrentTimer += Time.deltaTime;
+            if(fCurrentTimer>=fTimeToMoveAgain)
+            {
+                bCanMove = true;
+            }
+        }
+            Move();
     }
 
     private void InputDetection()
     {
-
         if (horMove.WasPerformedThisFrame())
         {
             CalculateNewPlace(horMove.ReadValue<float>(), false);
@@ -66,7 +84,8 @@ public class PlayerMouvement : MonoBehaviour
             return;
         
         bIsMoving = true;
-
+        bCanMove = false;
+        fCurrentTimer = 0;
         if (!isVertical && ((Mathf.Sign(dir) < 0 && iHorAxe > 0) || (Mathf.Sign(dir) > 0 && iHorAxe < maxHorAxe)))
         {
             _nextPos = new Vector3(transform.position.x + Mathf.Sign(dir) * fHorMove, transform.position.y, transform.position.z);
@@ -100,7 +119,6 @@ public class PlayerMouvement : MonoBehaviour
     }
     private void Roll()
     {
-        Debug.Log(_dir);
         if (_dir == Vector2.right)
             rollAnimator.SetBool("rollRight", true);
         else 

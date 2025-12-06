@@ -299,6 +299,9 @@ MonoBehaviour:
   maxVerAxe: 2
   maxHorAxe: 2
   bIsMoving: 0
+  bCanMove: 1
+  fTimeToMoveAgain: 5
+  fCurrentTimer: 0
 --- !u!54 &7946509534873678624
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -434,7 +437,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2462348780801983601}
   - component: {fileID: 4904790195250275287}
-  - component: {fileID: 7489907393716260244}
   - component: {fileID: 3305032476180734833}
   - component: {fileID: 6994220994646434597}
   m_Layer: 3
@@ -510,14 +512,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &7489907393716260244
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5386526777376538058}
-  m_Enabled: 1
 --- !u!114 &3305032476180734833
 MonoBehaviour:
   m_ObjectHideFlags: 0

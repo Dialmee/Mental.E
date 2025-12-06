@@ -310,6 +310,10 @@ PrefabInstance:
       propertyPath: fHorMove
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4617373002503063601, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
+      propertyPath: fCurrentTimer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5228355784597486471, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -688,6 +692,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7540829850089847313, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
   m_PrefabInstance: {fileID: 819659340}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2054503194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4617373002503063601, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
+  m_PrefabInstance: {fileID: 819659340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fbe034babc2ad4c8f41d931fc62a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2055575571 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8220667178393563403, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
@@ -1024,6 +1039,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8708263512338130987, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: playerMouvement
+      value: 
+      objectReference: {fileID: 2054503194}
     - target: {fileID: 9145065997116821917, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: playerManager
       value: 
