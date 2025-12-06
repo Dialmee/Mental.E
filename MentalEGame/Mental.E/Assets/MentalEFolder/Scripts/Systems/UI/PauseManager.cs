@@ -29,14 +29,14 @@ public class PauseManager : MonoBehaviour
         if (toPause)
         {
             Time.timeScale = 0f;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            /*Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;*/
         }
         else
         {
             Time.timeScale = 1f;
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            /*Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;*/
         }
     }
     public void LoaderScene(string sceneToLoad)
