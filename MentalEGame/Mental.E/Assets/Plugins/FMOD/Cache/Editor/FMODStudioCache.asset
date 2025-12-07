@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/MentalEFolder/fmod/mentalEfmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639006465308948380
+  lastModified: 639007146456600749
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 5259072
   Exists: 1
 --- !u!114 &-2157021304716300944
 MonoBehaviour:
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: Assets/MentalEFolder/fmod/mentalEfmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639006465308988393
+  lastModified: 639007146456646153
   FileSizes:
   - Name: Desktop
-    Value: 712
+    Value: 850
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -55,11 +55,39 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: -2157021304716300944}
   - {fileID: -6407745396824475520}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: 1408477003212691742}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6407745396824475520}
   StringsBanks:
   - {fileID: -2157021304716300944}
-  cacheTime: 639006465308988393
+  cacheTime: 639007146456646153
   cacheVersion: 131634
+--- !u!114 &1408477003212691742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/music_gameplay
+  m_EditorClassIdentifier: 
+  Path: event:/music_gameplay
+  Guid:
+    Data1: -1871062834
+    Data2: 1313202834
+    Data3: -794873672
+    Data4: 201318459
+  Banks:
+  - {fileID: -6407745396824475520}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 390000
