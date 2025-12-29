@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6805963b-ca72-4b2c-87e3-2dbd04fc1587}">
+		<property name="assetPath">
+			<value>sfx_impact_stone_6.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.3322448979591837</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5fe13440-d3d0-4001-9e61-7b5d99bbf40e}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -5,10 +5,18 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using static UnityEngine.Rendering.VolumeComponent;
 
-public class SoundManager
+public class SoundManager : MonoBehaviour
 {
+    public float fPausedVolume = 0f;
+    public float fPlayingVolume = 1f;
     public SoundManagerConfig soundManagerConfig;
-
+    private void Start()
+    {
+        soundManagerConfig.music_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.musicVcaName);
+        soundManagerConfig.sfx_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.sfxVcaName);
+        fPlayingVolume = soundManagerConfig.fVolumeMusic;
+        fPausedVolume = fPlayingVolume*0.4f;
+    }
     public void ChangeVolume(VolumeType volumeType, float volume)
     {
         switch (volumeType)
@@ -17,10 +25,24 @@ public class SoundManager
                 return;
             case VolumeType.Music:
                 VolumeChanging(soundManagerConfig.music_VCA, volume);
+                soundManagerConfig.fVolumeMusic = volume;
                 break;
             case VolumeType.Sfx:
                 VolumeChanging(soundManagerConfig.sfx_VCA, volume);
+                soundManagerConfig.fVolumeSfx = volume;
                 break;
+        }
+    }
+    public void PausedVolume(bool toPause)
+    {
+        if (toPause)
+        {
+            fPausedVolume = fPlayingVolume * 0.4f;
+            VolumeChanging(soundManagerConfig.music_VCA, fPausedVolume);
+        }
+        else
+        {
+            VolumeChanging(soundManagerConfig.music_VCA, fPlayingVolume);
         }
     }
 
@@ -45,17 +67,9 @@ public class SoundManager
         {
             VCA.setVolume(volume);
         }
-    }
-
-    public void PausedGameVolume(bool bIsPaused)
-    {
-        if (bIsPaused)
-        {
-            RuntimeManager.StudioSystem.setParameterByName("Pause", 0f);
-        }
         else
         {
-            RuntimeManager.StudioSystem.setParameterByName("Pause", 100f);
+            Debug.LogWarning("VCA is not Validl");
         }
     }
 
@@ -76,6 +90,10 @@ public class SoundManager
                     soundManagerConfig.fVolumeSfx = volume;
                     break;
             }
+        }
+        else
+        {
+            Debug.LogWarning("VCA is not Validl");
         }
     }
 

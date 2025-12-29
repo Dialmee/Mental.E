@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{891eb8d8-26a3-4405-a0bf-e35d5effc29a}">
+		<property name="assetPath">
+			<value>sfx_ui_button_upgrade_5.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.248</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5fe13440-d3d0-4001-9e61-7b5d99bbf40e}</destination>
+		</relationship>
+	</object>
+</objects>

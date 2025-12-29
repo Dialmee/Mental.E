@@ -14,17 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicVcaName: vca:/Music
   sfxVcaName: vca:/Sfx
-  fVolumeMusic: 0
-  fVolumeSfx: 0
-  sfxUiClickPath: path
-  sfxUiPointerPath: path
-  sfxTextPath: event:/Text
-  sfxSelectShipPath: event:/Ship_select
-  sfxLoopShipFlyPath: event:/Ship_fly
-  sfxHoverPath: event:/Orbit_hover
+  fVolumeMusic: 1
+  fVolumeSfx: 1
+  sfxUiNewLevelPath: event:/sfx_ui_levelUp
+  sfxUiPointerPath: event:/sfx_ui_button
+  sfxUiClickPath: event:/sfx_ui_button
+  sfxUiUpgradeButtonPath: event:/sfx_ui_button_upgrade
   sfxExplosionPath: event:/Ship_crash
-  sfxErrorPath: event:/Error
-  sfxUpgradePath: event:/Upgrade
-  sfxSlowMotionPath: event:/Slowmotion
-  sfxNewLifePath: event:/Getting life
-  sfxDirectionChangePath: event:/Direction change
+  sfxLazerGunPath: event:/sfx_lazer_gun
+  sfxLazerHitPath: event:/sfx_lazer_impact
+  sfxStoneHitPath: event:/sfx_impact_stone
+  sfxMovementPath: event:/sfx_move

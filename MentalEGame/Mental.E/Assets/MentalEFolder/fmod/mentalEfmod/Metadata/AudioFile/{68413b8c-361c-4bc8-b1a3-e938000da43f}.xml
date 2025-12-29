@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{68413b8c-361c-4bc8-b1a3-e938000da43f}">
+		<property name="assetPath">
+			<value>sfx_lazer_gun_9.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.81599999999999995</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5fe13440-d3d0-4001-9e61-7b5d99bbf40e}</destination>
+		</relationship>
+	</object>
+</objects>

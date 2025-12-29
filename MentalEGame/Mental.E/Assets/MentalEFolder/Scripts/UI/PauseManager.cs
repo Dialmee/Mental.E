@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
+    public SoundManager soundManager;
     [SerializeField] private string sGameSceneName = null;
     [SerializeField] private GameObject GO_Pause = null;
     [SerializeField] private GameObject GO_ResumePauseScreen = null;
@@ -46,8 +47,15 @@ public class PauseManager : MonoBehaviour
             //Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+        soundManager.PausedVolume(toPause);
     }
     public void SettingsOpen(bool toOpen)
+    {
+        GO_SettingsScreen.SetActive(toOpen);
+        GO_ResumePauseScreen.SetActive(!toOpen);
+        soundManager.PausedVolume(!toOpen);
+    }
+    private void SettingsOpenFromScript(bool toOpen)
     {
         GO_SettingsScreen.SetActive(toOpen);
         GO_ResumePauseScreen.SetActive(!toOpen);
@@ -64,7 +72,7 @@ public class PauseManager : MonoBehaviour
     {
         PauseGame(toPause);
         GO_Pause.SetActive(toPause);
-        SettingsOpen(!toPause);
+        SettingsOpenFromScript(!toPause);
         bGameIsPaused = toPause;
     }
     public void QuitGame()

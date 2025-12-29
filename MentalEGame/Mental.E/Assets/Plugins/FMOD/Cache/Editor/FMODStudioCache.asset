@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8979075363603692948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx_lazer_gun
+  m_EditorClassIdentifier: 
+  Path: event:/sfx_lazer_gun
+  Guid:
+    Data1: 1444040844
+    Data2: 1172635707
+    Data3: 303568030
+    Data4: -1426791547
+  Banks:
+  - {fileID: -6407745396824475520}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1008
 --- !u!114 &-6407745396824475520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,11 +42,65 @@ MonoBehaviour:
   Path: Assets/MentalEFolder/fmod/mentalEfmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639007146456600749
+  lastModified: 639025405580492812
   FileSizes:
   - Name: Desktop
-    Value: 5259072
+    Value: 6314368
   Exists: 1
+--- !u!114 &-6181816144981471233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx_impact_stone
+  m_EditorClassIdentifier: 
+  Path: event:/sfx_impact_stone
+  Guid:
+    Data1: 164719635
+    Data2: 1292955330
+    Data3: -835853126
+    Data4: -462287114
+  Banks:
+  - {fileID: -6407745396824475520}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1332
+--- !u!114 &-2999633504640429003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx_lazer_impact
+  m_EditorClassIdentifier: 
+  Path: event:/sfx_lazer_impact
+  Guid:
+    Data1: 982976528
+    Data2: 1332708973
+    Data3: 968488086
+    Data4: -1693462999
+  Banks:
+  - {fileID: -6407745396824475520}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2832
 --- !u!114 &-2157021304716300944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,11 +116,38 @@ MonoBehaviour:
   Path: Assets/MentalEFolder/fmod/mentalEfmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639007146456646153
+  lastModified: 639025405580533296
   FileSizes:
   - Name: Desktop
-    Value: 850
+    Value: 1186
   Exists: 1
+--- !u!114 &-1133617127742040746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx_ui_button
+  m_EditorClassIdentifier: 
+  Path: event:/sfx_ui_button
+  Guid:
+    Data1: -708257024
+    Data2: 1329940308
+    Data3: -1907855709
+    Data4: 1113841740
+  Banks:
+  - {fileID: -6407745396824475520}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 313
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,12 +165,19 @@ MonoBehaviour:
   - {fileID: -6407745396824475520}
   EditorEvents:
   - {fileID: 1408477003212691742}
+  - {fileID: -2999633504640429003}
+  - {fileID: -8979075363603692948}
+  - {fileID: 9118996113224659291}
+  - {fileID: 4091783695128173104}
+  - {fileID: -1133617127742040746}
+  - {fileID: -6181816144981471233}
+  - {fileID: 6952105749000018345}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6407745396824475520}
   StringsBanks:
   - {fileID: -2157021304716300944}
-  cacheTime: 639007146456646153
+  cacheTime: 639025405580533296
   cacheVersion: 131634
 --- !u!114 &1408477003212691742
 MonoBehaviour:
@@ -91,3 +206,84 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 390000
+--- !u!114 &4091783695128173104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx_ui_button_upgrade
+  m_EditorClassIdentifier: 
+  Path: event:/sfx_ui_button_upgrade
+  Guid:
+    Data1: -165523987
+    Data2: 1226901869
+    Data3: -2027131235
+    Data4: 1856745838
+  Banks:
+  - {fileID: -6407745396824475520}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1296
+--- !u!114 &6952105749000018345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx_move
+  m_EditorClassIdentifier: 
+  Path: event:/sfx_move
+  Guid:
+    Data1: -2094412127
+    Data2: 1156568907
+    Data3: -1680010355
+    Data4: 242672298
+  Banks:
+  - {fileID: -6407745396824475520}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1648
+--- !u!114 &9118996113224659291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx_ui_levelUp
+  m_EditorClassIdentifier: 
+  Path: event:/sfx_ui_levelUp
+  Guid:
+    Data1: -1949708935
+    Data2: 1258872025
+    Data3: 819057300
+    Data4: -623335143
+  Banks:
+  - {fileID: -6407745396824475520}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2040

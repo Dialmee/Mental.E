@@ -22,6 +22,7 @@ public class FoeManager : MonoBehaviour
     }
     public void TakeDamage(int nb)
     {
+        playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxLazerHitPath);
         hp -= nb;
         if (hp <= 0)
         {
@@ -32,6 +33,7 @@ public class FoeManager : MonoBehaviour
 
     private void vfxDeath()
     {
+        playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxExplosionPath);
         boxCollider.enabled = false;
         obstacleScrolling.enabled = false;
         goMesh.SetActive(false);

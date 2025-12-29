@@ -7,6 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerProjectile : MonoBehaviour
 {
+    [SerializeField] private PlayerManager playerManager;
     [SerializeField] private VisualEffect vfxArrow = null;
     [SerializeField] private GameObject goArrow = null;
     [SerializeField] private GameObject goxImpact = null;
@@ -76,6 +77,22 @@ public class PlayerProjectile : MonoBehaviour
             bHasHit = true;
             //TODO L'ennemi prend des d�gats
             collider.gameObject.GetComponent<FoeManager>().TakeDamage(iDamage);
+            goArrow.SetActive(false);
+            goxImpact.SetActive(true);
+            Tween.Delay(1f)
+                 .OnComplete(() =>
+                 {
+                     goxImpact.SetActive(false);
+                     this.gameObject.SetActive(false);
+                     target = null;
+                     this.transform.position = Vector3.zero;
+                     goArrow.SetActive(true);
+                 });
+        }
+        else if(collider.gameObject.CompareTag("Asteroid"))
+        {
+            playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxStoneHitPath);
+            bHasHit = true;
             goArrow.SetActive(false);
             goxImpact.SetActive(true);
             Tween.Delay(1f)

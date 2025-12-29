@@ -111,6 +111,14 @@ public class PlayerMouvement : MonoBehaviour
         
         transform.position = Vector3.MoveTowards(transform.position, _nextPos, moveSpeed * Time.deltaTime);
 
+        if (playerManager.pauseManager.soundManager != null)
+        {
+            playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxLazerGunPath);
+        }
+        else
+        {
+            Debug.LogWarning("no sound manager");
+        }
 
         if (transform.position == _nextPos)
             bIsMoving = false;

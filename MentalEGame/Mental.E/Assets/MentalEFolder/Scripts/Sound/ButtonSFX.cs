@@ -1,10 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEngine.Rendering.VolumeComponent;
 
 public class ButtonSFX : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
-    private SoundManager soundManager;
+    [SerializeField] private bool bIsUpgrade = false;
+    [SerializeField] private SoundManager soundManager;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -13,6 +15,13 @@ public class ButtonSFX : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        soundManager.PlayOneShot(soundManager.soundManagerConfig.sfxUiClickPath);
+        if(bIsUpgrade) 
+        {
+            soundManager.PlayOneShot(soundManager.soundManagerConfig.sfxUiUpgradeButtonPath);
+        }
+        else
+        {
+            soundManager.PlayOneShot(soundManager.soundManagerConfig.sfxUiClickPath);
+        }
     }
 }

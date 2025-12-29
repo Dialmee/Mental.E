@@ -17,22 +17,32 @@ public class SoundManagerConfig : ScriptableObject
     public float fVolumeSfx = 0f;
 
     [SerializeField]
-    public string sfxUiClickPath = "path";
+    public string sfxUiNewLevelPath = "path";
 
     [SerializeField]
     public string sfxUiPointerPath = "path";
 
     [SerializeField]
-    public string sfxHoverPath = "event:/Orbit_hover";
+    public string sfxUiClickPath = "path";
 
     [SerializeField]
-    public string sfxExplosionPath = "event:/Ship_crash";
+    public string sfxUiUpgradeButtonPath = "path";
 
     [SerializeField]
-    public string sfxUpgradePath = "event:/Upgrade";
+    public string sfxExplosionPath = "path";
 
     [SerializeField]
-    public string sfxSlowMotionPath = "event:/Slowmotion";
+    public string sfxLazerGunPath = "path";
+
+    [SerializeField]
+    public string sfxLazerHitPath = "path";
+
+    [SerializeField]
+    public string sfxStoneHitPath = "path";
+
+    [SerializeField]
+    public string sfxMovementPath = "path";
+
 
     public FMOD.Studio.EventInstance musicLoopInstance;
     public List<EventInstance> activeLoopedSounds = new List<EventInstance>();

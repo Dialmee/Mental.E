@@ -33,6 +33,14 @@ public class PlayerShoot : MonoBehaviour
             proj.iDamage = playerManager.ps.bulletDamages;
             proj.fSpeed = playerManager.ps.bulletSpeed;
             iCurrentProjectil += 1;
+            if(playerManager.pauseManager.soundManager != null)
+            {
+                playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxLazerGunPath);
+            }
+            else
+            {
+                Debug.LogWarning("no sound manager");
+            }
         }
     }
     private void CheckProjectilEnable()

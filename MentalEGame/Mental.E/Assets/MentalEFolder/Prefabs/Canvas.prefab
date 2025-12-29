@@ -664,6 +664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4222718206416998926}
   - component: {fileID: 3523518418488787559}
+  - component: {fileID: 6396084469085867481}
   m_Layer: 5
   m_Name: SfxSlider
   m_TagString: Untagged
@@ -756,6 +757,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6396084469085867481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002254581193273390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971bbc095f310944bb1321e87e178f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeType: 2
+  thisSlider: {fileID: 3523518418488787559}
 --- !u!1 &1164422046515575538
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +821,7 @@ GameObject:
   - component: {fileID: 1349313983209465592}
   - component: {fileID: 2612789884013900350}
   - component: {fileID: 527645968347886128}
+  - component: {fileID: 396096828341755651}
   m_Layer: 5
   m_Name: AmeliorationB
   m_TagString: Untagged
@@ -961,6 +977,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Go_this: {fileID: 1357179826134680686}
+--- !u!114 &396096828341755651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357179826134680686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a2673c9bb748c4289ee4bea802cba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bIsUpgrade: 1
 --- !u!1 &1534488801269426861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,6 +2680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1733447295588682744}
   slider: {fileID: 1077848207961975713}
+  volumeChanger: {fileID: 5098784257803112006}
 --- !u!114 &1733447295588682744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3103,6 +3133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4894502516464720445}
   - component: {fileID: 1077848207961975713}
+  - component: {fileID: 5098784257803112006}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -3195,6 +3226,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5098784257803112006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3927081707028711507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971bbc095f310944bb1321e87e178f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeType: 1
+  thisSlider: {fileID: 1077848207961975713}
 --- !u!1 &4170291783085740391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,6 +3327,7 @@ GameObject:
   - component: {fileID: 1506676984444272396}
   - component: {fileID: 191719006371815878}
   - component: {fileID: 8436406205999875534}
+  - component: {fileID: 2613769678471363104}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -3403,6 +3449,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2613769678471363104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4643321951199317033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a2673c9bb748c4289ee4bea802cba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bIsUpgrade: 0
 --- !u!1 &5273120583758726316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3417,6 +3476,7 @@ GameObject:
   - component: {fileID: 3101796005601042312}
   - component: {fileID: 7369834526838467782}
   - component: {fileID: 1139998801998797071}
+  - component: {fileID: 8576788381499506123}
   m_Layer: 5
   m_Name: AmeliorationC
   m_TagString: Untagged
@@ -3572,6 +3632,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Go_this: {fileID: 5273120583758726316}
+--- !u!114 &8576788381499506123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5273120583758726316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a2673c9bb748c4289ee4bea802cba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bIsUpgrade: 1
 --- !u!1 &5566149209883883796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,6 +3764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 3604180736774580247}
   slider: {fileID: 3523518418488787559}
+  volumeChanger: {fileID: 6396084469085867481}
 --- !u!114 &3604180736774580247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4866,6 +4940,7 @@ GameObject:
   - component: {fileID: 6771965629329313039}
   - component: {fileID: 7680107365163989472}
   - component: {fileID: 2828058550207923501}
+  - component: {fileID: 5451672838764539024}
   m_Layer: 5
   m_Name: AmeliorationA
   m_TagString: Untagged
@@ -5043,6 +5118,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Go_this: {fileID: 7177668177357219307}
+--- !u!114 &5451672838764539024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177668177357219307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a2673c9bb748c4289ee4bea802cba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bIsUpgrade: 1
 --- !u!1 &7292108240577887929
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,7 +5148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6156872917932516693
 RectTransform:
   m_ObjectHideFlags: 0
