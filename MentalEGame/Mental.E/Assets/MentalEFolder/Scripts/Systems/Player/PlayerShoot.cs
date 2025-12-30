@@ -35,7 +35,7 @@ public class PlayerShoot : MonoBehaviour
             iCurrentProjectil += 1;
             if(playerManager.pauseManager.soundManager != null)
             {
-                playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxLazerGunPath);
+                playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxLazerGunPath, Vector3.zero);
             }
             else
             {

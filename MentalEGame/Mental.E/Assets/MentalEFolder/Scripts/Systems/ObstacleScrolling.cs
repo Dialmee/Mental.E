@@ -4,10 +4,6 @@ using UnityEngine;
 public class ObstacleScrolling : MonoBehaviour
 {
     public float speed = 5f;
-    private void OnEnable()
-    {
-        this.transform.localPosition = Vector3.zero;
-    }
     private void Update()
     {
         if (transform.position.z > 0)

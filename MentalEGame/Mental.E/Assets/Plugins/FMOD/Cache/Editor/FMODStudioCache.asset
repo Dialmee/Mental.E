@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/MentalEFolder/fmod/mentalEfmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639025405580492812
+  lastModified: 639026317453217577
   FileSizes:
   - Name: Desktop
-    Value: 6314368
+    Value: 6314592
   Exists: 1
 --- !u!114 &-6181816144981471233
 MonoBehaviour:
@@ -116,10 +116,10 @@ MonoBehaviour:
   Path: Assets/MentalEFolder/fmod/mentalEfmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639025405580533296
+  lastModified: 639026317453262948
   FileSizes:
   - Name: Desktop
-    Value: 1186
+    Value: 1236
   Exists: 1
 --- !u!114 &-1133617127742040746
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   - {fileID: -6407745396824475520}
   StringsBanks:
   - {fileID: -2157021304716300944}
-  cacheTime: 639025405580533296
+  cacheTime: 639026317453262948
   cacheVersion: 131634
 --- !u!114 &1408477003212691742
 MonoBehaviour:
@@ -200,7 +200,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -6407745396824475520}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1

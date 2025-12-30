@@ -91,7 +91,7 @@ public class PlayerProjectile : MonoBehaviour
         }
         else if(collider.gameObject.CompareTag("Asteroid"))
         {
-            playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxStoneHitPath);
+            playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxStoneHitPath, this.transform.position);
             bHasHit = true;
             goArrow.SetActive(false);
             goxImpact.SetActive(true);

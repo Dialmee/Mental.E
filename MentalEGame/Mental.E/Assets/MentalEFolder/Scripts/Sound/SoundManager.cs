@@ -97,9 +97,16 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlayOneShot(string path)
+    public void PlayOneShot(string path, Vector3 vect)
     {
-        RuntimeManager.PlayOneShot(path);
+        if(vect==Vector3.zero)
+        {
+            RuntimeManager.PlayOneShot(path);
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(path, vect);
+        }
     }
 
     public void PlayMusic(FMODUnity.EventReference eventReference)

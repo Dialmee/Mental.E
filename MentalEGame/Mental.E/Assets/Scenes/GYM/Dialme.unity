@@ -375,6 +375,10 @@ PrefabInstance:
       propertyPath: fCurrentTimer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4904790195250275287, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5228355784597486471, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -997,6 +1001,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 61268618202968963, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61268618202968963, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 396096828341755651, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: soundManager
       value: 
@@ -1013,6 +1025,22 @@ PrefabInstance:
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 819659341}
+    - target: {fileID: 1704386906302132328, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262942027137687524, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262942027137687524, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262942027137687524, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2613769678471363104, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: soundManager
       value: 
@@ -1029,6 +1057,14 @@ PrefabInstance:
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 819659341}
+    - target: {fileID: 3797381175496554508, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797381175496554508, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3975269077829349184, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: soundManager
       value: 
@@ -1040,6 +1076,18 @@ PrefabInstance:
     - target: {fileID: 4365867734471619882, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825528265021710685, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825528265021710685, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825528265021710685, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5098784257803112006, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: pauseManager
@@ -1156,6 +1204,10 @@ PrefabInstance:
     - target: {fileID: 7738548418571810481, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545286708670630807, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8576788381499506123, guid: 60506beafe776824dad857a0b9bb2f7c, type: 3}
       propertyPath: soundManager

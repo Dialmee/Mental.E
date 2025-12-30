@@ -10,18 +10,18 @@ public class ButtonSFX : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        soundManager.PlayOneShot(soundManager.soundManagerConfig.sfxUiPointerPath);
+        soundManager.PlayOneShot(soundManager.soundManagerConfig.sfxUiPointerPath, Vector3.zero);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if(bIsUpgrade) 
         {
-            soundManager.PlayOneShot(soundManager.soundManagerConfig.sfxUiUpgradeButtonPath);
+            soundManager.PlayOneShot(soundManager.soundManagerConfig.sfxUiUpgradeButtonPath, Vector3.zero);
         }
         else
         {
-            soundManager.PlayOneShot(soundManager.soundManagerConfig.sfxUiClickPath);
+            soundManager.PlayOneShot(soundManager.soundManagerConfig.sfxUiClickPath, Vector3.zero);
         }
     }
 }
