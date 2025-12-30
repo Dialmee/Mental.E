@@ -20,7 +20,7 @@ MonoBehaviour:
   sfxUiPointerPath: event:/sfx_ui_button
   sfxUiClickPath: event:/sfx_ui_button
   sfxUiUpgradeButtonPath: event:/sfx_ui_button_upgrade
-  sfxExplosionPath: event:/Ship_crash
+  sfxExplosionPath: event:/sfx_lazer_impact
   sfxLazerGunPath: event:/sfx_lazer_gun
   sfxLazerHitPath: event:/sfx_lazer_impact
   sfxStoneHitPath: event:/sfx_impact_stone
