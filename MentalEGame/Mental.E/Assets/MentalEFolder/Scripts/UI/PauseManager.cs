@@ -10,6 +10,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject GO_Pause = null;
     [SerializeField] private GameObject GO_ResumePauseScreen = null;
     [SerializeField] private GameObject GO_SettingsScreen = null;
+    [SerializeField] private GameObject GO_UpgradeScreen = null;
     [SerializeField] private GameObject GO_Cursor = null;
     private bool bGameIsPaused = false;
     private bool isLoadingScene = false;
@@ -70,10 +71,20 @@ public class PauseManager : MonoBehaviour
     }
     public void PauseMenu(bool toPause)
     {
-        PauseGame(toPause);
-        GO_Pause.SetActive(toPause);
-        SettingsOpenFromScript(!toPause);
-        bGameIsPaused = toPause;
+        if (bGameIsPaused && GO_UpgradeScreen != null && GO_UpgradeScreen.activeInHierarchy)
+        {
+            PauseGame(!toPause);
+            GO_Pause.SetActive(toPause);
+            SettingsOpenFromScript(!toPause);
+            bGameIsPaused = !toPause;
+        }
+        else
+        {
+            PauseGame(toPause);
+            GO_Pause.SetActive(toPause);
+            SettingsOpenFromScript(!toPause);
+            bGameIsPaused = toPause;
+        }
     }
     public void QuitGame()
     {

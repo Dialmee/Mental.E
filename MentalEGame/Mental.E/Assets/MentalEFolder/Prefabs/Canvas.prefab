@@ -2359,6 +2359,7 @@ MonoBehaviour:
   GO_Pause: {fileID: 7292108240577887929}
   GO_ResumePauseScreen: {fileID: 8545286708670630807}
   GO_SettingsScreen: {fileID: 1704386906302132328}
+  GO_UpgradeScreen: {fileID: 6137432959340239672}
   GO_Cursor: {fileID: 8004813921903599086}
 --- !u!114 &49901314324181742
 MonoBehaviour:

@@ -406,6 +406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: vfx_foeBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 4602051264700525002, guid: 04ea3497c27d0ed41b8c99d35eb740bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

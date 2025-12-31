@@ -297,6 +297,10 @@ PrefabInstance:
       propertyPath: pauseManager
       value: 
       objectReference: {fileID: 5608646501415047398}
+    - target: {fileID: 3305032476180734833, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5228355784597486471, guid: 1ad9463c3f0b61c4089569a468f388fe, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -1146,7 +1150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7272960810175048084, guid: 4d44dc2e1fdb7554d978382520eda15c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 7272960810175048084, guid: 4d44dc2e1fdb7554d978382520eda15c, type: 3}
       propertyPath: m_LocalPosition.z
