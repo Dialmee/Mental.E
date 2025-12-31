@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicVcaName: vca:/Music
   sfxVcaName: vca:/Sfx
+  uiVcaName: vca:/Ui
   fVolumeMusic: 1
   fVolumeSfx: 1
+  fVolumeUi: 1
   sfxUiNewLevelPath: event:/sfx_ui_levelUp
   sfxUiPointerPath: event:/sfx_ui_button
   sfxUiClickPath: event:/sfx_ui_button

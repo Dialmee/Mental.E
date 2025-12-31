@@ -14,6 +14,7 @@ public class SoundManager : MonoBehaviour
     {
         soundManagerConfig.music_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.musicVcaName);
         soundManagerConfig.sfx_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.sfxVcaName);
+        soundManagerConfig.ui_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.uiVcaName);
         fPlayingVolume = soundManagerConfig.fVolumeMusic;
         fPausedVolume = fPlayingVolume*0.4f;
     }
@@ -30,6 +31,10 @@ public class SoundManager : MonoBehaviour
             case VolumeType.Sfx:
                 VolumeChanging(soundManagerConfig.sfx_VCA, volume);
                 soundManagerConfig.fVolumeSfx = volume;
+                break;
+            case VolumeType.Ui:
+                VolumeChanging(soundManagerConfig.ui_VCA, volume);
+                soundManagerConfig.fVolumeUi = volume;
                 break;
         }
     }
@@ -57,6 +62,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case VolumeType.Sfx:
                 VolumeGet(soundManagerConfig.sfx_VCA, volumeType);
+                break;
+            case VolumeType.Ui:
+                VolumeGet(soundManagerConfig.ui_VCA, volumeType);
                 break;
         }
     }
@@ -88,6 +96,9 @@ public class SoundManager : MonoBehaviour
                     break;
                 case VolumeType.Sfx:
                     soundManagerConfig.fVolumeSfx = volume;
+                    break;
+                case VolumeType.Ui:
+                    soundManagerConfig.fVolumeUi = volume;
                     break;
             }
         }

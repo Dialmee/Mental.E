@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/MentalEFolder/fmod/mentalEfmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639026317453217577
+  lastModified: 639027719350390081
   FileSizes:
   - Name: Desktop
-    Value: 6314592
+    Value: 5853024
   Exists: 1
 --- !u!114 &-6181816144981471233
 MonoBehaviour:
@@ -72,7 +72,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 80
   Length: 1332
 --- !u!114 &-2999633504640429003
 MonoBehaviour:
@@ -99,7 +99,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 80
   Length: 2832
 --- !u!114 &-2157021304716300944
 MonoBehaviour:
@@ -116,10 +116,10 @@ MonoBehaviour:
   Path: Assets/MentalEFolder/fmod/mentalEfmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639026317453262948
+  lastModified: 639027719350425666
   FileSizes:
   - Name: Desktop
-    Value: 1236
+    Value: 1268
   Exists: 1
 --- !u!114 &-1133617127742040746
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   - {fileID: -6407745396824475520}
   StringsBanks:
   - {fileID: -2157021304716300944}
-  cacheTime: 639026317453262948
+  cacheTime: 639027719350425666
   cacheVersion: 131634
 --- !u!114 &1408477003212691742
 MonoBehaviour:
@@ -247,10 +247,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/sfx_move
   Guid:
-    Data1: -2094412127
-    Data2: 1156568907
-    Data3: -1680010355
-    Data4: 242672298
+    Data1: 1794757010
+    Data2: 1185013667
+    Data3: 357599931
+    Data4: -84556249
   Banks:
   - {fileID: -6407745396824475520}
   IsStream: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1648
+  Length: 1550
 --- !u!114 &9118996113224659291
 MonoBehaviour:
   m_ObjectHideFlags: 0

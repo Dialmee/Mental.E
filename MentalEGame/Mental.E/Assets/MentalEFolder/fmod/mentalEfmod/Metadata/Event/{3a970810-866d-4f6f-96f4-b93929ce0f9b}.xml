@@ -59,7 +59,11 @@
 			<destination>{d02facb6-cc4f-4919-90d1-c74a8e9450d6}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{41acfae7-dca1-42c3-a9c7-d92592175e51}" />
+	<object class="EventAutomatableProperties" id="{41acfae7-dca1-42c3-a9c7-d92592175e51}">
+		<property name="maximumDistance">
+			<value>80</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{fe3f272b-ffb7-42a1-82a7-daabd9db8c57}" />
 	<object class="GroupTrack" id="{c68ed7bf-74c2-4c8f-bffb-608d7e627aaa}">
 		<relationship name="modules">
@@ -75,6 +79,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{9a25f50f-c0d5-4426-8fd0-ef98e3974e0e}">
+		<relationship name="modulators">
+			<destination>{5b906d92-7496-4af9-ac0e-d7cb44aa8e1f}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{69657e4d-f1da-41c7-b20a-8e434c18f5cd}</destination>
 		</relationship>
@@ -108,6 +115,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{0801d638-78c9-4255-90af-96d2354a9d2b}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -120,6 +130,14 @@
 		<relationship name="output">
 			<destination>{9a25f50f-c0d5-4426-8fd0-ef98e3974e0e}</destination>
 		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{5b906d92-7496-4af9-ac0e-d7cb44aa8e1f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>21.5</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{69657e4d-f1da-41c7-b20a-8e434c18f5cd}">
 		<relationship name="effects">
@@ -166,6 +184,22 @@
 	</object>
 	<object class="MixerBusPanner" id="{c2652398-7e1e-4aa7-bc9b-ef838af1ffa7}" />
 	<object class="MixerBusFader" id="{e802cf00-7c78-4c0f-876b-f1822c545aa7}" />
-	<object class="SpatialiserEffect" id="{af5d8694-5aa6-44f5-8ae0-4f97e5cb6eac}" />
+	<object class="SpatialiserEffect" id="{af5d8694-5aa6-44f5-8ae0-4f97e5cb6eac}">
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>50</value>
+		</property>
+		<property name="minimumExtent">
+			<value>360</value>
+		</property>
+		<property name="panBlend">
+			<value>0.98999995</value>
+		</property>
+		<property name="userStereoSeparation">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{f5986a3d-015d-41e8-9ed2-f6dd3938f198}" />
 </objects>

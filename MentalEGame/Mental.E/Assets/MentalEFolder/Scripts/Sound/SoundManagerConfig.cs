@@ -13,8 +13,13 @@ public class SoundManagerConfig : ScriptableObject
 
     [SerializeField]
     public string sfxVcaName = "vca:/Sfx";
+
+    [SerializeField]
+    public string uiVcaName = "vca:/Ui";
+
     public float fVolumeMusic = 0f;
     public float fVolumeSfx = 0f;
+    public float fVolumeUi = 0f;
 
     [SerializeField]
     public string sfxUiNewLevelPath = "path";
@@ -48,4 +53,5 @@ public class SoundManagerConfig : ScriptableObject
     public List<EventInstance> activeLoopedSounds = new List<EventInstance>();
     public FMOD.Studio.VCA music_VCA;
     public FMOD.Studio.VCA sfx_VCA;
+    public FMOD.Studio.VCA ui_VCA;
 }

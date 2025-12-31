@@ -91,6 +91,7 @@ public class PlayerMouvement : MonoBehaviour
             _nextPos = new Vector3(transform.position.x + Mathf.Sign(dir) * fHorMove, transform.position.y, transform.position.z);
             iHorAxe += Mathf.RoundToInt(Mathf.Sign(dir));
             _dir = Vector2.right * dir;
+            SoundEffect();
         }
         else
         if (isVertical && ((Mathf.Sign(dir) < 0 && iVerAxe > 0) || (Mathf.Sign(dir) > 0 && iVerAxe < maxVerAxe)))
@@ -98,9 +99,21 @@ public class PlayerMouvement : MonoBehaviour
             _nextPos = new Vector3(transform.position.x, transform.position.y + Mathf.Sign(dir) * fVerMove, transform.position.z);
             iVerAxe += Mathf.RoundToInt(Mathf.Sign(dir));
             _dir = Vector2.up * dir;
+            SoundEffect();
         }
 
         Roll();
+    }
+    private void SoundEffect()
+    {
+        if (playerManager.pauseManager.soundManager != null)
+        {
+            playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxMovementPath, Vector3.zero);
+        }
+        else
+        {
+            Debug.LogWarning("no sound manager");
+        }
     }
 
     private void Move()
@@ -110,15 +123,6 @@ public class PlayerMouvement : MonoBehaviour
         }
         
         transform.position = Vector3.MoveTowards(transform.position, _nextPos, moveSpeed * Time.deltaTime);
-
-        if (playerManager.pauseManager.soundManager != null)
-        {
-            playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxLazerGunPath, Vector3.zero);
-        }
-        else
-        {
-            Debug.LogWarning("no sound manager");
-        }
 
         if (transform.position == _nextPos)
             bIsMoving = false;
