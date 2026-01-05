@@ -16,6 +16,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject GO_ResumePauseScreen = null;
     [SerializeField] private GameObject GO_SettingsScreen = null;
     [SerializeField] private GameObject GO_UpgradeScreen = null;
+    [SerializeField] private GameObject GO_Credits = null;
     [SerializeField] private GameObject GO_Cursor = null;
 
     private bool bGameIsPaused = false;
@@ -23,11 +24,15 @@ public class PauseManager : MonoBehaviour
     private AsyncOperation loadingOperation;
     private void Start()
     {
-        deathScript.bGameIsEnded = false;
-        Cursor.visible = false;
         if (SceneManager.GetActiveScene().name == sGameSceneName)
         {
+            Cursor.visible = false;
+            deathScript.bGameIsEnded = false;
             PauseGame(false);
+        }
+        else
+        {
+            Cursor.visible = true;
         }
     }
     private void Update()
@@ -97,6 +102,11 @@ public class PauseManager : MonoBehaviour
             SettingsOpenFromScript(!toPause);
             bGameIsPaused = toPause;
         }
+    }
+    public void CreditsOpen(bool bToOpen)
+    {
+        GO_Credits.SetActive(bToOpen);
+        GO_ResumePauseScreen.SetActive(!bToOpen);
     }
     public void QuitGame()
     {
