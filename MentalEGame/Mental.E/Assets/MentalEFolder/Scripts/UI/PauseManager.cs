@@ -1,3 +1,4 @@
+using PrimeTween;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
+    public uiUpgradesConfig uiUpgradesConfig;
+
+    public DeathScript deathScript;
+    public PlayerStats playerStats;
     public SoundManager soundManager;
     [SerializeField] private string sGameSceneName = null;
     [SerializeField] private GameObject GO_Pause = null;
@@ -12,11 +17,13 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject GO_SettingsScreen = null;
     [SerializeField] private GameObject GO_UpgradeScreen = null;
     [SerializeField] private GameObject GO_Cursor = null;
+
     private bool bGameIsPaused = false;
     private bool isLoadingScene = false;
     private AsyncOperation loadingOperation;
     private void Start()
     {
+        deathScript.bGameIsEnded = false;
         Cursor.visible = false;
         if (SceneManager.GetActiveScene().name == sGameSceneName)
         {
@@ -25,7 +32,7 @@ public class PauseManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Keyboard.current.escapeKey.wasPressedThisFrame && GO_Pause!=null)
+        if(Keyboard.current.escapeKey.wasPressedThisFrame && GO_Pause!=null && !deathScript.bGameIsEnded)
         {
             PauseMenu(!bGameIsPaused);
         }
@@ -63,6 +70,11 @@ public class PauseManager : MonoBehaviour
     }
     public void LoaderScene(string sceneToLoad)
     {
+        playerStats.Start();
+        if(sceneToLoad== "MainMenu" || sceneToLoad == "Scenes/Game/MainMenu")
+        {
+            uiUpgradesConfig.iNextUpgrade = 10;
+        }
         Debug.LogWarning("Scene loading attempt");
         if (isLoadingScene) return;
         if (!Application.CanStreamedLevelBeLoaded(sceneToLoad)) return;

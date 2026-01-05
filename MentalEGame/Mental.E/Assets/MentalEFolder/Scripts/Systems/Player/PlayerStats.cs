@@ -4,15 +4,24 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "Scriptable Objects/PlayerStats")]
 public class PlayerStats : ScriptableObject
 {
+    public float intial_hpMax = 2f;
     public float hpMax = 2f;
+    public float intial_healthRegeneration = 0.2f;
     public float healthRegeneration = 0.2f;
+    public int intial_bulletDamages = 2;
     public int bulletDamages = 2;
+    public float intial_bulletSpeed = 2f;
     public float bulletSpeed = 2f;
+    public float initial_bulletRange = 2f;
     public float bulletRange = 2f;
+    public float initial_fireRate = 2f;
     public float fireRate = 2f;
-    public float moveCd = 2f;
+    public float initial_moveCd = 1f;
+    public float moveCd = 1f;
+    [Tooltip("0 is forward, 1 is right, 2 is left, 3 is up, 4 is down")] public int[] initial_nbBullets = new int[5] { 1, 0, 0, 0, 0 };
     [Tooltip("0 is forward, 1 is right, 2 is left, 3 is up, 4 is down")] public int[] nbBullets = new int[5] { 1, 0, 0, 0, 0 };
     public int iLevel = 0;
+    public float initial_fXPmax = 100f;
     public float fXPmax = 100f;
 
     private int _maxUpBullRange = 3;
@@ -20,6 +29,21 @@ public class PlayerStats : ScriptableObject
     public float[] fUpdatesNumbers = new float[10] { 1f, 1f, 20f, 0.1f, -1f, 1f, 1f, 1f, 0f, 2f };
     public int[] iUpdate = new int[4] { 0, 0, 0, 0 };
 
+    public void Start()
+    {
+        hpMax = intial_hpMax;
+        healthRegeneration = intial_healthRegeneration;
+        bulletDamages = intial_bulletDamages;
+        bulletSpeed = intial_bulletSpeed;
+        bulletRange = initial_bulletRange;
+        fireRate = initial_fireRate;
+        moveCd = initial_moveCd;
+        for (int i = 0; i < nbBullets.Length; i++)
+        {
+            nbBullets[i] = initial_nbBullets[i];
+        }
+        fXPmax = initial_fXPmax;
+    }
     public void Upgrade(int i, PlayerManager playerManager)
     {
         if(i==9)

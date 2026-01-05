@@ -4,6 +4,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerManager : MonoBehaviour
 {
+    [SerializeField] private uiUpgradesConfig uiUpgradesConfig;
     public PauseManager pauseManager;
     public PlayerStats ps;
     public PlayerMouvement playerMouvement;
@@ -14,12 +15,16 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private NewLevel newLevel = null;
     [SerializeField] private int iDamageAsteroid = 10;
 
-    void Start()
+    private void Start()
     {
         hp = ps.hpMax;
         if(lifeUpdate!=null)
         {
             lifeUpdate.ChangeUI();
+        }
+        if (uiUpgradesConfig.iNextUpgrade!=10)
+        {
+            ps.Upgrade(uiUpgradesConfig.iNextUpgrade, this);
         }
     }
 
@@ -71,6 +76,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Death()
     {
-        //TODO: player death, ui and all
+        pauseManager.PauseGame(true);
+        pauseManager.deathScript.StartDeath();
     }
 }

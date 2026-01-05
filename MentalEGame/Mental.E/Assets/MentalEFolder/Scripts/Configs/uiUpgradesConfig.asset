@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a43067b1d044ad43853cd699af21dd6, type: 3}
+  m_Name: uiUpgradesConfig
+  m_EditorClassIdentifier: 
+  sprites_update:
+  - {fileID: 21300000, guid: 66921a5f546073f4f81d52a6bf9e68a7, type: 3}
+  - {fileID: 21300000, guid: 127dd1f0fbd9765428233cd3cdc4e56d, type: 3}
+  - {fileID: 21300000, guid: 269ec8fbb2a24c542a4ccec24439e2ff, type: 3}
+  - {fileID: 21300000, guid: 13e9bfc0e3c30b145a4175675419d243, type: 3}
+  - {fileID: 21300000, guid: 67a01ba0c67bbee409ba8a3047826a38, type: 3}
+  - {fileID: 21300000, guid: 59a969c7d6a553e489c4ddee9636a4f3, type: 3}
+  - {fileID: 21300000, guid: 830ad03a8db8fd04199c74087fb089ca, type: 3}
+  - {fileID: 21300000, guid: d2214c4d13bfe7e4898ca8b8cb7e9409, type: 3}
+  - {fileID: 21300000, guid: 7f01ad50807efe94d9cd3db2722d5982, type: 3}
+  - {fileID: 21300000, guid: 53733308e027eb543b9302bfb4b06d00, type: 3}
+  sTextAmelioration:
+  - Augmente le nombre de projectiles en horizontal.
+  - Augmente le nombre de projectiles en vertical.
+  - "Augmentation de la port\xE9e de tir."
+  - "Augmentation de la vitesse de r\xE9g\xE9n\xE9ration."
+  - "Diminution du temps d'attendre dans les d\xE9placements entre axes."
+  - "Augmentation de la fr\xE9quence des projectiles."
+  - Augmentation de la vitesse des projectiles.
+  - "Augmentation des d\xE9g\xE2ts des projectiles."
+  - "R\xE9g\xE9n\xE9ration instantann\xE9e des points de vie."
+  - Augmentation des points de vie maximum.
+  sTitleAmelioration:
+  - Nbr. Proj.
+  - Nbr. Proj.
+  - "Port\xE9e +"
+  - "Vit. R\xE9g\xE8n."
+  - Vit. Vaisseau
+  - Freq. Atq.
+  - Vit. Proj.
+  - Dgts. +
+  - "R\xE9g\xE9n\xE9ration"
+  - HP max +
+  color_text:
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.2320754, b: 0.62356627, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  iNextUpgrade: 10

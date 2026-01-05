@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07c4c0ef2a4bd549b83f0e8e577919f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiUpgradesConfig: {fileID: 11400000, guid: 15d6f6ef43da33f44a7d0184b356b496, type: 2}
   pauseManager: {fileID: 0}
   ps: {fileID: 11400000, guid: 6c06d2a16696cb9419c2846ea57ffbdd, type: 2}
   playerMouvement: {fileID: 4617373002503063601}
