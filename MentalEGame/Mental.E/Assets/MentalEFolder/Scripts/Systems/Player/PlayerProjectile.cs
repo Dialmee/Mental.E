@@ -1,4 +1,5 @@
 using PrimeTween;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -37,7 +38,10 @@ public class PlayerProjectile : MonoBehaviour
     }
     private void Update()
     {
-        if(this.gameObject.activeInHierarchy && target !=null && !bHasHit)
+        if (!target.gameObject.activeInHierarchy)
+            bulletDisappear();
+
+        if (this.gameObject.activeInHierarchy && target !=null && !bHasHit)
         {
             if(target.gameObject.activeInHierarchy)
             {
@@ -77,33 +81,30 @@ public class PlayerProjectile : MonoBehaviour
             bHasHit = true;
             //TODO L'ennemi prend des d�gats
             collider.gameObject.GetComponent<FoeManager>().TakeDamage(iDamage);
-            goArrow.SetActive(false);
-            goxImpact.SetActive(true);
-            Tween.Delay(1f)
-                 .OnComplete(() =>
-                 {
-                     goxImpact.SetActive(false);
-                     this.gameObject.SetActive(false);
-                     target = null;
-                     this.transform.position = Vector3.zero;
-                     goArrow.SetActive(true);
-                 });
+            bulletDisappear();
         }
         else if(collider.gameObject.CompareTag("Asteroid"))
         {
             playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxStoneHitPath, this.transform.position);
             bHasHit = true;
-            goArrow.SetActive(false);
-            goxImpact.SetActive(true);
-            Tween.Delay(1f)
-                 .OnComplete(() =>
-                 {
-                     goxImpact.SetActive(false);
-                     this.gameObject.SetActive(false);
-                     target = null;
-                     this.transform.position = Vector3.zero;
-                     goArrow.SetActive(true);
-                 });
+            bulletDisappear();
         }
+    }
+
+
+    private void bulletDisappear()
+    {
+
+        goArrow.SetActive(false);
+        goxImpact.SetActive(true);
+        Tween.Delay(1f)
+             .OnComplete(() =>
+             {
+                 goxImpact.SetActive(false);
+                 this.gameObject.SetActive(false);
+                 target = null;
+                 this.transform.position = Vector3.zero;
+                 goArrow.SetActive(true);
+             });
     }
 }

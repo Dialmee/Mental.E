@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,52 +45,29 @@ public class SpawnAxe : MonoBehaviour
         }
     }
 
-    public Transform WhatFoe(bool bIsPlayer)
+    public Transform WhatFoe(bool isPlayer)
     {
-        Transform transform = this.transform;
-        float greatestDistance = 0f;
-        float newDistance = 0f;
-        GameObject Go_far = null;
-        foreach (GameObject go_foe in GO_foes)
+        float bullRange = playerManager.ps.bulletRange * 10;
+        if (!isPlayer)
         {
-            if(go_foe.activeInHierarchy && !go_foe.transform.GetComponent<FoeManager>().bIsDead)
-            {
-                newDistance = this.transform.position.z - go_foe.transform.position.z;
-                if (newDistance > greatestDistance)
-                {
-                    greatestDistance = newDistance;
-                    Go_far = go_foe;
-                }
-            }
+            bullRange *= 0.5f;
         }
-        foreach (GameObject go_ast in GO_asteroid)
-        {
-            if (go_ast.activeInHierarchy)
-            {
-                newDistance = this.transform.position.z - go_ast.transform.position.z;
-                if (newDistance > greatestDistance)
-                {
-                    greatestDistance = newDistance;
-                    Go_far = null;
-                }
-            }
-        }
-        if(bIsPlayer && newDistance < playerManager.ps.bulletRange)
-        {
-            Go_far = null;
-        }
-        else if(!bIsPlayer && newDistance < playerManager.ps.bulletRange*0.5f)
-        {
-            Go_far = null;
-        }
-        if (Go_far != null)
-        {
-            transform = Go_far.transform;
-            return transform;
-        }
-        else
-        {
+        Debug.Log(bullRange);
+        int layer= ~LayerMask.GetMask("Player");
+
+        Vector3 PosStartRaycast = new Vector3(transform.position.x, transform.position.y, playerManager.gameObject.transform.position.z);
+
+        RaycastHit hit;
+        Physics.Raycast(PosStartRaycast, Vector3.forward, out hit, bullRange, layer);
+        if (hit.collider == null)
             return null;
-        }
+
+        FoeManager foeHit = hit.collider.GetComponent<FoeManager>();
+        if (foeHit != null)
+            return foeHit.transform;
+
+        return null;
+
     }
+
 }
