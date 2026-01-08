@@ -19,6 +19,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject GO_Credits = null;
     [SerializeField] private GameObject GO_Cursor = null;
 
+    public bool bIsTuto = false;
     private bool bGameIsPaused = false;
     private bool isLoadingScene = false;
     private AsyncOperation loadingOperation;
@@ -28,7 +29,6 @@ public class PauseManager : MonoBehaviour
         {
             Cursor.visible = false;
             deathScript.bGameIsEnded = false;
-            PauseGame(false);
         }
         else
         {
@@ -37,7 +37,7 @@ public class PauseManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Keyboard.current.escapeKey.wasPressedThisFrame && GO_Pause!=null && !deathScript.bGameIsEnded)
+        if(Keyboard.current.escapeKey.wasPressedThisFrame && GO_Pause!=null && !deathScript.bGameIsEnded && !bIsTuto)
         {
             PauseMenu(!bGameIsPaused);
         }

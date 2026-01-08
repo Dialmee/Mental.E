@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "Scriptable Objects/PlayerStats")]
 public class PlayerStats : ScriptableObject
 {
+    public bool bTutoDone = false;
     public float intial_hpMax = 2f;
     public float hpMax = 2f;
     public float intial_healthRegeneration = 0.2f;
