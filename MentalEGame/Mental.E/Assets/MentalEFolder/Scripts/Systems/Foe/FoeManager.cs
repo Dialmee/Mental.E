@@ -50,7 +50,6 @@ public class FoeManager : MonoBehaviour
     {
         goMesh.SetActive(true);
         this.gameObject.SetActive(false);
-        this.transform.position = Vector3.zero;
         obstacleScrolling.enabled = true;
     }
 }

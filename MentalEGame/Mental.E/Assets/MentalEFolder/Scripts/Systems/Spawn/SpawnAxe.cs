@@ -11,37 +11,56 @@ public class SpawnAxe : MonoBehaviour
     public int iCurrentAsteroid = 0;
     public PlayerManager playerManager;
     public int iAxe = 0;
+
     private void Start()
     {
-        tr_entity = this.GetComponent<Transform>();
+        tr_entity = GetComponent<Transform>();
     }
-    public void Spawn(int hasard)
+    public void Spawn(bool isEnemie)
     {
-        if(hasard < 70)
+        if(isEnemie)
         {
-            CheckEntityEnable(iCurrentFoe, GO_foes);
+            CheckSpawnEnemie();
             iCurrentFoe += 1;
         }
         else
         {
-            CheckEntityEnable(iCurrentAsteroid, GO_asteroid);
+            CheckSpawnAsteroid();
             iCurrentAsteroid += 1;
         }
     }
-    private void CheckEntityEnable(int iCurrentEntity, List<GameObject> GO_entity)
+    private void CheckSpawnEnemie()
     {
-        if (iCurrentEntity >= GO_entity.Count && GO_entity[0].activeInHierarchy)
+        if (iCurrentFoe >= GO_foes.Count && GO_foes[0].activeInHierarchy)
         {
-            GO_entity.Add(Instantiate(GO_entity[0], this.transform.position, Quaternion.identity, tr_entity));
+            GO_foes.Add(Instantiate(GO_foes[0], transform.position, Quaternion.identity, tr_entity));
         }
-        else if (iCurrentEntity >= GO_entity.Count)
+        else if (iCurrentFoe >= GO_foes.Count)
         {
-            iCurrentEntity = 0;
-            GO_entity[0].SetActive(true);
+            iCurrentFoe = 0;
+            GO_foes[0].SetActive(true);
         }
         else
         {
-            GO_entity[iCurrentEntity].SetActive(true);
+            GO_foes[iCurrentFoe].SetActive(true);
+        }
+    }
+    private void CheckSpawnAsteroid()
+    {
+        if (iCurrentAsteroid >= GO_asteroid.Count && GO_asteroid[0].activeInHierarchy)
+        {
+            GO_asteroid.Add(Instantiate(GO_asteroid[0], transform.position, Quaternion.identity, tr_entity));
+        }
+        else if (iCurrentAsteroid >= GO_asteroid.Count)
+        {
+            iCurrentAsteroid = 0;
+            GO_asteroid[0].SetActive(true);
+            GO_asteroid[0].transform.position = transform.position;
+        }
+        else
+        {
+            GO_asteroid[iCurrentAsteroid].SetActive(true);
+            GO_asteroid[0].transform.position = transform.position;
         }
     }
 
@@ -52,10 +71,10 @@ public class SpawnAxe : MonoBehaviour
         {
             bullRange *= 0.5f;
         }
-        Debug.Log(bullRange);
         int layer= ~LayerMask.GetMask("Player");
 
-        Vector3 PosStartRaycast = new Vector3(transform.position.x, transform.position.y, playerManager.gameObject.transform.position.z);
+        Vector3 PosStartRaycast = new Vector3(transform.position.x, transform.position.y,
+            playerManager.gameObject.transform.position.z);
 
         RaycastHit hit;
         Physics.Raycast(PosStartRaycast, Vector3.forward, out hit, bullRange, layer);
