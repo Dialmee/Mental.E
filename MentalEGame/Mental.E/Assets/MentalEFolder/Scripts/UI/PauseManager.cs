@@ -38,7 +38,11 @@ public class PauseManager : MonoBehaviour
                 PauseGame(false);
             }
         }
-        soundManager.PlayMusic(eventReference);
+        else
+        {
+            PauseGame(false);
+        }
+            soundManager.PlayMusic(eventReference);
     }
     private void Update()
     {
