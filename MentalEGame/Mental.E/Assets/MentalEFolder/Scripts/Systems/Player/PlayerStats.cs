@@ -90,7 +90,7 @@ public class PlayerStats : ScriptableObject
     }
     public void upgradeMaxHp(PlayerManager playerManager)//9
     {
-        hpMax += fUpdatesNumbers[9];
+        hpMax = hpMax*fUpdatesNumbers[9];
         playerManager.lifeUpdate.MoreHPSlider();
     }
     public void moreHp(PlayerManager playerManager)//8
@@ -99,19 +99,19 @@ public class PlayerStats : ScriptableObject
     }
     public void upgradeBullDamage()//7
     {
-        bulletDamages += Mathf.RoundToInt(fUpdatesNumbers[7]);
+        bulletDamages = Mathf.RoundToInt(bulletDamages*fUpdatesNumbers[7]);
     }
     public void upgradeBullSpeed()//6
     {
-        bulletSpeed += fUpdatesNumbers[6];
+        bulletSpeed = bulletSpeed*fUpdatesNumbers[6];
     }
     public void upgradeFireRate()//5
     {
-        fireRate += fUpdatesNumbers[5];
+        fireRate = fireRate*fUpdatesNumbers[5];
     }
     public void upgradeMoveCd()//4
     {
-        moveCd += fUpdatesNumbers[4];
+        moveCd = moveCd*fUpdatesNumbers[4];
     }
     public void upgradeRegeneration()//3
     {

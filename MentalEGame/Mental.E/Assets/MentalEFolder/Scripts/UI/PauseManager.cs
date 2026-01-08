@@ -27,8 +27,15 @@ public class PauseManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == sGameSceneName)
         {
+            // TO DO : a enlever pour build
+            playerStats.Start();
+            //
             Cursor.visible = false;
             deathScript.bGameIsEnded = false;
+            if (playerStats.bTutoDone)
+            {
+                PauseGame(false);
+            }
         }
         else
         {

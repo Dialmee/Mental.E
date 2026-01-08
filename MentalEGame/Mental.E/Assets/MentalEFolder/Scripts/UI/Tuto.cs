@@ -15,14 +15,25 @@ public class Tuto : MonoBehaviour
     [SerializeField] private GameObject go_Image;
     [SerializeField] private float fDurationBubbleActivate = 0.5f;
     [SerializeField] private int iNumberBubbleToImage = 2;
+    [SerializeField] private float fWaitAfterStartLevel = 2f;
+    [SerializeField] private float fWaitAfterOpenScreen = 1f;
     [SerializeField] private TextMeshProUGUI textButton;
     private int i = 0;
     private void Start()
     {
         if(!playerStats.bTutoDone)
         {
-            OpenTuto(true);
+            OpenTutoAfterSceneLoad();
         }
+    }
+    private void OpenTutoAfterSceneLoad()
+    {
+        Sequence.Create(useUnscaledTime: true) // left = rectTransform.offsetMin.x
+                .ChainDelay(fWaitAfterStartLevel)
+                .OnComplete(() =>
+                {
+                    OpenTuto(true);
+                });
     }
     public void OpenTuto(bool bToOpen)
     {
@@ -56,6 +67,12 @@ public class Tuto : MonoBehaviour
                 tr_Bubble[i].offsetMax = new Vector2(0f, canvas.rect.height);
             }
         }
+        Sequence.Create(useUnscaledTime: true) // left = rectTransform.offsetMin.x
+                .ChainDelay(fWaitAfterOpenScreen)
+                .OnComplete(() =>
+                {
+                    NextBubble();
+                });
     }
     public void NextBubble()
     {
@@ -67,6 +84,7 @@ public class Tuto : MonoBehaviour
                 playerStats.bTutoDone = true;
             }
             pauseManager.PauseGame(false);
+            pauseManager.bIsTuto = false;
 
         }
         else
