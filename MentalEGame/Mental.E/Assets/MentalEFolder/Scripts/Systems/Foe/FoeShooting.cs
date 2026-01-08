@@ -4,11 +4,7 @@ public class FoeShooting : MonoBehaviour
 {
     [SerializeField] private FoeManager foeManager;
     [SerializeField] private SpawnAxe spawnAxe;
-    private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private Transform tr_ProjectilParent;
-    [SerializeField] private List<GameObject> GO_Projectil = new List<GameObject>(10);
-    private int iCurrentProjectil = 0;
     private float fTimer = 0f;
     [SerializeField] private float fSpeed = 5f;
     private float fDamageInitial = 5;
@@ -27,12 +23,13 @@ public class FoeShooting : MonoBehaviour
                 if (fTimer > spawnAxe.playerManager.ps.fireRate * 1.5f)
                 {
                     Shoot();
+                    Debug.Log(gameObject.name + " says piou piou !!!!");
                     fTimer = 0f;
                 }
                 if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)
                 {
                     fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
-                    foreach (GameObject projectile in GO_Projectil)
+                    foreach (GameObject projectile in spawnAxe.GO_Projectil)
                     {
                         projectile.GetComponent<FoeProjectil>().iDamage = Mathf.RoundToInt(Mathf.Floor(fDamageInitial));
                     }
@@ -47,26 +44,27 @@ public class FoeShooting : MonoBehaviour
     private void Shoot()
     {
         CheckProjectilEnable();
-        GO_Projectil[iCurrentProjectil].SetActive(true);
-        iCurrentProjectil += 1;
+        spawnAxe.GO_Projectil[spawnAxe.iCurrentProjectil].transform.position = transform.position;
+        spawnAxe.GO_Projectil[spawnAxe.iCurrentProjectil].SetActive(true);
+        spawnAxe.iCurrentProjectil += 1;
     }
     private void CheckProjectilEnable()
     {
-        if (iCurrentProjectil >= GO_Projectil.Count && GO_Projectil[0].activeInHierarchy)
+        if (spawnAxe.iCurrentProjectil >= spawnAxe.GO_Projectil.Count && spawnAxe.GO_Projectil[0].activeInHierarchy)
         {
-            GO_Projectil.Add(Instantiate(GO_Projectil[0], this.transform.position, Quaternion.identity, tr_ProjectilParent));
+            spawnAxe.GO_Projectil.Add(Instantiate(spawnAxe.GO_Projectil[0], this.transform.position, Quaternion.identity, spawnAxe.ProjectileParent));
         }
-        else if (iCurrentProjectil >= GO_Projectil.Count)
+        else if (spawnAxe.iCurrentProjectil >= spawnAxe.GO_Projectil.Count)
         {
-            iCurrentProjectil = 0;
+            spawnAxe.iCurrentProjectil = 0;
         }
     }
     private void CheckProjectilDisable()
     {
         bool bisActive = false;
-        for (int i = 0; i < GO_Projectil.Count; i++)
+        for (int i = 0; i < spawnAxe.GO_Projectil.Count; i++)
         {
-            if (GO_Projectil[i].activeInHierarchy)
+            if (spawnAxe.GO_Projectil[i].activeInHierarchy)
             {
                 bisActive = true;
             }
