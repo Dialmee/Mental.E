@@ -12,9 +12,9 @@ public class FoeProjectil : MonoBehaviour
     private void OnEnable()
     {
         bHasHit = false;
-        this.transform.localPosition = Vector3.zero;
         goBullet.SetActive(true);
         goxImpact.SetActive(false);
+        Debug.Log(transform.position);
     }
     private void Update()
     {

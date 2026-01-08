@@ -6,6 +6,9 @@ public class SpawnAxe : MonoBehaviour
 {
     public List<GameObject> GO_foes = new List<GameObject>(1);
     public List<GameObject> GO_asteroid = new List<GameObject>(1);
+    public List<GameObject> GO_Projectil = new List<GameObject>(10);
+    public Transform ProjectileParent;
+    public int iCurrentProjectil = 0;
     private Transform tr_entity;
     public int iCurrentFoe = 0;
     public int iCurrentAsteroid = 0;
