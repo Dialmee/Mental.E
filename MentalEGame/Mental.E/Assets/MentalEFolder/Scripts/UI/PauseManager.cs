@@ -18,6 +18,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject GO_UpgradeScreen = null;
     [SerializeField] private GameObject GO_Credits = null;
     [SerializeField] private GameObject GO_Cursor = null;
+    [SerializeField] private FMODUnity.EventReference eventReference;
 
     public bool bIsTuto = false;
     private bool bGameIsPaused = false;
@@ -25,22 +26,19 @@ public class PauseManager : MonoBehaviour
     private AsyncOperation loadingOperation;
     private void Start()
     {
+        Cursor.visible = false;
         if (SceneManager.GetActiveScene().name == sGameSceneName)
         {
             // TO DO : a enlever pour build
             playerStats.Start();
             //
-            Cursor.visible = false;
             deathScript.bGameIsEnded = false;
             if (playerStats.bTutoDone)
             {
                 PauseGame(false);
             }
         }
-        else
-        {
-            Cursor.visible = true;
-        }
+        soundManager.PlayMusic(eventReference);
     }
     private void Update()
     {

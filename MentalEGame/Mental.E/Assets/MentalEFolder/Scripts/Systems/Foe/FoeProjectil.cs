@@ -14,7 +14,6 @@ public class FoeProjectil : MonoBehaviour
         bHasHit = false;
         goBullet.SetActive(true);
         goxImpact.SetActive(false);
-        Debug.Log(transform.position);
     }
     private void Update()
     {

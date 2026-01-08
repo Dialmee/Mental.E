@@ -16,14 +16,12 @@ public class FoeShooting : MonoBehaviour
         if (spawnAxe.playerManager.playerMouvement.getiAxe() == spawnAxe.iAxe && !foeManager.bIsDead)
         {
             Transform transform = spawnAxe.WhatFoe(false, layerMask);
-            Debug.Log("the final transform is " + transform);
             fTimer += Time.deltaTime;
             if (transform != null)
             {
                 if (fTimer > spawnAxe.playerManager.ps.fireRate)
                 {
                     Shoot();
-                    Debug.Log(gameObject.name + " says piou piou !!!!");
                     fTimer = 0f;
                 }
                 if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)

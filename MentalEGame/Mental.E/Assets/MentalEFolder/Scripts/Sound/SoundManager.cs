@@ -3,18 +3,29 @@ using FMODUnity;
 using Mono.Cecil;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using static UnityEngine.Rendering.VolumeComponent;
 
 public class SoundManager : MonoBehaviour
 {
+    [SerializeField] private string sGameSceneName = "MentalEGame";
     public float fPausedVolume = 0f;
     public float fPlayingVolume = 1f;
     public SoundManagerConfig soundManagerConfig;
     private void Start()
     {
-        soundManagerConfig.music_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.musicVcaName);
-        soundManagerConfig.sfx_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.sfxVcaName);
-        soundManagerConfig.ui_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.uiVcaName);
+        if(!soundManagerConfig.music_VCA.isValid())
+        {
+            soundManagerConfig.music_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.musicVcaName);
+        }
+        if(!soundManagerConfig.sfx_VCA.isValid())
+        {
+            soundManagerConfig.sfx_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.sfxVcaName);
+        }
+        if(!soundManagerConfig.ui_VCA.isValid())
+        {
+            soundManagerConfig.ui_VCA = FMODUnity.RuntimeManager.GetVCA(soundManagerConfig.uiVcaName);
+        }
         fPlayingVolume = soundManagerConfig.fVolumeMusic;
         fPausedVolume = fPlayingVolume*0.4f;
     }
@@ -40,14 +51,17 @@ public class SoundManager : MonoBehaviour
     }
     public void PausedVolume(bool toPause)
     {
-        if (toPause)
+        if(SceneManager.GetActiveScene().name == sGameSceneName)
         {
-            fPausedVolume = fPlayingVolume * 0.4f;
-            VolumeChanging(soundManagerConfig.music_VCA, fPausedVolume);
-        }
-        else
-        {
-            VolumeChanging(soundManagerConfig.music_VCA, fPlayingVolume);
+            if (toPause)
+            {
+                fPausedVolume = fPlayingVolume * 0.4f;
+                VolumeChanging(soundManagerConfig.music_VCA, fPausedVolume);
+            }
+            else
+            {
+                VolumeChanging(soundManagerConfig.music_VCA, fPlayingVolume);
+            }
         }
     }
 
