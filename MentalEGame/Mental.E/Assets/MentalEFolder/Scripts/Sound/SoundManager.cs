@@ -1,10 +1,7 @@
 using FMOD.Studio;
 using FMODUnity;
-using Mono.Cecil;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.VolumeComponent;
 
 public class SoundManager : MonoBehaviour
 {
