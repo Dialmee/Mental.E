@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7272960810175048084}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: PlayerProjectileParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,10 +96,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8611443367359331907, guid: 11335f41bc22a194db85aacfe1e6ab14, type: 3}
-      propertyPath: fSpeed
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -169,10 +165,6 @@ PrefabInstance:
     - target: {fileID: 5813094763105604080, guid: 11335f41bc22a194db85aacfe1e6ab14, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8611443367359331907, guid: 11335f41bc22a194db85aacfe1e6ab14, type: 3}
-      propertyPath: fSpeed
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -244,10 +236,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8611443367359331907, guid: 11335f41bc22a194db85aacfe1e6ab14, type: 3}
-      propertyPath: fSpeed
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -318,10 +306,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8611443367359331907, guid: 11335f41bc22a194db85aacfe1e6ab14, type: 3}
-      propertyPath: fSpeed
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -391,10 +375,6 @@ PrefabInstance:
     - target: {fileID: 5813094763105604080, guid: 11335f41bc22a194db85aacfe1e6ab14, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8611443367359331907, guid: 11335f41bc22a194db85aacfe1e6ab14, type: 3}
-      propertyPath: fSpeed
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8611443367359331907, guid: 11335f41bc22a194db85aacfe1e6ab14, type: 3}
       propertyPath: fTresholdZ

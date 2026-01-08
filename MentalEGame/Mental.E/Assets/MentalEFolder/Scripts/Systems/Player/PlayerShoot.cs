@@ -62,7 +62,7 @@ public class PlayerShoot : MonoBehaviour
             fTimer[0] += Time.deltaTime;
             if (fTimer[0] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[iAxe].WhatFoe(true);
+                Transform target = spawnAxes[iAxe].WhatFoe(true, layerMask);
                 if(target != null)
                 {
                     Shoot(target);
@@ -75,7 +75,7 @@ public class PlayerShoot : MonoBehaviour
             fTimer[1] += Time.deltaTime;
             if (fTimer[1] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[iAxe + 1].WhatFoe(true);
+                Transform target = spawnAxes[iAxe + 1].WhatFoe(true, layerMask);
                 if(target != null)
                 {
                     Shoot(target);
@@ -88,7 +88,7 @@ public class PlayerShoot : MonoBehaviour
             fTimer[2] += Time.deltaTime;
             if (fTimer[2] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[iAxe - 1].WhatFoe(true);
+                Transform target = spawnAxes[iAxe - 1].WhatFoe(true, layerMask);
                 if (target != null)
                 {
                     Shoot(target);
@@ -101,7 +101,7 @@ public class PlayerShoot : MonoBehaviour
             fTimer[3] += Time.deltaTime;
             if (fTimer[3] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[iAxe - 3].WhatFoe(true);
+                Transform target = spawnAxes[iAxe - 3].WhatFoe(true, layerMask);
                 if (target != null)
                 {
                     Shoot(target);
@@ -114,7 +114,7 @@ public class PlayerShoot : MonoBehaviour
             fTimer[4] += Time.deltaTime;
             if (fTimer[4] > playerManager.ps.fireRate)
             {
-                Transform target = spawnAxes[iAxe + 3].WhatFoe(true);
+                Transform target = spawnAxes[iAxe + 3].WhatFoe(true, layerMask);
                 if (target != null)
                 {
                     Shoot(target);

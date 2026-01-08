@@ -67,29 +67,44 @@ public class SpawnAxe : MonoBehaviour
         }
     }
 
-    public Transform WhatFoe(bool isPlayer)
+    public Transform WhatFoe(bool isPlayer, LayerMask layerMask)
     {
         float bullRange = playerManager.ps.bulletRange * 10;
         if (!isPlayer)
         {
-            bullRange *= 0.5f;
+            bullRange = bullRange*0.8f;
         }
-        int layer= ~LayerMask.GetMask("Player");
-
-        Vector3 PosStartRaycast = new Vector3(transform.position.x, transform.position.y,
-            playerManager.gameObject.transform.position.z);
-
+        Vector3 PosStartRaycast = this.transform.position;
         RaycastHit hit;
-        Physics.Raycast(PosStartRaycast, Vector3.forward, out hit, bullRange, layer);
+        Vector3 direction = Vector3.forward;
+        if (!isPlayer)
+        {
+            PosStartRaycast = new Vector3(transform.position.x, transform.position.y, this.gameObject.transform.position.z);
+            direction = Vector3.back;
+        }
+        else
+        {
+            PosStartRaycast = new Vector3(transform.position.x, transform.position.y,  playerManager.gameObject.transform.position.z);
+            direction = Vector3.forward;
+        }
+            Physics.Raycast(PosStartRaycast, direction, out hit, bullRange, layerMask);
         if (hit.collider == null)
+        {
             return null;
-
-        FoeManager foeHit = hit.collider.GetComponent<FoeManager>();
-        if (foeHit != null)
-            return foeHit.transform;
-
-        return null;
-
+        }
+        else
+        {
+            /*FoeManager foeHit = hit.collider.GetComponent<FoeManager>();
+            if (foeHit != null)
+            {
+                Debug.Log(foeHit.transform);
+                return foeHit.transform;
+            }
+            else
+            {
+                return null;
+            }*/
+            return hit.collider.transform;
+        }
     }
-
 }

@@ -6,7 +6,6 @@ public class FoeShooting : MonoBehaviour
     [SerializeField] private SpawnAxe spawnAxe;
     [SerializeField] private LayerMask layerMask;
     private float fTimer = 0f;
-    [SerializeField] private float fSpeed = 5f;
     private float fDamageInitial = 5;
     private void Start()
     {
@@ -16,11 +15,12 @@ public class FoeShooting : MonoBehaviour
     {
         if (spawnAxe.playerManager.playerMouvement.getiAxe() == spawnAxe.iAxe && !foeManager.bIsDead)
         {
-            Transform transform = spawnAxe.WhatFoe(false);
+            Transform transform = spawnAxe.WhatFoe(false, layerMask);
+            Debug.Log("the final transform is " + transform);
             fTimer += Time.deltaTime;
-            if (transform == this.transform)
+            if (transform != null)
             {
-                if (fTimer > spawnAxe.playerManager.ps.fireRate * 1.5f)
+                if (fTimer > spawnAxe.playerManager.ps.fireRate)
                 {
                     Shoot();
                     Debug.Log(gameObject.name + " says piou piou !!!!");

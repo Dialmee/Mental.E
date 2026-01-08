@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1b13a10ac41684aaa2f7db79716fd6, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  bTutoDone: 1
+  bTutoDone: 0
   intial_hpMax: 50
   hpMax: 50
   intial_healthRegeneration: 0.2
@@ -21,10 +21,10 @@ MonoBehaviour:
   bulletDamages: 10
   intial_bulletSpeed: 10
   bulletSpeed: 10
-  initial_bulletRange: 10
-  bulletRange: 10
-  initial_fireRate: 1
-  fireRate: 1
+  initial_bulletRange: 20
+  bulletRange: 20
+  initial_fireRate: 2
+  fireRate: 2
   initial_moveCd: 1
   moveCd: 1
   initial_nbBullets: 0100000000000000000000000000000000000000

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3480291713265025689}
   - component: {fileID: 3811135241143707117}
   - component: {fileID: 7826968470929673306}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1689957933800338566}
   - component: {fileID: 8611443367359331907}
   - component: {fileID: 782804408859144239}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: PlayerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,11 +265,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5368160190194347335, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5950848718881562560, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7125245022276328452, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: m_Name
@@ -277,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7125245022276328452, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7125245022276328452, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: m_IsActive
@@ -285,7 +285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8860477641026107163, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176160449225705707, guid: f8c3c1368a7de5d4aa8b5366f319ef36, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3306628981468979504, guid: f8c3c1368a7de5d4aa8b5366f319ef36, type: 3}
       propertyPath: m_Name
@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306628981468979504, guid: f8c3c1368a7de5d4aa8b5366f319ef36, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3390500267029261552, guid: f8c3c1368a7de5d4aa8b5366f319ef36, type: 3}
       propertyPath: m_LocalScale.x

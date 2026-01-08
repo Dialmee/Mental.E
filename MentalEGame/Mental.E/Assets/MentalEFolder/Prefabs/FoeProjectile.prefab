@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1348963740303818961}
   - component: {fileID: 5831896047753029567}
   - component: {fileID: 7159800895952751523}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FoeProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goBullet: {fileID: 3463401010873713409}
   goxImpact: {fileID: 7557336865516577244}
-  fSpeed: 12
+  fSpeed: 15
   iDamage: 10
 --- !u!135 &7159800895952751523
 SphereCollider:
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 2271714280191275850}
   - component: {fileID: 5904284407061274515}
   - component: {fileID: 7380362267815955973}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 9aff38c3305dc4e48a0115fac9959d9b, type: 2}
+    - target: {fileID: 5368160190194347335, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5889651885327516716, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.b
       value: 0.29803923
@@ -267,9 +271,17 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key2.r
       value: 0.14509805
       objectReference: {fileID: 0}
+    - target: {fileID: 5950848718881562560, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7125245022276328452, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: m_Name
       value: VfxHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7125245022276328452, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7125245022276328452, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: m_IsActive
@@ -335,6 +347,10 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0.14380859
       objectReference: {fileID: 0}
+    - target: {fileID: 8860477641026107163, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8974210926524605783, guid: 1144e7cba96b75c49ba85b2fb0fb7622, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -362,6 +378,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1348963740303818961}
     m_Modifications:
+    - target: {fileID: 428109790016821272, guid: 04ea3497c27d0ed41b8c99d35eb740bb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1710626612884879380, guid: 04ea3497c27d0ed41b8c99d35eb740bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -407,8 +427,20 @@ PrefabInstance:
       value: vfx_foeBullet
       objectReference: {fileID: 0}
     - target: {fileID: 4602051264700525002, guid: 04ea3497c27d0ed41b8c99d35eb740bb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602051264700525002, guid: 04ea3497c27d0ed41b8c99d35eb740bb, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004135356910083559, guid: 04ea3497c27d0ed41b8c99d35eb740bb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7148371406693785348, guid: 04ea3497c27d0ed41b8c99d35eb740bb, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
