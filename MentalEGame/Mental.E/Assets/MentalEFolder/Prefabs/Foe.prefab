@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40007fb8839867d46a9fd2f99d2ad503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foeStats: {fileID: 11400000, guid: d9972ec3cc37d064b827584d0f2b8041, type: 2}
   foeManager: {fileID: 2286167367854805600}
   spawnAxe: {fileID: 0}
   layerMask:
@@ -80,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf40c1921387044d8561793da11d55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foeStats: {fileID: 11400000, guid: d9972ec3cc37d064b827584d0f2b8041, type: 2}
   boxCollider: {fileID: 390040224987378878}
   obstacleScrolling: {fileID: 516326092857701701}
   goMesh: {fileID: 979225296299586205}

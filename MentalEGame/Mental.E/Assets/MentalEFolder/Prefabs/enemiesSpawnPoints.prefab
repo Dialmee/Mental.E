@@ -64,10 +64,9 @@ MonoBehaviour:
   - {fileID: 8833429658358163320}
   - {fileID: 4772924364869184258}
   - {fileID: 4816644547170571116}
+  foeStat: {fileID: 11400000, guid: d9972ec3cc37d064b827584d0f2b8041, type: 2}
   baseEnemiesNumber: 2
   baseAsteroidNumber: 1
-  timeBetweenRound: 5
-  timeBetweenWave: 5
   round: 1
 --- !u!1001 &619198266064559375
 PrefabInstance:

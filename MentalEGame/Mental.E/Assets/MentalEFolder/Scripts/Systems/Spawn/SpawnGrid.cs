@@ -25,6 +25,12 @@ public class SpawnGrid : MonoBehaviour
     private float _tNextRoundSpawn = 0f;
     private float _tNextWaveSpawn = 0f;
 
+    private void Start()
+    {
+        foeStat.Start();
+    }
+
+
     private void Update()
     {
         TimerCheck();
@@ -52,8 +58,8 @@ public class SpawnGrid : MonoBehaviour
 
     private void CalculateEnemieRound()
     {
-        int nbEnemie = baseEnemiesNumber + round%5 + (round/5)*2;
-        int nbAsteroid = baseAsteroidNumber + round % 5 + (round / 5) * 2;
+        int nbEnemie = baseEnemiesNumber + (baseEnemiesNumber * (round / 5));
+        int nbAsteroid = baseAsteroidNumber + (baseEnemiesNumber * (round / 5));
 
         foeStat.maxHP = foeStat.initialMaxHP * (round/3);
         foeStat.BulletDamage = foeStat.initialBulletDamage * (round / 5);

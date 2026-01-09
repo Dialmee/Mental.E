@@ -11,7 +11,6 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private Tuto tuto;
     public DeathScript deathScript;
     public PlayerStats playerStats;
-    public FoeStat foeStats;
     public SoundManager soundManager;
     [SerializeField] private string sGameSceneName = null;
     [SerializeField] private GameObject GO_Pause = null;
@@ -33,7 +32,6 @@ public class PauseManager : MonoBehaviour
         {
             // TO DO : a enlever pour build
             playerStats.Start();
-            foeStats.Start();
             //
             deathScript.bGameIsEnded = false;
             if (playerStats.bTutoDone)
@@ -96,7 +94,6 @@ public class PauseManager : MonoBehaviour
     public void LoaderScene(string sceneToLoad)
     {
         playerStats.Start();
-        foeStats.Start();
         if (sceneToLoad== "MainMenu" || sceneToLoad == "Scenes/Game/MainMenu")
         {
             uiUpgradesConfig.iNextUpgrade = 10;
