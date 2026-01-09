@@ -61,7 +61,7 @@ public class SpawnGrid : MonoBehaviour
         int nbEnemie = baseEnemiesNumber + (baseEnemiesNumber * (round / 5));
         int nbAsteroid = baseAsteroidNumber + (baseEnemiesNumber * (round / 5));
 
-        foeStat.maxHP = foeStat.initialMaxHP * (round/3);
+        foeStat.maxHP = foeStat.initialMaxHP * (round/5);
         foeStat.BulletDamage = foeStat.initialBulletDamage * (round / 5);
 
         Debug.Log("For this round "+round+", enemies: "+nbEnemie+" and asteroids:"+nbAsteroid);
