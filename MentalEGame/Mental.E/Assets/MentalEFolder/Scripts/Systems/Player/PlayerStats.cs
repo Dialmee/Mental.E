@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerStats : ScriptableObject
 {
     public bool bTutoDone = false;
+    /*public float intial_fSpeed = 2f;
+    public float fSpeed = 2f;*/
     public float intial_hpMax = 2f;
     public float hpMax = 2f;
     public float intial_healthRegeneration = 0.2f;
@@ -13,6 +15,7 @@ public class PlayerStats : ScriptableObject
     public int bulletDamages = 2;
     public float intial_bulletSpeed = 2f;
     public float bulletSpeed = 2f;
+    public float fBulletSpeedNow = 2f;
     public float initial_bulletRange = 2f;
     public float bulletRange = 2f;
     public float initial_fireRate = 2f;

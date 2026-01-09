@@ -43,7 +43,8 @@ public class PlayerProjectile : MonoBehaviour
 
         if (this.gameObject.activeInHierarchy && target !=null && !bHasHit)
         {
-            if(target.gameObject.activeInHierarchy)
+            fSpeed = WholeTimerScript.Instance.fFoeSpeed;
+            if (target.gameObject.activeInHierarchy)
             {
                 Vector3 direction = (Vector3)target.position - rb.position;
                 direction.Normalize();

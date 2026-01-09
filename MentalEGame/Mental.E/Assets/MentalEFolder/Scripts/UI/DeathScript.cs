@@ -19,13 +19,13 @@ public class DeathScript : MonoBehaviour
     }
     public void StartDeath()
     {
+        bGameIsEnded = true;
         GO_RestartScreen.SetActive(true);
     }
     public void StartAgain(bool bAmeliorationFirst)
     {
         if (bAmeliorationFirst)
         {
-            bGameIsEnded = true;
             int i = iHasard(0, 9);
             pauseManager.uiUpgradesConfig.iNextUpgrade = i;
             imageDeathButtonAmelioration.sprite = pauseManager.uiUpgradesConfig.sprites_update[i];

@@ -30,7 +30,7 @@ public class PlayerShoot : MonoBehaviour
             proj.target = target;
             proj.playerTr = this.transform;
             proj.iDamage = playerManager.ps.bulletDamages;
-            proj.fSpeed = playerManager.ps.bulletSpeed;
+            proj.fSpeed = playerManager.ps.fBulletSpeedNow;
             iCurrentProjectil += 1;
             if(playerManager.pauseManager.soundManager != null)
             {
