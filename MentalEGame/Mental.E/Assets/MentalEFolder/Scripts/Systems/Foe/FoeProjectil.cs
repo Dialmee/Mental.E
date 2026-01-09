@@ -4,6 +4,7 @@ using UnityEngine.VFX;
 
 public class FoeProjectil : MonoBehaviour
 {
+    [SerializeField] private FoeStat foeStats;
     [SerializeField] private GameObject goBullet = null;
     [SerializeField] private GameObject goxImpact = null;
     [SerializeField] private float fSpeed = 10f;
@@ -11,6 +12,7 @@ public class FoeProjectil : MonoBehaviour
     public int iDamage = 10;
     private void OnEnable()
     {
+        fSpeed = foeStats.bulletSpeed;
         bHasHit = false;
         goBullet.SetActive(true);
         goxImpact.SetActive(false);

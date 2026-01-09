@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "Scriptable Objects/PlayerStats")]

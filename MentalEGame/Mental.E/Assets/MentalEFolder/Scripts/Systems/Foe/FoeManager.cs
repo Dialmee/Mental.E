@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FoeManager : MonoBehaviour
 {
+    [SerializeField] private FoeStat foeStats;
     [SerializeField] private BoxCollider boxCollider;
     [SerializeField] private ObstacleScrolling obstacleScrolling;
     [SerializeField] private GameObject goMesh;
@@ -17,6 +18,7 @@ public class FoeManager : MonoBehaviour
     private void OnEnable()
     {
         activationAssets(true);
+        maxHp = foeStats.maxHP;
         hp = maxHp;
     }
     public void TakeDamage(int nb)

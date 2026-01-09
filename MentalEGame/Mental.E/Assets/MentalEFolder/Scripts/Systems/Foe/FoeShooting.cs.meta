@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 40007fb8839867d46a9fd2f99d2ad503
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - foeStats: {fileID: 11400000, guid: d9972ec3cc37d064b827584d0f2b8041, type: 2}
+  - foeManager: {instanceID: 0}
+  - spawnAxe: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

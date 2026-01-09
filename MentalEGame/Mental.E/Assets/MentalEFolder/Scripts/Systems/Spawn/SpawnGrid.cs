@@ -8,6 +8,7 @@ public class SpawnGrid : MonoBehaviour
     //TODO: round calculation and modification of enemies stats
     public float fFrequence = 10f;
     [SerializeField]private SpawnAxe[] spawnAxes = new SpawnAxe[9];
+    [SerializeField] private FoeStat foeStat;
 
     [SerializeField] private int baseEnemiesNumber = 2;
     [SerializeField] private int baseAsteroidNumber = 1;
@@ -53,6 +54,10 @@ public class SpawnGrid : MonoBehaviour
     {
         int nbEnemie = baseEnemiesNumber + round%5 + (round/5)*2;
         int nbAsteroid = baseAsteroidNumber + round % 5 + (round / 5) * 2;
+
+        foeStat.maxHP = foeStat.initialMaxHP * (round/3);
+        foeStat.BulletDamage = foeStat.initialBulletDamage * (round / 5);
+        foeStat.bulletSpeed = foeStat.initialBulletSpeed * (round / 6);
 
         Debug.Log("For this round "+round+", enemies: "+nbEnemie+" and asteroids:"+nbAsteroid);
 

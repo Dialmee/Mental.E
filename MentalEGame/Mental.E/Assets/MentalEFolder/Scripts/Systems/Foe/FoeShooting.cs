@@ -2,14 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 public class FoeShooting : MonoBehaviour
 {
+    [SerializeField] private FoeStat foeStats;
     [SerializeField] private FoeManager foeManager;
     [SerializeField] private SpawnAxe spawnAxe;
     [SerializeField] private LayerMask layerMask;
+    private float fDamageInitial;
     private float fTimer = 0f;
-    private float fDamageInitial = 5;
+    //private float fDamageInitial = 5;
     private void Start()
     {
-        fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
+
+        fDamageInitial = foeStats.BulletDamage;
     }
     private void Update()
     {
