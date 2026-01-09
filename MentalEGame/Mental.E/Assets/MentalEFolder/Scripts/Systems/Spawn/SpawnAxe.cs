@@ -34,39 +34,30 @@ public class SpawnAxe : MonoBehaviour
     }
     private void CheckSpawnEnemie()
     {
-        if (iCurrentFoe >= GO_foes.Count && GO_foes[0].activeInHierarchy)
+        foreach (GameObject go in GO_foes)
         {
-            GO_foes.Add(Instantiate(GO_foes[0], transform.position, Quaternion.identity, tr_entity));
+            if (!go.activeInHierarchy)
+            {
+                go.SetActive(true);
+                go.transform.position = transform.position;
+                return;
+            }
         }
-        else if (iCurrentFoe >= GO_foes.Count)
-        {
-            iCurrentFoe = 0;
-            GO_foes[0].SetActive(true);
-            GO_foes[0].transform.position = transform.position;
-        }
-        else
-        {
-            GO_foes[iCurrentFoe].SetActive(true);
-            GO_foes[0].transform.position = transform.position;
-        }
+        GO_foes.Add(Instantiate(GO_foes[0], transform.position, Quaternion.identity, tr_entity));
+        
     }
     private void CheckSpawnAsteroid()
     {
-        if (iCurrentAsteroid >= GO_asteroid.Count && GO_asteroid[0].activeInHierarchy)
+        foreach (GameObject go in GO_asteroid)
         {
-            GO_asteroid.Add(Instantiate(GO_asteroid[0], transform.position, Quaternion.identity, tr_entity));
+            if (!go.activeInHierarchy)
+            {
+                go.SetActive(true);
+                go.transform.position = transform.position;
+                return;
+            }
         }
-        else if (iCurrentAsteroid >= GO_asteroid.Count)
-        {
-            iCurrentAsteroid = 0;
-            GO_asteroid[0].SetActive(true);
-            GO_asteroid[0].transform.position = transform.position;
-        }
-        else
-        {
-            GO_asteroid[iCurrentAsteroid].SetActive(true);
-            GO_asteroid[0].transform.position = transform.position;
-        }
+        GO_asteroid.Add(Instantiate(GO_asteroid[0], transform.position, Quaternion.identity, tr_entity));
     }
 
     public Transform WhatFoe(bool isPlayer, LayerMask layerMask)
