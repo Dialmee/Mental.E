@@ -29,7 +29,6 @@ public class FoeShooting : MonoBehaviour
                 }
                 if (fDamageInitial != spawnAxe.playerManager.ps.bulletDamages * 0.5f)
                 {
-                    fDamageInitial = spawnAxe.playerManager.ps.bulletDamages * 0.5f;
                     foreach (GameObject projectile in spawnAxe.GO_Projectil)
                     {
                         projectile.GetComponent<FoeProjectil>().iDamage = Mathf.RoundToInt(Mathf.Floor(fDamageInitial));
