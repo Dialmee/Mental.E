@@ -36,7 +36,14 @@ public class FoeShooting : MonoBehaviour
         }
         else if (foeManager.bIsDead)
         {
-            CheckProjectilDisable();
+            bool bisActive = false;
+            for (int i = 0; i < spawnAxe.GO_Projectil.Count; i++)
+            {
+                if (spawnAxe.GO_Projectil[i].activeInHierarchy)
+                {
+                    bisActive = true;
+                }
+            }
         }
     }
     private void Shoot()
@@ -55,21 +62,6 @@ public class FoeShooting : MonoBehaviour
         else if (spawnAxe.iCurrentProjectil >= spawnAxe.GO_Projectil.Count)
         {
             spawnAxe.iCurrentProjectil = 0;
-        }
-    }
-    private void CheckProjectilDisable()
-    {
-        bool bisActive = false;
-        for (int i = 0; i < spawnAxe.GO_Projectil.Count; i++)
-        {
-            if (spawnAxe.GO_Projectil[i].activeInHierarchy)
-            {
-                bisActive = true;
-            }
-        }
-        if (!bisActive)
-        {
-            foeManager.Death();
         }
     }
 }

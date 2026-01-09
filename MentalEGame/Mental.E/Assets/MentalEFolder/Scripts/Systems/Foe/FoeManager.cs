@@ -16,15 +16,14 @@ public class FoeManager : MonoBehaviour
 
     private void OnEnable()
     {
-        boxCollider.enabled = true;
-        bIsDead = false;
+        activationAssets(true);
         hp = maxHp;
     }
     public void TakeDamage(int nb)
     {
         playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxLazerHitPath, this.transform.position);
         hp -= nb;
-        if (hp <= 0)
+        if (hp <= 0 && !bIsDead)
         {
             hp = 0;
             vfxDeath();
@@ -34,22 +33,22 @@ public class FoeManager : MonoBehaviour
     private void vfxDeath()
     {
         playerManager.pauseManager.soundManager.PlayOneShot(playerManager.pauseManager.soundManager.soundManagerConfig.sfxExplosionPath, this.transform.position);
-        boxCollider.enabled = false;
-        obstacleScrolling.enabled = false;
-        goMesh.SetActive(false);
+        activationAssets(false);
         goVfxBOOM.SetActive(true);
         psvfxBOOM.Play();
-        Tween.Delay(2f)
-            .OnComplete(() => {
-                bIsDead = true;
-                playerManager.GainXP(fXPifDie);
-                goVfxBOOM.SetActive(false);
-            });
+        playerManager.GainXP(fXPifDie);
+        Tween.Delay(2f).OnComplete(() =>
+        {
+            goVfxBOOM.SetActive(false);
+            gameObject.SetActive(false);
+        });
     }
-    public void Death()
+
+    private void activationAssets(bool state)
     {
-        goMesh.SetActive(true);
-        this.gameObject.SetActive(false);
-        obstacleScrolling.enabled = true;
+        boxCollider.enabled = state;
+        obstacleScrolling.enabled = state;
+        goMesh.SetActive(state);
+        bIsDead = !state;
     }
 }

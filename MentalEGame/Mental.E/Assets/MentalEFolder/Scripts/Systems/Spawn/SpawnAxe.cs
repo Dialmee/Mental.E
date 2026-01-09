@@ -42,10 +42,12 @@ public class SpawnAxe : MonoBehaviour
         {
             iCurrentFoe = 0;
             GO_foes[0].SetActive(true);
+            GO_foes[0].transform.position = transform.position;
         }
         else
         {
             GO_foes[iCurrentFoe].SetActive(true);
+            GO_foes[0].transform.position = transform.position;
         }
     }
     private void CheckSpawnAsteroid()
