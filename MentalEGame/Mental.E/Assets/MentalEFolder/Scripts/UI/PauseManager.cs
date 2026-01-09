@@ -40,7 +40,9 @@ public class PauseManager : MonoBehaviour
         }
         else
         {
-            PauseGame(false);
+            Time.timeScale = 1f;
+            //Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
             soundManager.PlayMusic(eventReference);
     }
