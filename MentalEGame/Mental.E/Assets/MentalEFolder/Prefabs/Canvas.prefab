@@ -3312,7 +3312,7 @@ MonoBehaviour:
   deathScript: {fileID: 4371227885997552726}
   playerStats: {fileID: 11400000, guid: 6c06d2a16696cb9419c2846ea57ffbdd, type: 2}
   soundManager: {fileID: 49901314324181742}
-  sGameSceneName: Dialme
+  sGameSceneName: MentalEGame
   GO_Pause: {fileID: 7292108240577887929}
   GO_ResumePauseScreen: {fileID: 8545286708670630807}
   GO_SettingsScreen: {fileID: 1704386906302132328}
