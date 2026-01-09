@@ -5,16 +5,13 @@ public class FoeStat : ScriptableObject
 {
     public float initialMaxHP = 20;
     public float initialBulletDamage = 10;
-    public float initialBulletSpeed = 10;
 
-    public float maxHP;
-    public float BulletDamage; 
-    public float bulletSpeed; 
+    public float maxHP = 20;
+    public float BulletDamage = 10; 
     public void Start()
     {
         maxHP = initialMaxHP;
         BulletDamage = initialBulletDamage;
-        bulletSpeed = -1*initialBulletSpeed;
     }
 
 }

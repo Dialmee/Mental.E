@@ -61,14 +61,13 @@ public class SpawnGrid : MonoBehaviour
         int nbEnemie = baseEnemiesNumber + (baseEnemiesNumber * (round / 5));
         int nbAsteroid = baseAsteroidNumber + (baseEnemiesNumber * (round / 5));
 
-        foeStat.maxHP = foeStat.initialMaxHP * (round/3);
+        foeStat.maxHP = foeStat.initialMaxHP * (round/5);
         foeStat.BulletDamage = foeStat.initialBulletDamage * (round / 5);
-        foeStat.bulletSpeed = foeStat.initialBulletSpeed * (round / 6);
 
         Debug.Log("For this round "+round+", enemies: "+nbEnemie+" and asteroids:"+nbAsteroid);
 
-        RoundBuffer[0] = nbEnemie; //enemie
-        RoundBuffer[1] = nbAsteroid; //asteroid
+        RoundBuffer[0] = nbEnemie; 
+        RoundBuffer[1] = nbAsteroid; 
     }
 
     private void EndSpawnRound()
