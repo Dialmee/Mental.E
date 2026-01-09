@@ -29,7 +29,7 @@ MonoBehaviour:
   moveCd: 1
   initial_nbBullets: 0100000000000000000000000000000000000000
   nbBullets: 0100000000000000000000000000000000000000
-  iLevel: 11
+  iLevel: 0
   initial_fXPmax: 100
   fXPmax: 100
   fUpdatesNumbers:
@@ -43,4 +43,4 @@ MonoBehaviour:
   - 1.2
   - 0
   - 1.2
-  iUpdate: 00000000040000000000000000000000
+  iUpdate: 00000000000000000000000000000000
