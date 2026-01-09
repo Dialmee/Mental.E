@@ -2094,10 +2094,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6891599497838843284}
-        m_TargetAssemblyTypeName: Tuto, Assembly-CSharp
-        m_MethodName: OpenTuto
-        m_Mode: 6
+      - m_Target: {fileID: 3975269077829349184}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: TutoFromButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3593,6 +3593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiUpgradesConfig: {fileID: 11400000, guid: 15d6f6ef43da33f44a7d0184b356b496, type: 2}
+  tuto: {fileID: 6891599497838843284}
   deathScript: {fileID: 4371227885997552726}
   playerStats: {fileID: 11400000, guid: 6c06d2a16696cb9419c2846ea57ffbdd, type: 2}
   soundManager: {fileID: 49901314324181742}

@@ -8,6 +8,7 @@ public class PauseManager : MonoBehaviour
 {
     public uiUpgradesConfig uiUpgradesConfig;
 
+    [SerializeField] private Tuto tuto;
     public DeathScript deathScript;
     public PlayerStats playerStats;
     public SoundManager soundManager;
@@ -72,6 +73,12 @@ public class PauseManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
         soundManager.PausedVolume(toPause);
+    }
+    public void TutoFromButton()
+    {
+        GO_Pause.SetActive(false);
+        bGameIsPaused = false;
+        tuto.OpenTuto(true);
     }
     public void SettingsOpen(bool toOpen)
     {
