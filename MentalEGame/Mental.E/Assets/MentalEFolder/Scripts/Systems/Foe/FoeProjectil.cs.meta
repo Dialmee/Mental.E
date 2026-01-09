@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: ca518a2884f25504a9508e067c73ff57
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - foeStats: {fileID: 11400000, guid: d9972ec3cc37d064b827584d0f2b8041, type: 2}
+  - goBullet: {instanceID: 0}
+  - goxImpact: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -894,6 +894,10 @@ PrefabInstance:
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 1629482557}
+    - target: {fileID: 1884343970338284472, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: foeStat
+      value: 
+      objectReference: {fileID: 11400000, guid: d9972ec3cc37d064b827584d0f2b8041, type: 2}
     - target: {fileID: 2208342587964404282, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
       propertyPath: playerManager
       value: 

@@ -1,2 +1,23 @@
 fileFormatVersion: 2
 guid: 6d2143e8f9faed3468211957beadc1f5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - uiUpgradesConfig: {instanceID: 0}
+  - tuto: {instanceID: 0}
+  - deathScript: {instanceID: 0}
+  - playerStats: {instanceID: 0}
+  - foeStats: {fileID: 11400000, guid: d9972ec3cc37d064b827584d0f2b8041, type: 2}
+  - soundManager: {instanceID: 0}
+  - GO_Pause: {instanceID: 0}
+  - GO_ResumePauseScreen: {instanceID: 0}
+  - GO_SettingsScreen: {instanceID: 0}
+  - GO_UpgradeScreen: {instanceID: 0}
+  - GO_Credits: {instanceID: 0}
+  - GO_Cursor: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
