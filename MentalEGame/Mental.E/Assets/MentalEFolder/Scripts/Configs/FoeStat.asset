@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1199bdb1cac0da4fb9e65cfd89a710f, type: 3}
   m_Name: FoeStat
   m_EditorClassIdentifier: 
-  initialMaxHP: 0
-  initialDamage: 0
-  initialSpeed: 0
-  maxHP: 0
-  damage: 0
-  speed: 0
+  initialMaxHP: 20
+  initialBulletDamage: 10
+  initialBulletSpeed: 10
+  maxHP: 20
+  BulletDamage: 10
+  bulletSpeed: 10
