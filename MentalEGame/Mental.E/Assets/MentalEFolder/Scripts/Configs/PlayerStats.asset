@@ -21,16 +21,16 @@ MonoBehaviour:
   bulletDamages: 10
   intial_bulletSpeed: 10
   bulletSpeed: 10
-  fBulletSpeedNow: 10.747761
+  fBulletSpeedNow: 10.047603
   initial_bulletRange: 20
   bulletRange: 20
   initial_fireRate: 2
   fireRate: 2
   initial_moveCd: 1
-  moveCd: 0.64000005
+  moveCd: 1
   initial_nbBullets: 0100000000000000000000000000000000000000
   nbBullets: 0100000000000000000000000000000000000000
-  iLevel: 0
+  iLevel: 1
   initial_fXPmax: 100
   fXPmax: 100
   fUpdatesNumbers:
