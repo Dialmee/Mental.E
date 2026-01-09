@@ -12,8 +12,8 @@ public class SpawnGrid : MonoBehaviour
     [SerializeField] private int baseEnemiesNumber = 2;
     [SerializeField] private int baseAsteroidNumber = 1;
 
-    [SerializeField] private float timeBetweenRound = 5f;
-    [SerializeField] private float timeBetweenWave = 5f;
+     private float timeBetweenRound = 3f;
+     private float timeBetweenWave = 1f;
 
     [SerializeField] private int round = 1;
 
@@ -24,9 +24,6 @@ public class SpawnGrid : MonoBehaviour
     private float _tNextRoundSpawn = 0f;
     private float _tNextWaveSpawn = 0f;
 
-    private void Start()
-    {
-    }
     private void Update()
     {
         TimerCheck();
@@ -73,7 +70,7 @@ public class SpawnGrid : MonoBehaviour
     private void SpawnWave()
     {
         int qtt = RoundBuffer[0] + RoundBuffer[1];
-        //Debug.Log("Spawning Wave, qtt:" + qtt);
+        Debug.Log("Spawning Wave, qtt:" + qtt);
         if (qtt == 0) { 
             EndSpawnRound();
             return;
@@ -82,6 +79,10 @@ public class SpawnGrid : MonoBehaviour
         if (qtt >= 9)
             qtt = 9;
 
+        qtt = Random.Range(qtt / 3, qtt);
+
+        if (qtt <= 0)
+            qtt = 1;
         
         List<int> availableList = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
         int i;
