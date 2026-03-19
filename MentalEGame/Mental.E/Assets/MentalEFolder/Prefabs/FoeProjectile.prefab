@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goBullet: {fileID: 3463401010873713409}
   goxImpact: {fileID: 7557336865516577244}
-  fSpeed: 15
+  fSpeed: 45
   iDamage: 10
 --- !u!135 &7159800895952751523
 SphereCollider:

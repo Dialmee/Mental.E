@@ -121,7 +121,7 @@ MonoBehaviour:
     m_Flags: 0
   fHorMove: 10
   fVerMove: 8
-  moveSpeed: 20
+  moveSpeed: 35
   maxVerAxe: 2
   maxHorAxe: 2
   bIsMoving: 0

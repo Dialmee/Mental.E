@@ -513,6 +513,10 @@ PrefabInstance:
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 1003526551}
+    - target: {fileID: 1884343970338284472, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
+      propertyPath: fFrequence
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2208342587964404282, guid: 4d9a8a6843f7c4546bcb83b350c17125, type: 3}
       propertyPath: playerManager
       value: 
@@ -949,6 +953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fTimer: 0
+  finitialFoeSpeed: 45
   fFoeSpeed: 10
   playerStats: {fileID: 11400000, guid: 6c06d2a16696cb9419c2846ea57ffbdd, type: 2}
 --- !u!4 &952622159

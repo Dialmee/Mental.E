@@ -25,7 +25,8 @@ public class WholeTimerScript : MonoBehaviour
         }
     }
     public float fTimer = 0f;
-    public float fFoeSpeed = 10f;
+    public float finitialFoeSpeed = 30f;
+    public float fFoeSpeed = 30f;
     [SerializeField] private PlayerStats playerStats;
     private void Start()
     {
@@ -42,6 +43,6 @@ public class WholeTimerScript : MonoBehaviour
     private void UpdateStats()
     {
         playerStats.fBulletSpeedNow = playerStats.bulletSpeed+ (fTimer / 100f);
-        fFoeSpeed = 10 + (fTimer /100f);
+        fFoeSpeed = finitialFoeSpeed + (fTimer /100f);
     }
 }
